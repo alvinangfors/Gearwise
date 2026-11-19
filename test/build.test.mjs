@@ -18,7 +18,9 @@ async function project() {
   cat[0].asin = 'B0TESTAAAA'; cat[1].asin = 'B0TESTBBBB';
   delete cat[0].pick; delete cat[1].pick; // testa API-titeln, inte redaktionella namn
   await writeFile(join(dir, 'data/catalog.json'), JSON.stringify(cat));
-  return { dir, slug0: cat[0].slug, slug2: cat[2].slug };
+  const noAsin = cat.find((p, i) => i > 1 && !p.asin);
+  assert.ok(noAsin, 'det måste finnas minst en produkt utan ASIN');
+  return { dir, slug0: cat[0].slug, slug2: noAsin.slug };
 }
 const run = (dir, script, env = {}) => execFileSync('node', [`scripts/${script}`], { cwd: dir, env: { ...process.env, ...env }, encoding: 'utf8', stdio: 'pipe' });
 

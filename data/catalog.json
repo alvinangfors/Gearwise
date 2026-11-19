@@ -97,7 +97,7 @@
       "Kraftigt ljud",
       "Upp till en hel dags spel"
     ],
-    "asin": null,
+    "asin": "B0DXKMXPXW",
     "img": null,
     "guide": {
       "intro": "En bärbar högtalare är en avvägning mellan storlek och ljud. Små högtalare kan låta tydligt, men djup bas kräver volym i själva lådan.",
@@ -122,7 +122,8 @@
       "forWho": "Dig som vill ha musik på balkongen, i stugan eller på stranden.",
       "skipIf": "Högtalaren ska stå still inomhus. Då ger en wifi-högtalare oftast bättre ljud och smidigare streaming."
     },
-    "bestsellers": "electronics/20638336031"
+    "bestsellers": "electronics/20638336031",
+    "pick": "JBL bärbar Bluetooth-högtalare, tålig och vattentät"
   },
   {
     "slug": "smart-hogtalare",
