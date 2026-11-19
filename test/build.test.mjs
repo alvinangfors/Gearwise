@@ -51,7 +51,7 @@ test('fetch → build visar pris, tidpunkt och prisinfo', async () => {
   assert.match(html, /<strong>1 299,00 kr<\/strong>Amazon\.se, \d+ \w+\.? \d{4} kl\. \d\d:\d\d/);
   assert.match(html, /data-price-ts="\d{4}-/);
   assert.match(html, /Det pris och den tillgänglighet som visas på Amazon\.se vid köptillfället gäller/);
-  assert.match(html, /Vårt val:<\/b> Modell B0TESTAAAA/);
+  assert.match(html, /Vårt val<\/b> <span>Modell B0TESTAAAA/);
   assert.match(html, /href="https:\/\/www\.amazon\.se\/dp\/B0TESTAAAA\?tag=t-21" target="_blank" rel="nofollow sponsored noopener"/);
   const other = await readFile(join(dir, `dist/produkt/${slug2}/index.html`), 'utf8');
   assert.doesNotMatch(other.split('<section')[0], /data-price-ts/); // produkt utan ASIN har inget pris
@@ -62,7 +62,7 @@ test('fetch → build visar pris, tidpunkt och prisinfo', async () => {
   await writeFile(join(dir, 'data/amazon.json'), JSON.stringify(a));
   run(dir, 'build.mjs');
   const stale = await readFile(join(dir, `dist/produkt/${slug0}/index.html`), 'utf8');
-  assert.doesNotMatch(stale, /data-price-ts|1 299,00 kr|Vårt val/);
+  assert.doesNotMatch(stale, /data-price-ts|1 299,00 kr|Modell B0TESTAAAA/);
   assert.match(stale, /amazon\.se\/dp\/B0TESTAAAA\?tag=/); // länken fungerar ändå
   await rm(dir, { recursive: true, force: true });
 });

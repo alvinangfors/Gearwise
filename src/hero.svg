@@ -1,27 +1,100 @@
-<svg class="scene" viewBox="0 0 500 400" role="img" aria-label="Hörlurar, mobiltelefon och högtalare på en hylla">
+<svg class="scene" id="scene" viewBox="0 0 520 440" role="img" aria-label="Hörlurar, mobiltelefon, högtalare, smartklocka och laddare som svävar ovanför en hylla">
   <defs>
-    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a4a7a"/><stop offset="1" stop-color="#0d3157"/></linearGradient>
-    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fd3ff"/><stop offset="1" stop-color="#4fa8e0"/></linearGradient>
-    <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7aa0"/><stop offset="1" stop-color="#e2416f"/></linearGradient>
-    <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8fd3ff" stop-opacity=".35"/><stop offset="1" stop-color="#8fd3ff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="hg-spk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f5590"/><stop offset="1" stop-color="#0d3157"/></linearGradient>
+    <linearGradient id="hg-scr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a8ddff"/><stop offset=".55" stop-color="#6cb8f0"/><stop offset="1" stop-color="#8b7cf6"/></linearGradient>
+    <linearGradient id="hg-pk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff86a8"/><stop offset="1" stop-color="#e2416f"/></linearGradient>
+    <linearGradient id="hg-eq" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff5c8a"/><stop offset="1" stop-color="#ffd1de"/></linearGradient>
+    <linearGradient id="hg-shelf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1d4a75" stop-opacity="0"/><stop offset=".2" stop-color="#2a5f93"/><stop offset=".8" stop-color="#2a5f93"/><stop offset="1" stop-color="#1d4a75" stop-opacity="0"/></linearGradient>
+    <radialGradient id="hg-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8fd3ff" stop-opacity=".38"/><stop offset="1" stop-color="#8fd3ff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="hg-glow2" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ff5c8a" stop-opacity=".3"/><stop offset="1" stop-color="#ff5c8a" stop-opacity="0"/></radialGradient>
   </defs>
-  <circle cx="250" cy="170" r="200" fill="url(#glow)"/>
-  <rect x="20" y="318" width="460" height="18" rx="4" fill="#1d4a75"/><rect x="20" y="336" width="460" height="30" fill="#0d2d4e"/>
-  <g class="float">
-    <rect x="196" y="70" width="120" height="236" rx="22" fill="#05182c"/><rect x="204" y="80" width="104" height="216" rx="15" fill="url(#g2)"/>
-    <rect x="216" y="104" width="80" height="12" rx="6" fill="#ffffff99"/><rect x="216" y="128" width="54" height="10" rx="5" fill="#ffffff66"/>
-    <rect x="216" y="160" width="80" height="80" rx="12" fill="#0a2540" opacity=".85"/><circle cx="256" cy="200" r="22" fill="#ff5c8a"/><path d="M249 189 L268 200 L249 211Z" fill="#fff"/>
-    <rect x="216" y="254" width="80" height="12" rx="6" fill="#ffffff88"/>
+
+  <g class="ly" style="--d:6">
+    <circle cx="260" cy="200" r="210" fill="url(#hg-glow)"/>
+    <circle cx="350" cy="140" r="130" fill="url(#hg-glow2)"/>
   </g>
-  <g>
-    <path d="M50 250 C50 150 170 150 170 250" fill="none" stroke="#f4f8fb" stroke-width="16" stroke-linecap="round"/>
-    <rect x="34" y="236" width="40" height="80" rx="18" fill="url(#g3)"/><rect x="146" y="236" width="40" height="80" rx="18" fill="url(#g3)"/>
-    <rect x="40" y="244" width="10" height="60" rx="5" fill="#ffffff55"/><rect x="152" y="244" width="10" height="60" rx="5" fill="#ffffff55"/>
+
+  <g class="ly" style="--d:10">
+    <ellipse class="orbit" cx="260" cy="215" rx="225" ry="74" fill="none" stroke="#8fd3ff" stroke-opacity=".28" stroke-width="1.5" stroke-dasharray="3 11"/>
   </g>
-  <g>
-    <rect x="350" y="180" width="110" height="138" rx="26" fill="url(#g1)" stroke="#2a5d8f" stroke-width="2"/>
-    <circle cx="405" cy="262" r="36" fill="#071a2e"/><circle cx="405" cy="262" r="24" fill="#123a60"/><circle cx="405" cy="262" r="9" fill="#8fd3ff"/>
-    <circle cx="405" cy="210" r="11" fill="#071a2e"/><rect x="368" y="188" width="74" height="5" rx="2.5" fill="#8fd3ff" opacity=".6"/>
+
+  <!-- Hylla -->
+  <g class="ly" style="--d:8">
+    <rect x="18" y="352" width="484" height="14" rx="7" fill="url(#hg-shelf)"/>
+    <ellipse cx="118" cy="352" rx="64" ry="5" fill="#000" opacity=".3"/>
+    <ellipse cx="262" cy="352" rx="58" ry="5" fill="#000" opacity=".3"/>
+    <ellipse cx="410" cy="352" rx="58" ry="5" fill="#000" opacity=".3"/>
   </g>
-  <ellipse cx="110" cy="320" rx="70" ry="5" fill="#000" opacity=".25"/><ellipse cx="405" cy="320" rx="60" ry="5" fill="#000" opacity=".25"/>
+
+  <!-- Mobil med equalizer -->
+  <g class="ly" style="--d:18"><g class="fl">
+    <rect x="200" y="70" width="124" height="246" rx="24" fill="#04111f"/>
+    <rect x="208" y="80" width="108" height="226" rx="17" fill="url(#hg-scr)"/>
+    <rect x="243" y="86" width="38" height="7" rx="3.5" fill="#04111f"/>
+    <rect x="220" y="108" width="84" height="11" rx="5.5" fill="#ffffffaa"/>
+    <rect x="220" y="128" width="56" height="9" rx="4.5" fill="#ffffff70"/>
+    <rect x="220" y="152" width="84" height="96" rx="14" fill="#0a2540" opacity=".88"/>
+    <g class="eq" fill="url(#hg-eq)">
+      <rect class="b b1" x="232" y="190" width="8" height="44" rx="4"/>
+      <rect class="b b2" x="245" y="190" width="8" height="44" rx="4"/>
+      <rect class="b b3" x="258" y="190" width="8" height="44" rx="4"/>
+      <rect class="b b4" x="271" y="190" width="8" height="44" rx="4"/>
+      <rect class="b b5" x="284" y="190" width="8" height="44" rx="4"/>
+    </g>
+    <circle class="pulse" cx="262" cy="174" r="7" fill="#ff5c8a"/>
+    <rect x="220" y="262" width="84" height="12" rx="6" fill="#ffffff88"/>
+    <rect x="220" y="282" width="40" height="10" rx="5" fill="#ffffff55"/>
+  </g></g>
+
+  <!-- Hörlurar -->
+  <g class="ly" style="--d:26"><g class="fl d2">
+    <path d="M60 262 C60 160 176 160 176 262" fill="none" stroke="#f4f8fb" stroke-width="16" stroke-linecap="round"/>
+    <rect x="42" y="246" width="42" height="84" rx="19" fill="url(#hg-pk)"/>
+    <rect x="152" y="246" width="42" height="84" rx="19" fill="url(#hg-pk)"/>
+    <rect x="49" y="255" width="10" height="62" rx="5" fill="#ffffff66"/>
+    <rect x="159" y="255" width="10" height="62" rx="5" fill="#ffffff66"/>
+  </g></g>
+
+  <!-- Högtalare med ljudvågor -->
+  <g class="ly" style="--d:22">
+    <g class="rings" fill="none" stroke="#8fd3ff" stroke-width="2.5">
+      <circle class="ring r1" cx="410" cy="270" r="40"/>
+      <circle class="ring r2" cx="410" cy="270" r="40"/>
+      <circle class="ring r3" cx="410" cy="270" r="40"/>
+    </g>
+    <g class="fl d3">
+      <rect x="354" y="188" width="112" height="152" rx="28" fill="url(#hg-spk)" stroke="#3a74ad" stroke-width="2"/>
+      <circle class="cone" cx="410" cy="270" r="38" fill="#071a2e"/>
+      <circle cx="410" cy="270" r="25" fill="#123a60"/>
+      <circle cx="410" cy="270" r="10" fill="#8fd3ff"/>
+      <circle cx="410" cy="215" r="12" fill="#071a2e"/>
+      <rect x="374" y="196" width="72" height="5" rx="2.5" fill="#8fd3ff" opacity=".6"/>
+    </g>
+  </g>
+
+  <!-- Smartklocka med puls -->
+  <g class="ly" style="--d:34"><g class="fl d4">
+    <rect x="76" y="44" width="30" height="104" rx="10" fill="#1d4a75"/>
+    <rect x="62" y="66" width="58" height="58" rx="17" fill="#0a2540" stroke="#3a74ad" stroke-width="2"/>
+    <rect x="68" y="72" width="46" height="46" rx="12" fill="#04111f"/>
+    <path class="ecg" d="M72 97 h9 l4 -10 l6 20 l5 -14 l4 6 h12" fill="none" stroke="#ff5c8a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  </g></g>
+
+  <!-- Laddare -->
+  <g class="ly" style="--d:30"><g class="fl d5">
+    <rect x="426" y="62" width="58" height="66" rx="13" fill="#f4f8fb" stroke="#0a2540" stroke-width="3"/>
+    <rect x="440" y="48" width="7" height="16" rx="2" fill="#c9d6e0"/>
+    <rect x="463" y="48" width="7" height="16" rx="2" fill="#c9d6e0"/>
+    <path class="bolt" d="M459 74 L446 96 H458 L452 114 L470 88 H458 Z" fill="#ff5c8a"/>
+  </g></g>
+
+  <!-- Gnistor -->
+  <g class="ly" style="--d:40" fill="#ffffff">
+    <path class="tw t1" d="M168 70 l3 9 l9 3 l-9 3 l-3 9 l-3 -9 l-9 -3 l9 -3z"/>
+    <path class="tw t2" d="M372 130 l2 6 l6 2 l-6 2 l-2 6 l-2 -6 l-6 -2 l6 -2z"/>
+    <path class="tw t3" d="M34 190 l2 6 l6 2 l-6 2 l-2 6 l-2 -6 l-6 -2 l6 -2z"/>
+    <path class="tw t4" d="M488 196 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3 l8 -3z"/>
+    <circle class="tw t5" cx="330" cy="40" r="2.5"/>
+    <circle class="tw t6" cx="140" cy="128" r="2"/>
+  </g>
 </svg>
