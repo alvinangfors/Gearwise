@@ -712,7 +712,7 @@
       "Ljudsignal",
       "Utbytbart batteri"
     ],
-    "asin": null,
+    "asin": "B0G4TQHV9Y",
     "img": null,
     "guide": {
       "intro": "En Bluetooth-tracker har ingen GPS. På nära håll hittar du den via mobilen och en ljudsignal. På längre avstånd syns den bara om en annan mobil i samma nätverk passerar.",
@@ -737,7 +737,8 @@
       "forWho": "Dig som ofta letar efter nycklar eller vill hålla koll på resväskan.",
       "skipIf": "Du behöver spåra något i realtid, till exempel ett fordon. Då krävs en GPS-tracker med SIM-kort."
     },
-    "bestsellers": "electronics/20637786031"
+    "bestsellers": "electronics/20637786031",
+    "pick": "MiLi tracker med utbytbart CR2032-batteri"
   },
   {
     "slug": "universell-reseadapter",
