@@ -832,7 +832,7 @@
       "Pulsmätning",
       "Flera dagars batteri"
     ],
-    "asin": null,
+    "asin": "B0CT3SGHXL",
     "img": null,
     "guide": {
       "intro": "Smartklockor spänner från vardagsklockor med notiser och appar till rena träningsklockor med lång batteritid. Bestäm först vad som är viktigast för dig.",
@@ -857,6 +857,7 @@
       "forWho": "Dig som tränar regelbundet och vill följa puls, distans och sömn.",
       "skipIf": "Du bara vill räkna steg. Då räcker ett enklare aktivitetsarmband."
     },
-    "bestsellers": "electronics/20637796031"
+    "bestsellers": "electronics/20637796031",
+    "pick": "Garmin Forerunner löparklocka med AMOLED-skärm"
   }
 ]
