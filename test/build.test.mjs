@@ -16,6 +16,7 @@ async function project() {
   await rm(join(dir, 'data/amazon.json'), { force: true });
   const cat = JSON.parse(await readFile(join(dir, 'data/catalog.json'), 'utf8'));
   cat[0].asin = 'B0TESTAAAA'; cat[1].asin = 'B0TESTBBBB';
+  delete cat[0].pick; delete cat[1].pick; // testa API-titeln, inte redaktionella namn
   await writeFile(join(dir, 'data/catalog.json'), JSON.stringify(cat));
   return { dir, slug0: cat[0].slug, slug2: cat[2].slug };
 }
