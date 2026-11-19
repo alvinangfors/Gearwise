@@ -225,7 +225,7 @@ for (const p of products) {
       <div class="meta"><span>${esc(p.cat)}</span><span>·</span><span>${p.level}</span></div>
       <h1>${esc(p.name)}</h1>
       <p class="lead">${esc(p.why)}</p>
-      ${p.a?.title ? `<p class="pick"><b>Vårt val:</b> ${esc(p.a.title)}</p>` : ''}
+      ${(p.a?.title || p.pick) ? `<p class="pick"><b>Vårt val:</b> ${esc(p.a?.title || p.pick)}</p>` : ''}
       <ul>${p.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>
       ${priceBlock(p)}
       <div class="actions">${buy(p, true)}
@@ -354,7 +354,7 @@ await out('products.json', JSON.stringify({
   priceDisclaimer: DISCLAIMER,
   products: products.map((p) => ({
     slug: p.slug, name: p.name, cat: p.cat, level: p.level, why: p.why, bullets: p.bullets, guide: p.guide,
-    asin: p.asin || null, title: p.a?.title || null, link: p.link, img: p.img?.url || null, price: p.price, icon: ICONS[p.icon],
+    asin: p.asin || null, title: p.a?.title || p.pick || null, link: p.link, img: p.img?.url || null, price: p.price, icon: ICONS[p.icon],
   })),
 }));
 

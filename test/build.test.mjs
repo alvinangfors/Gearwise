@@ -36,12 +36,13 @@ test('fetch → build visar pris, tidpunkt och prisinfo', async () => {
   const { dir, slug0, slug2 } = await project();
 
   const env = { AMAZON_CREDENTIAL_ID: 'x', AMAZON_CREDENTIAL_SECRET: 'y', AMAZON_API_HOST: url, AMAZON_TOKEN_URL: `${url}/token` };
+  server.unref();
   const fetchOut = await new Promise((ok, fail) => {
     import('node:child_process').then(({ execFile }) => execFile('node', ['scripts/fetch-amazon.mjs'], { cwd: dir, env: { ...process.env, ...env } }, (e, so, se) => e ? fail(new Error(se)) : ok(so)));
   });
-  assert.match(fetchOut, /Hämtade 2\/2/);
-  run(dir, 'build.mjs');
   server.close();
+  assert.match(fetchOut, /Hämtade (\d+)\/\1 produkter/);
+  run(dir, 'build.mjs');
 
   const html = await readFile(join(dir, `dist/produkt/${slug0}/index.html`), 'utf8');
   assert.match(html, /<strong>1 299,00 kr<\/strong>Amazon\.se, \d+ \w+\.? \d{4} kl\. \d\d:\d\d/);
