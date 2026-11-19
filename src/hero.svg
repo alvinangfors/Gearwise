@@ -1,0 +1,27 @@
+<svg class="scene" viewBox="0 0 500 400" role="img" aria-label="Hörlurar, mobiltelefon och högtalare på en hylla">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a4a7a"/><stop offset="1" stop-color="#0d3157"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fd3ff"/><stop offset="1" stop-color="#4fa8e0"/></linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7aa0"/><stop offset="1" stop-color="#e2416f"/></linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8fd3ff" stop-opacity=".35"/><stop offset="1" stop-color="#8fd3ff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <circle cx="250" cy="170" r="200" fill="url(#glow)"/>
+  <rect x="20" y="318" width="460" height="18" rx="4" fill="#1d4a75"/><rect x="20" y="336" width="460" height="30" fill="#0d2d4e"/>
+  <g class="float">
+    <rect x="196" y="70" width="120" height="236" rx="22" fill="#05182c"/><rect x="204" y="80" width="104" height="216" rx="15" fill="url(#g2)"/>
+    <rect x="216" y="104" width="80" height="12" rx="6" fill="#ffffff99"/><rect x="216" y="128" width="54" height="10" rx="5" fill="#ffffff66"/>
+    <rect x="216" y="160" width="80" height="80" rx="12" fill="#0a2540" opacity=".85"/><circle cx="256" cy="200" r="22" fill="#ff5c8a"/><path d="M249 189 L268 200 L249 211Z" fill="#fff"/>
+    <rect x="216" y="254" width="80" height="12" rx="6" fill="#ffffff88"/>
+  </g>
+  <g>
+    <path d="M50 250 C50 150 170 150 170 250" fill="none" stroke="#f4f8fb" stroke-width="16" stroke-linecap="round"/>
+    <rect x="34" y="236" width="40" height="80" rx="18" fill="url(#g3)"/><rect x="146" y="236" width="40" height="80" rx="18" fill="url(#g3)"/>
+    <rect x="40" y="244" width="10" height="60" rx="5" fill="#ffffff55"/><rect x="152" y="244" width="10" height="60" rx="5" fill="#ffffff55"/>
+  </g>
+  <g>
+    <rect x="350" y="180" width="110" height="138" rx="26" fill="url(#g1)" stroke="#2a5d8f" stroke-width="2"/>
+    <circle cx="405" cy="262" r="36" fill="#071a2e"/><circle cx="405" cy="262" r="24" fill="#123a60"/><circle cx="405" cy="262" r="9" fill="#8fd3ff"/>
+    <circle cx="405" cy="210" r="11" fill="#071a2e"/><rect x="368" y="188" width="74" height="5" rx="2.5" fill="#8fd3ff" opacity=".6"/>
+  </g>
+  <ellipse cx="110" cy="320" rx="70" ry="5" fill="#000" opacity=".25"/><ellipse cx="405" cy="320" rx="60" ry="5" fill="#000" opacity=".25"/>
+</svg>

@@ -1,0 +1,422 @@
+[
+  {
+    "slug": "brusreducerande-horlurar",
+    "name": "Brusreducerande over-ear-hörlurar",
+    "cat": "Ljud", "icon": "phones", "lvl": 3, "pop": 10,
+    "q": "brusreducerande hörlurar over-ear bluetooth",
+    "why": "För pendling, flyg och fokus. Aktiv brusreducering stänger ute omvärlden.",
+    "bullets": ["Aktiv brusreducering (ANC)", "Lång batteritid", "Bekväm för långa pass"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "Over-ear-hörlurar med aktiv brusreducering (ANC) dämpar framför allt jämna, låga ljud som motorbrus, fläktar och flygplanskabiner. Röster och plötsliga ljud dämpas mindre. Därför märks skillnaden mellan modeller mest på tåg och flyg.",
+      "consider": [
+        ["Komfort före specifikationer", "Vikt, tryck mot huvudet och kuddarnas material avgör om du orkar ha dem på en hel flygresa. Prova gärna, och kontrollera returvillkoren innan du köper."],
+        ["Batteritid med ANC påslaget", "Tillverkarens siffra gäller ofta med brusreduceringen avstängd. Kontrollera tiden med ANC på, eftersom det är så du kommer att använda dem."],
+        ["Codec och telefon", "iPhone använder AAC. Många Android-telefoner klarar också LDAC eller aptX. Har hörlurarna inte samma codec som telefonen, faller de tillbaka på den grundläggande SBC."],
+        ["Multipoint", "Med multipoint kan hörlurarna vara kopplade till dator och mobil samtidigt. Det är praktiskt om du tar samtal under arbetsdagen."]
+      ],
+      "forWho": "Dig som pendlar, flyger eller jobbar i öppet kontorslandskap.",
+      "skipIf": "Du vill träna i dem eller behöver höra trafiken omkring dig. Då passar in-ear med transparensläge bättre."
+    }
+  },
+  {
+    "slug": "tradlosa-in-ear-horlurar",
+    "name": "Trådlösa in-ear-hörlurar",
+    "cat": "Ljud", "icon": "buds", "lvl": 2, "pop": 9,
+    "q": "trådlösa in-ear hörlurar bluetooth anc",
+    "why": "Små och smidiga för träning och vardag, med fodral som laddar.",
+    "bullets": ["Laddfodral", "Svettåliga modeller finns", "Snabb parkoppling"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "Helt trådlösa in-ear-hörlurar får plats i fickan och laddas i sitt fodral. Hur bra de låter och hur väl de stänger ute ljud beror mycket på hur de sitter i örat.",
+      "consider": [
+        ["Passform", "Kontrollera att det följer med öronproppar i flera storlekar. Sitter de inte tätt försvinner både basen och brusreduceringen."],
+        ["Tålighet", "IPX4 tål svett och stänk. Ska du träna hårt eller springa i regn är IPX5 eller högre tryggare."],
+        ["Batteritid per laddning", "Räkna med tiden per laddning, ofta 5–8 timmar, och inte med totalen inklusive fodralet. Det är den som avgör om de räcker en hel arbetsdag."],
+        ["Transparensläge", "Släpper in omgivningsljud via mikrofonerna, så att du hör trafik och utrop utan att ta ut hörlurarna."]
+      ],
+      "forWho": "Dig som vill ha något litet till träning, promenader och vardag.",
+      "skipIf": "Du sitter i långa möten eller flyger ofta och vill ha maximal komfort. Då är over-ear skönare i längden."
+    }
+  },
+  {
+    "slug": "bluetooth-hogtalare",
+    "name": "Bärbar Bluetooth-högtalare",
+    "cat": "Ljud", "icon": "speaker", "lvl": 2, "pop": 8,
+    "q": "bärbar bluetooth högtalare vattentät",
+    "why": "Tål regn och sand. Perfekt till balkongen, stranden och stugan.",
+    "bullets": ["Vattentät (IPX7)", "Kraftigt ljud", "Upp till en hel dags spel"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "En bärbar högtalare är en avvägning mellan storlek och ljud. Små högtalare kan låta tydligt, men djup bas kräver volym i själva lådan.",
+      "consider": [
+        ["IP-klass", "IPX7 betyder att den tål att doppas i vatten. IP67 betyder att den dessutom är dammtät, vilket är bra på stranden."],
+        ["Batteritiden är uppmätt på måttlig volym", "Spelar du högt blir tiden kortare, ofta betydligt."],
+        ["Stereo och partyläge", "Många modeller kan kopplas ihop två och två. Det fungerar normalt bara med samma märke."],
+        ["Laddning", "USB-C är smidigast. Vissa större modeller kan också ladda mobilen."]
+      ],
+      "forWho": "Dig som vill ha musik på balkongen, i stugan eller på stranden.",
+      "skipIf": "Högtalaren ska stå still inomhus. Då ger en wifi-högtalare oftast bättre ljud och smidigare streaming."
+    }
+  },
+  {
+    "slug": "smart-hogtalare",
+    "name": "Smart högtalare med röststyrning",
+    "cat": "Smarta hemmet", "icon": "smartspk", "lvl": 2, "pop": 6,
+    "q": "smart högtalare röststyrning",
+    "why": "Styr musik, timer och smarta lampor med rösten.",
+    "bullets": ["Röstassistent", "Styr smarta hemmet", "Musik via wifi"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "En smart högtalare är lika mycket en röstassistent som en högtalare. Valet handlar därför först om vilket ekosystem du vill leva i, och först sedan om ljudet.",
+      "consider": [
+        ["Språk", "Kontrollera att röstassistenten förstår svenska. Stödet skiljer sig mellan tillverkarna."],
+        ["Ekosystem", "Har du redan smarta lampor eller kontakter, välj en högtalare som stöder dem eller standarden Matter."],
+        ["Integritet", "Se efter en fysisk knapp som stänger av mikrofonen, och gå igenom tillverkarens inställningar för röstinspelningar."],
+        ["Musiktjänst", "Kontrollera att din musiktjänst går att styra direkt med rösten."]
+      ],
+      "forWho": "Dig som vill styra musik, timers och smarta hemmet utan att plocka fram mobilen.",
+      "skipIf": "Du inte vill ha en mikrofon som lyssnar efter ett aktiveringsord i hemmet."
+    }
+  },
+  {
+    "slug": "usb-c-laddare-65w",
+    "name": "USB-C-laddare 65 W (GaN)",
+    "cat": "Laddning", "icon": "charger", "lvl": 1, "pop": 10,
+    "q": "usb-c laddare 65w gan",
+    "why": "En liten laddare som klarar mobil, surfplatta och laptop.",
+    "bullets": ["GaN – kompakt och sval", "Flera portar", "Snabbladdning (PD)"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "Laddare med galliumnitrid (GaN) är mindre och blir svalare än äldre laddare med samma effekt. 65 W räcker för de flesta mobiler, surfplattor och många tunna laptops.",
+      "consider": [
+        ["Effekten delas mellan portarna", "65 W är den totala effekten. Laddar du två saker samtidigt får varje port mindre, och det brukar framgå av tillverkarens tabell."],
+        ["Kolla vad datorn behöver", "Står det 90 W eller mer på datorns originalladdare laddar den långsammare med 65 W, eller bara när den är avstängd."],
+        ["Kabeln påverkar", "Vanliga USB-C-kablar klarar 60 W (3 A). För full effekt behövs en kabel märkt för 5 A, alltså 100 W eller 240 W."],
+        ["PPS för Samsung", "Vissa Samsung-telefoner kräver PPS för den snabbaste laddningen. Kolla att laddaren stöder det."]
+      ],
+      "forWho": "Dig som vill ersätta flera laddare med en, hemma och på resan.",
+      "skipIf": "Du har en kraftfull laptop för spel eller kreativt arbete som kräver 100 W eller mer."
+    }
+  },
+  {
+    "slug": "powerbank-20000",
+    "name": "Powerbank 20 000 mAh",
+    "cat": "Laddning", "icon": "power", "lvl": 1, "pop": 9,
+    "q": "powerbank 20000mah usb-c",
+    "why": "Ladda mobilen flera gånger om på resan eller festivalen.",
+    "bullets": ["Hög kapacitet", "USB-C in/ut", "Laddar två enheter samtidigt"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "20 000 mAh räcker till flera mobilladdningar, men allt når inte fram till mobilen. Räkna med att ungefär två tredjedelar av den angivna kapaciteten kommer till nytta, på grund av spänningsomvandling och värmeförluster.",
+      "consider": [
+        ["Flyg", "20 000 mAh motsvarar ungefär 74 Wh, och under 100 Wh är tillåtet i handbagaget hos de flesta flygbolag. Powerbanks får inte ligga i incheckat bagage. Kontrollera alltid flygbolagets egna regler."],
+        ["Uteffekt", "Ska den ladda en surfplatta eller laptop behövs USB-C PD med minst 20–45 W. För bara mobil räcker mindre."],
+        ["Vikt", "Kapaciteten väger. Räkna med ungefär en tredjedels kilo eller mer."],
+        ["Ladda powerbanken", "Snabb laddning in via USB-C gör stor skillnad, annars kan en full laddning ta en hel natt."]
+      ],
+      "forWho": "Dig som reser, går på festival eller är ute en hel dag utan uttag.",
+      "skipIf": "Du bara behöver lite extra ström i vardagen. Då räcker en lättare 10 000 mAh."
+    }
+  },
+  {
+    "slug": "tradlos-laddstation-3-i-1",
+    "name": "Trådlös laddplatta 3-i-1",
+    "cat": "Laddning", "icon": "pad", "lvl": 2, "pop": 7,
+    "q": "trådlös laddstation 3 i 1",
+    "why": "Mobil, klocka och hörlurar på samma plats vid sängen.",
+    "bullets": ["Qi-kompatibel", "Färre sladdar", "Snyggt på nattduksbordet"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "En laddstation för tre enheter samlar mobil, klocka och hörlurar på ett ställe. Det viktiga är att alla tre faktiskt passar just dina prylar.",
+      "consider": [
+        ["Klockan styr valet", "Apple Watch och många Android-klockor laddas inte med vanlig Qi. Stationen måste ha en laddare som är gjord för just din klocka."],
+        ["Qi2 och magneter", "Med Qi2 eller MagSafe-kompatibla magneter hamnar telefonen rätt varje gång, och laddningen kan bli snabbare."],
+        ["Adaptern", "Många stationer kräver en kraftig USB-C-adapter som inte alltid följer med. Kolla vad som ingår."],
+        ["Skal", "Tjocka skal och skal med metall eller kortfack kan störa trådlös laddning."]
+      ],
+      "forWho": "Dig som laddar mobil, klocka och hörlurar varje natt och vill slippa sladdhärvan.",
+      "skipIf": "Du vill ladda så snabbt som möjligt. Sladd är fortfarande snabbare och effektivare."
+    }
+  },
+  {
+    "slug": "usb-c-kabel-flatad",
+    "name": "Flätad USB-C-kabel (2-pack)",
+    "cat": "Laddning", "icon": "cable", "lvl": 1, "pop": 8,
+    "q": "usb-c kabel flätad 2m",
+    "why": "Tålig kabel som klarar vardagens böjar och drag.",
+    "bullets": ["Flätat hölje", "2 meter", "Snabbladdning och data"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "USB-C-kablar ser likadana ut men klarar olika mycket. Skillnaden syns i specifikationen, inte på kontakten.",
+      "consider": [
+        ["Effekt", "60 W räcker för mobil och surfplatta. För en laptop på 65 W eller mer behövs en kabel märkt 100 W eller 240 W."],
+        ["Dataöverföring", "Många laddkablar överför bara data i USB 2.0-hastighet (480 Mbit/s). För skärm eller snabb SSD behövs USB 3 eller USB4."],
+        ["Längd", "Två meter är bra vid sängen och soffan. I väskan är en kortare kabel smidigare."],
+        ["Kontakten", "En kraftig avlastning vid kontakten håller ofta längre än själva flätningen."]
+      ],
+      "forWho": "Dig som har sladdar som spricker vid kontakten eller vill ha en extra vid sängen.",
+      "skipIf": "Du ska koppla in en extern skärm. Då behöver du en USB-C-kabel med videostöd."
+    }
+  },
+  {
+    "slug": "smarta-led-lampor",
+    "name": "Smarta LED-lampor (färg)",
+    "cat": "Smarta hemmet", "icon": "bulb", "lvl": 1, "pop": 8,
+    "q": "smart led lampa e27 wifi färg",
+    "why": "Skapa stämning med appen eller rösten – miljontals färger.",
+    "bullets": ["E27-sockel", "Schemaläggning", "Ingen brygga för wifi-varianter"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "Smarta lampor är ett enkelt sätt att börja med smarta hemmet. Det stora valet står mellan lampor som ansluter direkt till wifi och lampor som går via en brygga.",
+      "consider": [
+        ["Wifi, Zigbee eller Matter", "Wifi-lampor kräver ingen brygga men belastar routern när de blir många. Zigbee och Thread kräver en brygga men är ofta stabilare. Matter gör det lättare att blanda märken."],
+        ["Sockel och ljusstyrka", "Kontrollera sockeln: E27, E14 eller GU10. 806 lumen motsvarar ungefär en gammal 60 W-glödlampa."],
+        ["Strömbrytaren", "Smarta lampor ska sitta på en vanlig strömbrytare som står på. Använd inte en dimmer på väggen."],
+        ["Wifi-band", "De flesta wifi-lampor kräver 2,4 GHz-nätet."]
+      ],
+      "forWho": "Dig som vill schemalägga ljus, styra stämningen eller börja med smarta hemmet.",
+      "skipIf": "Lampan styrs bara med väggknappen. Då gör den smarta funktionen ingen nytta."
+    }
+  },
+  {
+    "slug": "smart-kontakt-energimatning",
+    "name": "Smart kontakt med energimätning",
+    "cat": "Smarta hemmet", "icon": "plug", "lvl": 1, "pop": 7,
+    "q": "smart plug wifi energimätning",
+    "why": "Gör vanliga apparater smarta och se vad de drar i ström.",
+    "bullets": ["Styr via app", "Timer och scheman", "Energistatistik"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "En smart kontakt slår av och på strömmen till det du kopplar in, enligt schema eller från mobilen. Med energimätning ser du dessutom vad apparaten förbrukar.",
+      "consider": [
+        ["Maxlast", "Kontrollera hur många ampere eller watt kontakten tål, särskilt för element, vattenkokare och andra apparater som drar mycket."],
+        ["Kontaktmodell", "I Sverige används jordad kontakt av typ F. Se till att du köper en EU-variant."],
+        ["Apparaten måste starta av sig själv", "Det fungerar bara med apparater som startar när strömmen slås på, till exempel lampor och fläktar. Kaffebryggare med startknapp fungerar inte."],
+        ["App och standard", "Matter eller lokal styrning gör kontakten mindre beroende av tillverkarens moln."]
+      ],
+      "forWho": "Dig som vill schemalägga lampor eller se vad till exempel tv:n drar i standby.",
+      "skipIf": "Apparaten måste startas med en knapp efter att den fått ström."
+    }
+  },
+  {
+    "slug": "wifi-kamera-inomhus",
+    "name": "Wifi-kamera för inomhus",
+    "cat": "Smarta hemmet", "icon": "cam", "lvl": 2, "pop": 6,
+    "q": "wifi kamera inomhus 2k",
+    "why": "Håll koll på hemmet, husdjuret eller bebisen från mobilen.",
+    "bullets": ["Rörelsevarningar", "Mörkerseende", "Tvåvägsljud"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "En inomhuskamera låter dig titta in hemma från mobilen. Fundera lika mycket på hur inspelningarna lagras och skyddas som på bildkvaliteten.",
+      "consider": [
+        ["Lagring", "Ett microSD-kort lagrar lokalt. Molnlagring kostar ofta en månadsavgift. Se efter vad som fungerar utan abonnemang."],
+        ["Säkerhet", "Använd ett unikt lösenord och tvåstegsverifiering i appen. Välj en tillverkare som uppdaterar mjukvaran."],
+        ["Integritetsläge", "En fysisk lucka eller ett läge där linsen vrids bort är bra när du är hemma."],
+        ["Respektera andra", "Berätta för de som bor i eller besöker hemmet att kameran finns. Rikta den inte ut mot grannar eller allmän plats."]
+      ],
+      "forWho": "Dig som vill hålla koll på husdjur, en sovande bebis eller hemmet när du är borta.",
+      "skipIf": "Du behöver bevaka utomhus. Det kräver en kamera som tål väder, och andra regler kan gälla."
+    }
+  },
+  {
+    "slug": "mekaniskt-tangentbord",
+    "name": "Trådlöst mekaniskt tangentbord",
+    "cat": "Dator & kontor", "icon": "keys", "lvl": 2, "pop": 7,
+    "q": "trådlöst mekaniskt tangentbord nordisk layout",
+    "why": "Skön skrivkänsla och färre sladdar på skrivbordet.",
+    "bullets": ["Nordisk layout finns", "Bluetooth + 2,4 GHz", "Bakgrundsbelysning"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "Mekaniska tangentbord har en separat brytare under varje tangent. Det ger en tydligare känsla och längre livslängd än vanliga membrantangentbord.",
+      "consider": [
+        ["Nordisk layout", "Många modeller säljs bara med amerikansk layout, utan å, ä och ö på egna tangenter. Kontrollera att det står nordisk eller svensk layout."],
+        ["Brytare", "Linjära brytare är tysta och jämna. Taktila har en kännbar puckel. Klickande brytare låter mycket och kan störa i delade rum."],
+        ["Storlek", "Fullstorlek har numeriskt tangentbord. TKL och 75 % sparar plats så att musen hamnar närmare."],
+        ["Anslutning", "En 2,4 GHz-mottagare ger lägre fördröjning än Bluetooth. Bluetooth gör det enkelt att växla mellan enheter."]
+      ],
+      "forWho": "Dig som skriver mycket och vill ha en skönare och mer exakt känsla.",
+      "skipIf": "Du vill ha ett platt tangentbord som är lätt att ta med. Då passar ett tunt membran- eller saxtangentbord bättre."
+    }
+  },
+  {
+    "slug": "ergonomisk-mus",
+    "name": "Ergonomisk trådlös mus",
+    "cat": "Dator & kontor", "icon": "mouse", "lvl": 2, "pop": 6,
+    "q": "ergonomisk trådlös mus",
+    "why": "Vertikal eller formgjuten mus som avlastar handleden.",
+    "bullets": ["Ergonomisk form", "Laddningsbar", "Flera enheter"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "En ergonomisk mus låter handen vila i ett mer naturligt läge. Den vanligaste varianten är vertikal, där du håller handen som vid ett handslag.",
+      "consider": [
+        ["Handstorlek", "Ergonomiska möss finns i olika storlekar. En mus som är för stor eller för liten tar bort fördelen."],
+        ["Vänsterhänt", "Formgjutna möss är oftast byggda för högerhand. Det finns vänsterversioner, men färre."],
+        ["Vänjning", "Räkna med några dagar innan en vertikal mus känns naturlig."],
+        ["Flera enheter", "Med flera kanaler kan du växla mellan jobbdator och privat dator med en knapp."]
+      ],
+      "forWho": "Dig som sitter många timmar vid datorn och vill avlasta handled och underarm.",
+      "skipIf": "Du har ont i handen eller armen. Då är det bra att först prata med vården eller en ergonom om vad som passar."
+    }
+  },
+  {
+    "slug": "usb-c-hubb-7-i-1",
+    "name": "USB-C-hubb 7-i-1",
+    "cat": "Dator & kontor", "icon": "hub", "lvl": 1, "pop": 8,
+    "q": "usb-c hub hdmi 7 i 1",
+    "why": "HDMI, USB och kortläsare till din tunna laptop.",
+    "bullets": ["4K HDMI", "USB-A + SD/microSD", "Laddning genom hubben"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "En USB-C-hubb ger en tunn laptop de portar som saknas: HDMI, USB-A och kortläsare. Hur bra den fungerar beror lika mycket på datorn som på hubben.",
+      "consider": [
+        ["Skärm via USB-C", "Datorns USB-C-port måste ha stöd för bild (DisplayPort Alt Mode eller Thunderbolt). Det framgår av datorns specifikation."],
+        ["4K i 30 eller 60 Hz", "Många billiga hubbar ger 4K bara i 30 Hz, vilket känns ryckigt med muspekaren. Välj 60 Hz om du jobbar på en 4K-skärm."],
+        ["Laddning genom hubben", "Hubben tar själv en del av effekten. Räkna med att datorn får 10–15 W mindre än laddaren ger."],
+        ["Flera skärmar", "Vissa datorer, bland annat flera Mac-modeller, visar bara en extern skärm oavsett hubb."]
+      ],
+      "forWho": "Dig med tunn laptop som behöver koppla in skärm, minneskort och vanliga USB-prylar.",
+      "skipIf": "Du vill ha flera skärmar och ett fast skrivbord. Då är en riktig dockningsstation värd mer."
+    }
+  },
+  {
+    "slug": "webbkamera",
+    "name": "Webbkamera 1080p/4K",
+    "cat": "Dator & kontor", "icon": "webcam", "lvl": 2, "pop": 5,
+    "q": "webbkamera 1080p mikrofon",
+    "why": "Skarpare bild i videomöten än laptopens inbyggda kamera.",
+    "bullets": ["Autofokus", "Inbyggd mikrofon", "Integritetslucka"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "En extern webbkamera ger ofta bättre bild än laptopens inbyggda, och kan placeras i ögonhöjd. Ljuset i rummet betyder dock ofta mer än upplösningen.",
+      "consider": [
+        ["1080p räcker oftast", "Mötestjänster komprimerar bilden, så 4K syns sällan fullt ut. 4K är mest användbart om du vill beskära bilden eller spela in."],
+        ["Ljus", "Bra kameror hanterar motljus och svagt ljus bättre. En lampa framför dig gör ändå mest skillnad."],
+        ["Mikrofon", "Den inbyggda mikrofonen räcker för möten. Ett headset ger tydligare ljud i bullriga miljöer."],
+        ["Bildvinkel", "Smal vinkel visar bara ditt ansikte. Bred vinkel passar om flera ska synas."]
+      ],
+      "forWho": "Dig som har många videomöten och vill se och synas bättre.",
+      "skipIf": "Din laptop redan har en bra kamera och du främst använder den med skärmen uppfälld."
+    }
+  },
+  {
+    "slug": "laptopstall-aluminium",
+    "name": "Laptopställ i aluminium",
+    "cat": "Dator & kontor", "icon": "stand", "lvl": 1, "pop": 6,
+    "q": "laptopställ aluminium justerbart",
+    "why": "Höj skärmen till ögonhöjd – nacken tackar dig.",
+    "bullets": ["Justerbar höjd", "Hopfällbart", "Bättre luftflöde"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "Ett laptopställ höjer skärmen så att du slipper böja nacken. För att det ska fungera ergonomiskt behöver du samtidigt ett separat tangentbord och en mus.",
+      "consider": [
+        ["Separat tangentbord", "Står datorn högt hamnar tangentbordet också högt. Utan externt tangentbord och mus blir det sämre för axlarna."],
+        ["Stabilitet", "Ett stadigt ställ gungar inte när du skriver eller använder pekskärmen."],
+        ["Storlek", "Kontrollera att stället passar din dators storlek och vikt."],
+        ["Resa", "Hopfällbara modeller får plats i datorväskan."]
+      ],
+      "forWho": "Dig som jobbar många timmar på laptop vid ett skrivbord.",
+      "skipIf": "Du redan har en extern skärm som du främst tittar på."
+    }
+  },
+  {
+    "slug": "portabel-ssd-1tb",
+    "name": "Portabel SSD 1 TB",
+    "cat": "Dator & kontor", "icon": "ssd", "lvl": 2, "pop": 7,
+    "q": "portabel ssd 1tb usb-c",
+    "why": "Snabb säkerhetskopiering av bilder och filmer i fickformat.",
+    "bullets": ["Upp till ~1000 MB/s", "Tålig", "USB-C"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "En portabel SSD är betydligt snabbare och tåligare än en vanlig extern hårddisk, eftersom den saknar rörliga delar. Hur snabb den blir i praktiken beror på datorns port.",
+      "consider": [
+        ["Porten avgör farten", "USB 3.2 Gen 2 (10 Gbit/s) ger runt 1 000 MB/s. En äldre USB 3.0-port (5 Gbit/s) ger ungefär hälften."],
+        ["Mac och Windows", "Formatera disken som exFAT om den ska användas med både Mac och Windows."],
+        ["Säkerhetskopiering", "En extern disk är en bra kopia, men inte den enda. Ha gärna en kopia på en annan plats också, till exempel i molnet."],
+        ["Kryptering", "Lösenordsskydd eller kryptering är bra om disken kan tappas bort."]
+      ],
+      "forWho": "Dig som fotograferar, filmar eller vill ha snabba säkerhetskopior.",
+      "skipIf": "Du bara behöver arkivera stora mängder data som sällan används. Då är en vanlig hårddisk billigare per terabyte."
+    }
+  },
+  {
+    "slug": "bluetooth-tracker",
+    "name": "Bluetooth-tracker (4-pack)",
+    "cat": "Resa & ute", "icon": "tag", "lvl": 1, "pop": 9,
+    "q": "bluetooth tracker nycklar 4 pack",
+    "why": "Hitta nycklar, väska och resväska via mobilen.",
+    "bullets": ["Fäst på nyckelring", "Ljudsignal", "Utbytbart batteri"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "En Bluetooth-tracker har ingen GPS. På nära håll hittar du den via mobilen och en ljudsignal. På längre avstånd syns den bara om en annan mobil i samma nätverk passerar.",
+      "consider": [
+        ["Rätt nätverk för din mobil", "Trackers för Apples Hitta-nätverk fungerar med iPhone. Trackers för Googles nätverk fungerar med Android. Vissa märken fungerar med båda men har ett mindre nätverk."],
+        ["Batteri", "Ett utbytbart knappcellsbatteri (ofta CR2032) håller ungefär ett år och är billigt att byta."],
+        ["Skydd mot spårning", "Moderna trackers varnar om någon annans tracker följer med dig. Det är bra, men kan ge en varning när du lånar någons väska."],
+        ["Fäste", "Se efter en ögla eller ett hål för nyckelringen, eller ett platt format för plånboken."]
+      ],
+      "forWho": "Dig som ofta letar efter nycklar eller vill hålla koll på resväskan.",
+      "skipIf": "Du behöver spåra något i realtid, till exempel ett fordon. Då krävs en GPS-tracker med SIM-kort."
+    }
+  },
+  {
+    "slug": "universell-reseadapter",
+    "name": "Universell reseadapter",
+    "cat": "Resa & ute", "icon": "adapter", "lvl": 1, "pop": 6,
+    "q": "universal reseadapter usb-c",
+    "why": "En adapter för över 150 länder, med USB-portar.",
+    "bullets": ["EU, UK, US, AU", "USB-A + USB-C", "Kompakt"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "En reseadapter ändrar kontaktens form så att den passar landets uttag. Den ändrar inte spänningen.",
+      "consider": [
+        ["Spänning", "Mobil- och datorladdare klarar oftast 100–240 V, vilket står på laddaren. Hårtorkar och plattänger gör det ofta inte."],
+        ["USB-effekt", "De inbyggda USB-portarna har ofta låg total effekt. För snabbladdning behöver du ta med din vanliga laddare."],
+        ["Jordade apparater", "Kontrollera att adaptern stöder jordade kontakter om du ska använda till exempel en laptopladdare med jord."],
+        ["Säkring", "En inbyggd säkring skyddar adaptern och det du kopplar in."]
+      ],
+      "forWho": "Dig som reser utanför Europa, till exempel till Storbritannien, USA eller Australien.",
+      "skipIf": "Du bara reser inom EU-länder med samma uttag som i Sverige."
+    }
+  },
+  {
+    "slug": "actionkamera-4k",
+    "name": "Actionkamera 4K",
+    "cat": "Resa & ute", "icon": "action", "lvl": 3, "pop": 5,
+    "q": "actionkamera 4k vattentät",
+    "why": "Filma skidåkning, cykling och dyk i skarp 4K.",
+    "bullets": ["Bildstabilisering", "Vattentät (med hus)", "Fästen medföljer ofta"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "En actionkamera är liten, tålig och gjord för att sitta fast på hjälm, styre eller bröst. Bildstabiliseringen avgör ofta mer än upplösningen.",
+      "consider": [
+        ["Stabilisering", "Bra elektronisk stabilisering gör filmer från cykel och skidor tittbara utan gimbal."],
+        ["Vattentålighet", "Många kameror tål några meters djup utan hus. För dykning krävs ett separat undervattenshus."],
+        ["Batteri och kyla", "Batteriet räcker ofta en till två timmars filmning, och kortare i kyla. Ta med extrabatteri."],
+        ["Minneskort", "4K-filmning kräver ett snabbt microSD-kort, minst klass V30. Kolla tillverkarens rekommendation."]
+      ],
+      "forWho": "Dig som vill filma sport, äventyr och resor ur förstapersonsperspektiv.",
+      "skipIf": "Du främst filmar vardag och resor utan fart. Då räcker mobilen ofta lika bra."
+    }
+  },
+  {
+    "slug": "smartklocka-gps",
+    "name": "Smartklocka med GPS",
+    "cat": "Resa & ute", "icon": "watch", "lvl": 3, "pop": 7,
+    "q": "smartklocka gps pulsmätare",
+    "why": "Träning, puls, sömn och notiser – direkt på handleden.",
+    "bullets": ["Inbyggd GPS", "Pulsmätning", "Flera dagars batteri"],
+    "asin": null, "img": null,
+    "guide": {
+      "intro": "Smartklockor spänner från vardagsklockor med notiser och appar till rena träningsklockor med lång batteritid. Bestäm först vad som är viktigast för dig.",
+      "consider": [
+        ["Mobilen", "Vissa klockor fungerar bara med iPhone eller bara med Android. Kontrollera det innan du köper."],
+        ["Batteri eller skärm", "Klockor med ljusstark skärm och många appar laddas ofta varje eller varannan dag. Träningsklockor kan klara en vecka eller mer."],
+        ["Pulsmätning", "Pulsmätning vid handleden fungerar bra i lugnt tempo men är mindre exakt vid intervaller. Ett pulsband runt bröstet är mer exakt."],
+        ["Betalning", "Om du vill betala med klockan, kontrollera att din bank stöder klockans betaltjänst."]
+      ],
+      "forWho": "Dig som tränar regelbundet och vill följa puls, distans och sömn.",
+      "skipIf": "Du bara vill räkna steg. Då räcker ett enklare aktivitetsarmband."
+    }
+  }
+]

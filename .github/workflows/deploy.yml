@@ -1,0 +1,64 @@
+# Bygger och publicerar sajten på GitHub Pages.
+# Körs vid push till main, manuellt, och var 12:e timme så att priser från Amazon
+# aldrig blir äldre än 24 timmar (Amazons krav). Utan API-nycklar byggs sajten utan priser.
+#
+# Inställningar i GitHub:
+#   Settings → Pages → Source: "GitHub Actions"
+#   Settings → Secrets and variables → Actions → Secrets:
+#     AMAZON_CREDENTIAL_ID, AMAZON_CREDENTIAL_SECRET
+#   … → Variables: AMAZON_CREDENTIAL_VERSION (t.ex. 3.2), AMAZON_PARTNER_TAG
+name: Bygg och publicera
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '23 5,17 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HAS_AMAZON_KEYS: ${{ secrets.AMAZON_CREDENTIAL_ID != '' }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm test
+      - name: Hämta produktdata från Amazon
+        if: env.HAS_AMAZON_KEYS == 'true'
+        continue-on-error: true   # misslyckas hämtningen byggs sajten utan priser
+        env:
+          AMAZON_CREDENTIAL_ID: ${{ secrets.AMAZON_CREDENTIAL_ID }}
+          AMAZON_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREDENTIAL_SECRET }}
+          AMAZON_CREDENTIAL_VERSION: ${{ vars.AMAZON_CREDENTIAL_VERSION }}
+          AMAZON_PARTNER_TAG: ${{ vars.AMAZON_PARTNER_TAG }}
+        run: npm run fetch
+      - name: Bygg
+        env:
+          AMAZON_PARTNER_TAG: ${{ vars.AMAZON_PARTNER_TAG }}
+        run: npm run build
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
