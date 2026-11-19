@@ -1,4 +1,4 @@
-// Prylkollen – klientskript (delas av alla sidor). Inga beroenden.
+// Gearwise – klientskript (delas av alla sidor). Inga beroenden.
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -8,8 +8,8 @@
 
   const load = (k) => { try { return JSON.parse(localStorage.getItem(k) || '[]'); } catch { return []; } };
   const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
-  let favs = load('pk-favs').filter((x) => typeof x === 'string');
-  let cmp = load('pk-cmp').filter((x) => typeof x === 'string').slice(0, MAX_CMP);
+  let favs = load('gw-favs').filter((x) => typeof x === 'string');
+  let cmp = load('gw-cmp').filter((x) => typeof x === 'string').slice(0, MAX_CMP);
 
   // ---------- Priser: visa bara om de är yngre än 24 h (Amazons krav) ----------
   function expirePrices() {
@@ -31,7 +31,7 @@
   }
   function toggleFav(slug) {
     favs = favs.includes(slug) ? favs.filter((x) => x !== slug) : [...favs, slug];
-    save('pk-favs', favs); syncFavs(); if (shop) shop.render();
+    save('gw-favs', favs); syncFavs(); if (shop) shop.render();
   }
 
   // ---------- Jämförelse ----------
@@ -53,10 +53,10 @@
     if (cmp.includes(slug)) cmp = cmp.filter((x) => x !== slug);
     else if (cmp.length >= MAX_CMP) { alert(`Du kan jämföra högst ${MAX_CMP} prylar. Ta bort någon först.`); return; }
     else cmp = [...cmp, slug];
-    save('pk-cmp', cmp); syncCmp();
+    save('gw-cmp', cmp); syncCmp();
     if (document.body.dataset.page === 'jamfor') renderCompare();
   }
-  bar && $('button', bar).addEventListener('click', () => { cmp = []; save('pk-cmp', cmp); syncCmp(); });
+  bar && $('button', bar).addEventListener('click', () => { cmp = []; save('gw-cmp', cmp); syncCmp(); });
 
   document.addEventListener('click', (e) => {
     const f = e.target.closest('[data-fav]'); if (f) { e.preventDefault(); toggleFav(f.dataset.fav); return; }
@@ -115,7 +115,7 @@
     if (fromUrl && !renderCompare.used) {
       renderCompare.used = true;
       cmp = fromUrl.split(',').filter((s) => data.products.some((p) => p.slug === s)).slice(0, MAX_CMP);
-      save('pk-cmp', cmp);
+      save('gw-cmp', cmp);
     }
     const u = new URL(location.href); cmp.length ? u.searchParams.set('p', cmp.join(',')) : u.searchParams.delete('p');
     history.replaceState(null, '', u);

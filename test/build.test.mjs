@@ -11,7 +11,7 @@ import { join } from 'node:path';
 const repo = new URL('../', import.meta.url).pathname;
 
 async function project() {
-  const dir = await mkdtemp(join(tmpdir(), 'prylkollen-'));
+  const dir = await mkdtemp(join(tmpdir(), 'gearwise-'));
   for (const p of ['scripts', 'src', 'static', 'data', 'site.config.json', 'package.json']) await cp(join(repo, p), join(dir, p), { recursive: true });
   await rm(join(dir, 'data/amazon.json'), { force: true });
   const cat = JSON.parse(await readFile(join(dir, 'data/catalog.json'), 'utf8'));
@@ -73,6 +73,6 @@ test('alla Amazon-länkar har partnertagg och rel="nofollow sponsored noopener"'
     assert.match(href.replaceAll('&amp;', '&'), /[?&]tag=[\w-]+/);
     assert.match(tag, /rel="nofollow sponsored noopener"/);
   }
-  assert.match(html, /Som Amazon-partner tjänar Prylkollen på kvalificerade köp/);
+  assert.match(html, /Som Amazon-partner tjänar Gearwise på kvalificerade köp/);
   await rm(dir, { recursive: true, force: true });
 });

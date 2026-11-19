@@ -1,16 +1,16 @@
 {
-  "name": "Prylkollen",
+  "name": "Gearwise",
   "url": "https://alvinangfors.github.io",
-  "basePath": "/prylkollen/",
+  "basePath": "/gearwise/",
   "description": "Handplockade prylar inom ljud, laddning, smarta hemmet, dator och resa – med köpguider och direktlänk till Amazon.se.",
 
-  "partnerTag": "prylkollen-21",
+  "partnerTag": "gearwise-21",
   "store": "https://www.amazon.se",
   "marketplace": "www.amazon.se",
 
   "owner": "[Ditt namn eller företagsnamn]",
   "ownerOrgNr": "",
-  "contactEmail": "hej@prylkollen.se",
+  "contactEmail": "hej@gearwise.se",
   "hosting": "GitHub Pages (GitHub Inc.)",
   "policyUpdated": "2026-11-19",
 

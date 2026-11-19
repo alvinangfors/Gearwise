@@ -1,4 +1,4 @@
-# Prylkollen – affiliate-sajt för teknik & gadgets
+# Gearwise – affiliate-sajt för teknik & gadgets
 
 En statisk sajt där varje produkt länkar till Amazon.se med affiliatelänk. Amazon sköter betalning, leverans, returer och kundservice; sajten tjänar provision via Amazon Associates.
 
@@ -72,7 +72,7 @@ Formatet för anropen kommer från Amazons officiella SDK, `creatorsapi-python-s
 | Pris bara från API:t | Priser visas bara om de kommer från API:t. Tidpunkten står bredvid, och under **Prisinfo** finns Amazons standardtext på svenska. |
 | Max 24 timmar gammal data | API-data som är äldre än 24 timmar används inte vid bygget. Webbläsaren tar dessutom bort priser som har blivit äldre än 24 timmar på en sida som legat kvar. |
 | Inga kopierade bilder | Bilder visas direkt från Amazons servrar och kopieras aldrig. |
-| Obligatorisk partnertext | Texten "Som Amazon-partner tjänar Prylkollen på kvalificerade köp" finns i sidfoten på varje sida. |
+| Obligatorisk partnertext | Texten "Som Amazon-partner tjänar Gearwise på kvalificerade köp" finns i sidfoten på varje sida. |
 | Länkattribut | Alla Amazon-länkar har `rel="nofollow sponsored noopener"`. Testerna kontrollerar det. |
 
 Tills API-åtkomst finns fungerar sajten utan priser. Knapparna leder då till en sökning på Amazon, och de ritade ikonerna visas i stället för bilder.
@@ -101,9 +101,9 @@ Byggkommandot är `npm run build` och publiceringsmappen `dist`. `netlify.toml` 
 
 Bygget varnar för det som saknas.
 
-- [ ] `partnerTag` är ditt eget Associates-ID (exemplet `prylkollen-21` är kvar).
+- [ ] `partnerTag` är ditt eget Associates-ID (exemplet `gearwise-21` är kvar).
 - [ ] `owner` (och eventuellt `ownerOrgNr`) är ifyllt, eftersom integritetspolicyn måste ange personuppgiftsansvarig.
-- [ ] `contactEmail` är en adress som fungerar (`hej@prylkollen.se` är en platshållare).
+- [ ] `contactEmail` är en adress som fungerar (`hej@gearwise.se` är en platshållare).
 - [ ] `hosting` matchar ditt webbhotell, och `policyUpdated` är satt.
 - [ ] `url` är rätt domän (används i canonical, sitemap och Open Graph).
 - [ ] Läs igenom integritetspolicyn och cookiesidan. De är skrivna utifrån hur sajten fungerar, men är ingen juridisk granskning.

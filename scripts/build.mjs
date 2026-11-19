@@ -29,9 +29,9 @@ const today = new Date().toISOString().slice(0, 10);
 
 // ---------- Kontroller ----------
 const warnings = [];
-if (tag === 'prylkollen-21') warnings.push('partnerTag är fortfarande exemplet "prylkollen-21" – byt till ditt eget Associates-ID i site.config.json (eller AMAZON_PARTNER_TAG).');
+if (tag === 'gearwise-21') warnings.push('partnerTag är fortfarande exemplet "gearwise-21" – byt till ditt eget Associates-ID i site.config.json (eller AMAZON_PARTNER_TAG).');
 if (/^\[.*\]$/.test(config.owner)) warnings.push('owner i site.config.json är en platshållare – integritetspolicyn måste ange vem som är personuppgiftsansvarig.');
-if (config.contactEmail === 'hej@prylkollen.se') warnings.push('contactEmail är platshållaren hej@prylkollen.se – kontrollera att adressen fungerar.');
+if (config.contactEmail === 'hej@gearwise.se') warnings.push('contactEmail är platshållaren hej@gearwise.se – kontrollera att adressen fungerar.');
 const cats = config.categories;
 for (const p of catalog) {
   if (!cats.includes(p.cat)) throw new Error(`${p.slug}: kategorin "${p.cat}" finns inte i site.config.json`);
@@ -319,8 +319,8 @@ pages.set('cookies/', layout({
 <p><strong>${esc(config.name)} sätter inga egna cookies</strong> och använder inga analys- eller annonsverktyg. Därför visar vi ingen cookiebanner.</p>
 <h2>Lokal lagring i din webbläsare</h2>
 <table><thead><tr><th>Namn</th><th>Vad det gör</th><th>Hur länge</th></tr></thead><tbody>
-<tr><td><code>pk-favs</code></td><td>Kommer ihåg dina favoriter (♥).</td><td>Tills du tar bort dem eller rensar webbläsaren</td></tr>
-<tr><td><code>pk-cmp</code></td><td>Kommer ihåg vilka prylar du valt att jämföra.</td><td>Tills du rensar jämförelsen eller webbläsaren</td></tr>
+<tr><td><code>gw-favs</code></td><td>Kommer ihåg dina favoriter (♥).</td><td>Tills du tar bort dem eller rensar webbläsaren</td></tr>
+<tr><td><code>gw-cmp</code></td><td>Kommer ihåg vilka prylar du valt att jämföra.</td><td>Tills du rensar jämförelsen eller webbläsaren</td></tr>
 </tbody></table>
 <p>Uppgifterna finns bara på din enhet och skickas aldrig till oss. Lagringen behövs för funktioner du själv använder och kräver därför inget samtycke enligt lagen om elektronisk kommunikation.</p>
 <h2>Amazon</h2>
