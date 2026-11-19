@@ -13,7 +13,7 @@
       "Lång batteritid",
       "Bekväm för långa pass"
     ],
-    "asin": null,
+    "asin": "B0F2TT8Q7M",
     "img": null,
     "guide": {
       "intro": "Over-ear-hörlurar med aktiv brusreducering (ANC) dämpar framför allt jämna, låga ljud som motorbrus, fläktar och flygplanskabiner. Röster och plötsliga ljud dämpas mindre. Därför märks skillnaden mellan modeller mest på tåg och flyg.",
@@ -38,7 +38,8 @@
       "forWho": "Dig som pendlar, flyger eller jobbar i öppet kontorslandskap.",
       "skipIf": "Du vill träna i dem eller behöver höra trafiken omkring dig. Då passar in-ear med transparensläge bättre."
     },
-    "bestsellers": "electronics/20637860031"
+    "bestsellers": "electronics/20637860031",
+    "pick": "Sony WH-1000XM6 brusreducerande hörlurar"
   },
   {
     "slug": "tradlosa-in-ear-horlurar",
