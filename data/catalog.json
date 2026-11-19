@@ -55,7 +55,7 @@
       "Svettåliga modeller finns",
       "Snabb parkoppling"
     ],
-    "asin": null,
+    "asin": "B0CRTYZG5C",
     "img": null,
     "guide": {
       "intro": "Helt trådlösa in-ear-hörlurar får plats i fickan och laddas i sitt fodral. Hur bra de låter och hur väl de stänger ute ljud beror mycket på hur de sitter i örat.",
@@ -80,7 +80,8 @@
       "forWho": "Dig som vill ha något litet till träning, promenader och vardag.",
       "skipIf": "Du sitter i långa möten eller flyger ofta och vill ha maximal komfort. Då är over-ear skönare i längden."
     },
-    "bestsellers": "electronics/20637862031"
+    "bestsellers": "electronics/20637862031",
+    "pick": "soundcore trådlösa in-ear-hörlurar med brusreducering"
   },
   {
     "slug": "bluetooth-hogtalare",
