@@ -37,6 +37,7 @@ for (const p of catalog) {
   if (!cats.includes(p.cat)) throw new Error(`${p.slug}: kategorin "${p.cat}" finns inte i site.config.json`);
   if (!ICONS[p.icon]) throw new Error(`${p.slug}: ikonen "${p.icon}" finns inte`);
   if (p.asin && !/^[A-Z0-9]{10}$/.test(p.asin)) throw new Error(`${p.slug}: ogiltigt ASIN "${p.asin}"`);
+  if (p.bestsellers && !/^[a-z-]+\/\d+$/.test(p.bestsellers)) throw new Error(`${p.slug}: ogiltig bestsellers-sökväg "${p.bestsellers}"`);
 }
 if (new Set(catalog.map((p) => p.slug)).size !== catalog.length) throw new Error('Dubbla slugs i catalog.json');
 
@@ -60,7 +61,9 @@ const products = catalog.map((p) => {
   const a = (amazon && p.asin && amazon.items[p.asin]) || null;
   const link = p.asin
     ? (a?.url || `${config.store}/dp/${encodeURIComponent(p.asin)}?tag=${encodeURIComponent(tag)}`)
-    : `${config.store}/s?k=${encodeURIComponent(p.q)}&tag=${encodeURIComponent(tag)}`;
+    : p.bestsellers
+      ? `${config.store}/gp/bestsellers/${p.bestsellers}?tag=${encodeURIComponent(tag)}`
+      : `${config.store}/s?k=${encodeURIComponent(p.q)}&tag=${encodeURIComponent(tag)}`;
   const img = a?.img || (p.img ? { url: p.img } : null);
   return { ...p, a, link, img, level: LVL[p.lvl], price: a?.price?.display || null };
 });
@@ -73,7 +76,7 @@ const pic = (p, alt = '') => p.img
 const priceBlock = (p) => p.price ? `<div class="price" data-price-ts="${amazon.fetchedAt}"><strong>${esc(p.price)}</strong>Amazon.se, ${esc(fetchedText)}
   <details><summary>Prisinfo</summary><p>${DISCLAIMER}</p></details></div>` : '';
 
-const buy = (p, long = false) => `<a class="buy" href="${esc(p.link)}" target="_blank" rel="nofollow sponsored noopener">${long ? (p.asin ? 'Se pris på Amazon' : 'Se urval på Amazon') : 'Se på Amazon'} →</a>`;
+const buy = (p, long = false) => `<a class="buy" href="${esc(p.link)}" target="_blank" rel="nofollow sponsored noopener">${long ? (p.asin ? 'Se pris på Amazon' : p.bestsellers ? 'Se topplistan på Amazon' : 'Se urval på Amazon') : 'Se på Amazon'} →</a>`;
 
 const card = (p) => `<article class="card" data-slug="${p.slug}" data-cat="${esc(p.cat)}" data-lvl="${p.lvl}" data-pop="${p.pop}" data-name="${esc(p.name)}" data-text="${esc((p.name + ' ' + p.why + ' ' + p.cat + ' ' + p.bullets.join(' ')).toLowerCase())}">
   <div class="pic">${pic(p)}</div>
@@ -231,6 +234,7 @@ for (const p of products) {
       <div class="actions">${buy(p, true)}
         <button class="btn2" data-fav="${p.slug}" aria-pressed="false" aria-label="Spara som favorit">♥ Spara</button>
         <button class="btn2" data-cmp="${p.slug}" aria-pressed="false" data-on="✓ Jämförs" data-off="Jämför">Jämför</button></div>
+      ${!p.asin && p.bestsellers ? `<p class="price" style="margin-top:10px">Länken går till Amazons bästsäljarlista för kategorin, sorterad efter vad som säljer mest just nu.</p>` : ''}
     </div>
   </article>
 </div></div>

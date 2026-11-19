@@ -39,6 +39,7 @@ npm test           # testar API-klienten och bygget
 `slug` (URL), `name`, `cat` (måste finnas i `categories`), `icon` (nyckel i `scripts/lib/icons.mjs`), `lvl` 1–3, `pop`, `q` (sökord på Amazon), `why`, `bullets`, `guide` (`intro`, `consider` [[rubrik, text]…], `forWho`, `skipIf`).
 
 - `asin` – Amazons produkt-ID. Ger direktlänk `/dp/ASIN?tag=…` och gör att API:t hämtar titel, bild och pris. Utan ASIN länkar knappen till en sökning.
+- `bestsellers` – Amazons bästsäljarlista för kategorin, t.ex. `electronics/20637860031` (från adressen amazon.se/gp/bestsellers/…). Används när produkten saknar `asin`, så att knappen visar det som säljer mest just nu.
 - `pick` – namnet på produkten du rekommenderar, visas som "Vårt val" på produktsidan. Används tills API:t levererar Amazons egen titel.
 - `img` – bild-URL som Amazon själva tillhandahåller (SiteStripe). Ladda aldrig ner bilden till egen server. Laddar bilden inte visas den ritade ikonen.
 

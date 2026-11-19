@@ -37,7 +37,8 @@
       ],
       "forWho": "Dig som pendlar, flyger eller jobbar i öppet kontorslandskap.",
       "skipIf": "Du vill träna i dem eller behöver höra trafiken omkring dig. Då passar in-ear med transparensläge bättre."
-    }
+    },
+    "bestsellers": "electronics/20637860031"
   },
   {
     "slug": "tradlosa-in-ear-horlurar",
@@ -77,7 +78,8 @@
       ],
       "forWho": "Dig som vill ha något litet till träning, promenader och vardag.",
       "skipIf": "Du sitter i långa möten eller flyger ofta och vill ha maximal komfort. Då är over-ear skönare i längden."
-    }
+    },
+    "bestsellers": "electronics/20637862031"
   },
   {
     "slug": "bluetooth-hogtalare",
@@ -117,7 +119,8 @@
       ],
       "forWho": "Dig som vill ha musik på balkongen, i stugan eller på stranden.",
       "skipIf": "Högtalaren ska stå still inomhus. Då ger en wifi-högtalare oftast bättre ljud och smidigare streaming."
-    }
+    },
+    "bestsellers": "electronics/20638336031"
   },
   {
     "slug": "smart-hogtalare",
@@ -157,7 +160,8 @@
       ],
       "forWho": "Dig som vill styra musik, timers och smarta hemmet utan att plocka fram mobilen.",
       "skipIf": "Du inte vill ha en mikrofon som lyssnar efter ett aktiveringsord i hemmet."
-    }
+    },
+    "bestsellers": "electronics/57378651031"
   },
   {
     "slug": "usb-c-laddare-65w",
@@ -279,7 +283,8 @@
       ],
       "forWho": "Dig som laddar mobil, klocka och hörlurar varje natt och vill slippa sladdhärvan.",
       "skipIf": "Du vill ladda så snabbt som möjligt. Sladd är fortfarande snabbare och effektivare."
-    }
+    },
+    "bestsellers": "electronics/20638067031"
   },
   {
     "slug": "usb-c-kabel-flatad",
@@ -319,7 +324,8 @@
       ],
       "forWho": "Dig som har sladdar som spricker vid kontakten eller vill ha en extra vid sängen.",
       "skipIf": "Du ska koppla in en extern skärm. Då behöver du en USB-C-kabel med videostöd."
-    }
+    },
+    "bestsellers": "electronics/20638160031"
   },
   {
     "slug": "smarta-led-lampor",
@@ -359,7 +365,8 @@
       ],
       "forWho": "Dig som vill schemalägga ljus, styra stämningen eller börja med smarta hemmet.",
       "skipIf": "Lampan styrs bara med väggknappen. Då gör den smarta funktionen ingen nytta."
-    }
+    },
+    "bestsellers": "home-improvement/20636792031"
   },
   {
     "slug": "smart-kontakt-energimatning",
@@ -399,7 +406,8 @@
       ],
       "forWho": "Dig som vill schemalägga lampor eller se vad till exempel tv:n drar i standby.",
       "skipIf": "Apparaten måste startas med en knapp efter att den fått ström."
-    }
+    },
+    "bestsellers": "home-improvement/26394344031"
   },
   {
     "slug": "wifi-kamera-inomhus",
@@ -439,7 +447,8 @@
       ],
       "forWho": "Dig som vill hålla koll på husdjur, en sovande bebis eller hemmet när du är borta.",
       "skipIf": "Du behöver bevaka utomhus. Det kräver en kamera som tål väder, och andra regler kan gälla."
-    }
+    },
+    "bestsellers": "electronics/20637769031"
   },
   {
     "slug": "mekaniskt-tangentbord",
@@ -479,7 +488,8 @@
       ],
       "forWho": "Dig som skriver mycket och vill ha en skönare och mer exakt känsla.",
       "skipIf": "Du vill ha ett platt tangentbord som är lätt att ta med. Då passar ett tunt membran- eller saxtangentbord bättre."
-    }
+    },
+    "bestsellers": "electronics/20638196031"
   },
   {
     "slug": "ergonomisk-mus",
@@ -519,7 +529,8 @@
       ],
       "forWho": "Dig som sitter många timmar vid datorn och vill avlasta handled och underarm.",
       "skipIf": "Du har ont i handen eller armen. Då är det bra att först prata med vården eller en ergonom om vad som passar."
-    }
+    },
+    "bestsellers": "electronics/20638195031"
   },
   {
     "slug": "usb-c-hubb-7-i-1",
@@ -559,7 +570,8 @@
       ],
       "forWho": "Dig med tunn laptop som behöver koppla in skärm, minneskort och vanliga USB-prylar.",
       "skipIf": "Du vill ha flera skärmar och ett fast skrivbord. Då är en riktig dockningsstation värd mer."
-    }
+    },
+    "bestsellers": "electronics/20637921031"
   },
   {
     "slug": "webbkamera",
@@ -599,7 +611,8 @@
       ],
       "forWho": "Dig som har många videomöten och vill se och synas bättre.",
       "skipIf": "Din laptop redan har en bra kamera och du främst använder den med skärmen uppfälld."
-    }
+    },
+    "bestsellers": "electronics/28133670031"
   },
   {
     "slug": "laptopstall-aluminium",
@@ -639,7 +652,8 @@
       ],
       "forWho": "Dig som jobbar många timmar på laptop vid ett skrivbord.",
       "skipIf": "Du redan har en extern skärm som du främst tittar på."
-    }
+    },
+    "bestsellers": "electronics/20638220031"
   },
   {
     "slug": "portabel-ssd-1tb",
@@ -679,7 +693,8 @@
       ],
       "forWho": "Dig som fotograferar, filmar eller vill ha snabba säkerhetskopior.",
       "skipIf": "Du bara behöver arkivera stora mängder data som sällan används. Då är en vanlig hårddisk billigare per terabyte."
-    }
+    },
+    "bestsellers": "electronics/20638233031"
   },
   {
     "slug": "bluetooth-tracker",
@@ -719,7 +734,8 @@
       ],
       "forWho": "Dig som ofta letar efter nycklar eller vill hålla koll på resväskan.",
       "skipIf": "Du behöver spåra något i realtid, till exempel ett fordon. Då krävs en GPS-tracker med SIM-kort."
-    }
+    },
+    "bestsellers": "electronics/20637786031"
   },
   {
     "slug": "universell-reseadapter",
@@ -799,7 +815,8 @@
       ],
       "forWho": "Dig som vill filma sport, äventyr och resor ur förstapersonsperspektiv.",
       "skipIf": "Du främst filmar vardag och resor utan fart. Då räcker mobilen ofta lika bra."
-    }
+    },
+    "bestsellers": "electronics/26909072031"
   },
   {
     "slug": "smartklocka-gps",
@@ -839,6 +856,7 @@
       ],
       "forWho": "Dig som tränar regelbundet och vill följa puls, distans och sömn.",
       "skipIf": "Du bara vill räkna steg. Då räcker ett enklare aktivitetsarmband."
-    }
+    },
+    "bestsellers": "electronics/20637796031"
   }
 ]
