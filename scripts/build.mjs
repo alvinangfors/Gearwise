@@ -101,7 +101,7 @@ function layout({ path, title, desc, body, page = '', jsonld = null, noindex = f
 <title>${esc(fullTitle)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${abs(path)}">
-${noindex ? '<meta name="robots" content="noindex">\n' : ''}<meta name="theme-color" content="#0a2540">
+${noindex ? '<meta name="robots" content="noindex">\n' : ''}${config.googleSiteVerification ? `<meta name="google-site-verification" content="${esc(config.googleSiteVerification)}">\n` : ''}<meta name="theme-color" content="#0a2540">
 <link rel="icon" href="${href('favicon.svg')}" type="image/svg+xml">
 <link rel="icon" href="${href('favicon-32.png')}" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="${href('apple-touch-icon.png')}">
