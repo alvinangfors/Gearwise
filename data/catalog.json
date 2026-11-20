@@ -1788,6 +1788,13 @@
       ],
       "forWho": "Dig som vill märka lådor, burkar eller paket med snygga, enhetliga etiketter.",
       "skipIf": "Du bara behöver några enstaka etiketter. Då är en etikettskrivare eller en penna smidigare."
-    }
+    },
+    "alts": [
+      {
+        "asin": "B0CV2GNHR3",
+        "name": "Double Dragon självhäftande etikettark",
+        "nameEn": "Double Dragon self-adhesive label sheets"
+      }
+    ]
   }
 ]

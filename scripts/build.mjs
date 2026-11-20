@@ -68,6 +68,7 @@ for (const p of catalog) {
   if (!ICONS[p.icon]) throw new Error(`${p.slug}: ikonen "${p.icon}" finns inte`);
   if (p.asin && !/^[A-Z0-9]{10}$/.test(p.asin)) throw new Error(`${p.slug}: ogiltigt ASIN "${p.asin}"`);
   if (p.bestsellers && !/^[a-z-]+\/\d+$/.test(p.bestsellers)) throw new Error(`${p.slug}: ogiltig bestsellers-sökväg "${p.bestsellers}"`);
+  for (const al of p.alts || []) { if (!/^[A-Z0-9]{10}$/.test(al.asin || '')) throw new Error(`${p.slug}: ogiltigt ASIN i alts: "${al.asin}"`); if (!al.name || !al.nameEn) throw new Error(`${p.slug}: alts saknar name/nameEn`); }
   const en = catalogEn[p.slug];
   if (!en) throw new Error(`${p.slug}: saknar engelsk översättning i data/catalog.en.json`);
   for (const k of ['slug', 'name', 'why', 'bullets', 'guide']) if (!en[k]) throw new Error(`${p.slug}: engelska fältet "${k}" saknas`);
@@ -112,6 +113,7 @@ const productsFor = (L) => baseProducts.map((p) => {
     pick: t ? (t.pick || p.pick || null) : (p.pick || null),
     catName: t ? CAT_EN[p.cat] : p.cat, level: S[L.code].lvl[p.lvl],
     url: route(L, 'product', t ? t.slug : p.slug),
+    alts: (p.alts || []).map((al) => ({ name: t ? al.nameEn : al.name, link: `${config.store}/dp/${encodeURIComponent(al.asin)}?tag=${encodeURIComponent(tag)}` })),
   };
 });
 const guidesFor = (L) => GUIDES.map((g) => {
@@ -394,6 +396,7 @@ ${[...products].sort((a, b) => b.pop - a.pop).map((p, i) => card(p, true, i)).jo
         <button class="btn2" data-fav="${p.id}" aria-pressed="false" aria-label="${T.saveAria}">${T.save}</button>
         <button class="btn2" data-cmp="${p.id}" aria-pressed="false" data-on="${T.comparing}" data-off="${T.compare}">${T.compare}</button></div>
       ${!p.asin && p.bestsellers ? `<p class="hint">${T.hintBest}</p>` : ''}
+      ${p.alts.length ? `<div class="alts"><p class="hint">${T.altsH}</p>${p.alts.map((al) => `<a class="altlink" href="${esc(al.link)}" target="_blank" rel="nofollow sponsored noopener"><span>${esc(al.name)}</span><span aria-hidden="true">→</span></a>`).join('')}</div>` : ''}
     </div>
   </article>
 </div></div>
