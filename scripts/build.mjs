@@ -21,7 +21,6 @@ const r = (p) => readFile(new URL(p, root), 'utf8');
 const config = JSON.parse(await r('site.config.json'));
 const catalog = JSON.parse(await r('data/catalog.json'));
 const catalogEn = JSON.parse(await r('data/catalog.en.json'));
-const photos = existsSync(new URL('data/images.json', root)) ? JSON.parse(await r('data/images.json')) : {}; // fria foton (Wikimedia Commons)
 const amazonRaw = existsSync(new URL('data/amazon.json', root)) ? JSON.parse(await r('data/amazon.json')) : null;
 
 const MAX_AGE = 24 * 3600 * 1000; // Amazon: pris/data får visas högst 24 h efter hämtning
@@ -39,9 +38,9 @@ const gt = ([a, b]) => `${esc(a)}<span class="gt">${esc(b)}</span>`; // rubrik m
 // ---------- Språk ----------
 const LANGS = {
   sv: { code: 'sv', pre: '', og: 'sv_SE', inLang: 'sv-SE', locale: 'sv-SE',
-    P: { product: 'produkt', compare: 'jamfor', about: 'om', privacy: 'integritet', cookies: 'cookies', gifts: 'julklappar', bf: 'black-friday', guides: 'guider', credits: 'bildkallor' } },
+    P: { product: 'produkt', compare: 'jamfor', about: 'om', privacy: 'integritet', cookies: 'cookies', gifts: 'julklappar', bf: 'black-friday', guides: 'guider' } },
   en: { code: 'en', pre: 'en/', og: 'en_GB', inLang: 'en', locale: 'en-GB',
-    P: { product: 'product', compare: 'compare', about: 'about', privacy: 'privacy', cookies: 'cookies', gifts: 'gifts', bf: 'black-friday', guides: 'guides', credits: 'image-credits' } },
+    P: { product: 'product', compare: 'compare', about: 'about', privacy: 'privacy', cookies: 'cookies', gifts: 'gifts', bf: 'black-friday', guides: 'guides' } },
 };
 const route = (L, k, slug) => (k === 'home' ? L.pre : `${L.pre}${L.P[k]}/${slug ? slug + '/' : ''}`);
 
@@ -173,9 +172,7 @@ for (const L of Object.values(LANGS)) {
   const H = (p = '') => href(p);
 
   // ----- Byggstenar -----
-  const photoTag = (p, alt, sizes) => { const f = photos[p.id]; return `<img class="photo" src="${H(f.src[960])}" srcset="${H(f.src[480])} 480w, ${H(f.src[960])} 960w" sizes="${sizes}" width="${f.w}" height="${f.h}" alt="${esc(alt)}" loading="lazy" decoding="async">`; };
-  const credit = (p) => { const f = photos[p.id]; if (!f || p.img) return ''; return `<p class="credit">${T.illus} · ${T.photoBy} ${esc(f.artist || T.unknown)}, <a href="${esc(f.licenseUrl || f.page)}" rel="noopener license">${esc(f.license)}</a>, <a href="${esc(f.page)}" rel="noopener">Wikimedia Commons</a></p>`; };
-  const pic = (p, alt = '', big = false) => (!p.img && photos[p.id]) ? photoTag(p, alt, big ? '(max-width: 860px) 92vw, 600px' : '(max-width: 600px) 92vw, 320px') : p.img
+  const pic = (p, alt = '') => p.img
     ? `<img class="ph" src="${esc(p.img.url)}" alt="${esc(alt)}"${p.img.w ? ` width="${p.img.w}" height="${p.img.h}"` : ''} loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="fb" hidden>${ICONS[p.icon]}</span>`
     : ICONS[p.icon];
   const priceBlock = (p) => p.price ? `<div class="price" data-price-ts="${amazon.fetchedAt}"><strong>${esc(p.price)}</strong>Amazon.se, ${esc(fetched)}
@@ -253,7 +250,7 @@ ${body}
     <p class="disc">${T.disc(esc(config.name))}</p>
   </div>
   <div><p>${T.contact}: <a href="mailto:${esc(config.contactEmail)}">${esc(config.contactEmail)}</a></p>
-  <nav aria-label="${T.aboutSite}"><a href="${H(R('guides'))}">${T.nav.guides}</a><a href="${H(R('gifts'))}">${T.gifts}</a><a href="${H(R('bf'))}">Black Friday</a><a href="${H(R('about'))}">${T.nav.about}</a><a href="${H(R('privacy'))}">${T.privacy}</a><a href="${H(R('cookies'))}">${T.cookies}</a><a href="${H(R('credits'))}">${T.credits}</a>${alt ? `<a href="${H(alt[O.code])}" hreflang="${O.code}" lang="${O.code}">${O.code === 'en' ? 'English' : 'Svenska'}</a>` : ''}</nav>
+  <nav aria-label="${T.aboutSite}"><a href="${H(R('guides'))}">${T.nav.guides}</a><a href="${H(R('gifts'))}">${T.gifts}</a><a href="${H(R('bf'))}">Black Friday</a><a href="${H(R('about'))}">${T.nav.about}</a><a href="${H(R('privacy'))}">${T.privacy}</a><a href="${H(R('cookies'))}">${T.cookies}</a>${alt ? `<a href="${H(alt[O.code])}" hreflang="${O.code}" lang="${O.code}">${O.code === 'en' ? 'English' : 'Svenska'}</a>` : ''}</nav>
   ${JUL ? `<p class="godjul">${T.merry(esc(config.name))}</p>` : ''}
   <p>© ${year} ${esc(config.name)}</p></div>
 </div>
@@ -387,7 +384,7 @@ ${[...products].sort((a, b) => b.pop - a.pop).map((p, i) => card(p, true, i)).jo
       body: `<div class="band"><div class="wrap">
   ${crumbs([[p.catName, `${R('home')}?kategori=${catSlug(p.cat)}#butik`], [p.name]])}
   <article class="prod">
-    <div><div class="halo"><div class="pic" style="view-transition-name:p-${p.id}">${pic(p, p.a?.title || p.name, true)}</div></div>${credit(p)}</div>
+    <div class="halo"><div class="pic" style="view-transition-name:p-${p.id}">${pic(p, p.a?.title || p.name)}</div></div>
     <div class="pinfo">
       <div class="meta"><span>${esc(p.catName)}</span><span>·</span><span class="lvl">${p.level}</span></div>
       <h1>${esc(p.name)}</h1>
@@ -662,12 +659,6 @@ ${T.tiers.map(([e, h, sub], i) => { const l = i + 1; return `<section class="ban
   };
   pages.set(R('about'), layout({ path: R('about'), alt: pair('about'), page: 'about', title: LEGAL.aboutT, desc: LEGAL.aboutD, body: prose(LEGAL.about) }));
   pages.set(R('privacy'), layout({ path: R('privacy'), alt: pair('privacy'), page: 'privacy', title: LEGAL.privT, desc: LEGAL.privD, body: prose(LEGAL.priv) }));
-  pages.set(R('credits'), layout({ path: R('credits'), alt: pair('credits'), page: 'credits', title: T.credits, desc: T.creditsDesc,
-    body: prose(`<h1>${T.credits}</h1><p>${T.creditsLede}</p>
-<div class="tablewrap"><table class="credits"><thead><tr><th>${T.creditsCols[0]}</th><th>${T.creditsCols[1]}</th><th>${T.creditsCols[2]}</th></tr></thead><tbody>
-${products.filter((p) => photos[p.id]).map((p) => { const f = photos[p.id]; return `<tr><td><a href="${H(p.url)}">${esc(p.name)}</a></td><td>${esc(f.artist || T.unknown)}</td><td><a href="${esc(f.licenseUrl || f.page)}" rel="noopener license">${esc(f.license)}</a> · <a href="${esc(f.page)}" rel="noopener">${T.source}</a></td></tr>`; }).join('\n')}
-</tbody></table></div>
-<p>${T.creditsNote}</p>`) }));
   pages.set(R('cookies'), layout({ path: R('cookies'), alt: pair('cookies'), page: 'cookies', title: LEGAL.cookT, desc: LEGAL.cookD, body: prose(LEGAL.cook) }));
 
   // ----- Länk-i-bio (bara svenska, inte i Google) -----
@@ -700,7 +691,7 @@ ${products.filter((p) => photos[p.id]).map((p) => { const f = photos[p.id]; retu
     priceDisclaimer: T.disclaimer,
     products: products.map((p) => ({
       slug: p.id, url: p.url, name: p.name, cat: p.catName, level: p.level, why: p.why, bullets: p.bullets, guide: p.guide,
-      asin: p.asin || null, title: p.a?.title || p.pick || null, link: p.link, img: p.img?.url || null, price: p.price, icon: ICONS[p.icon], photo: photos[p.id] ? H(photos[p.id].src[480]) : null,
+      asin: p.asin || null, title: p.a?.title || p.pick || null, link: p.link, img: p.img?.url || null, price: p.price, icon: ICONS[p.icon],
     })),
   }));
 }

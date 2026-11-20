@@ -353,7 +353,7 @@
     const add = list.length < MAX_CMP
       ? `<label class="addcmp">${TX.add} <select id="addCmp"><option value="">${TX.choose}</option>${opts}</select></label>` : '';
     if (!list.length) { root.innerHTML = `<p>${TX.none}</p>${add}`; bindAdd(); return; }
-    const pic = (p) => p.img ? `<img class="ph" src="${esc(p.img)}" alt="" referrerpolicy="no-referrer" loading="lazy"><span class="fb" hidden>${p.icon}</span>` : p.photo ? `<img class="photo" src="${esc(p.photo)}" alt="" loading="lazy">` : p.icon;
+    const pic = (p) => p.img ? `<img class="ph" src="${esc(p.img)}" alt="" referrerpolicy="no-referrer" loading="lazy"><span class="fb" hidden>${p.icon}</span>` : p.icon;
     const row = (label, fn) => `<tr><th scope="row">${label}</th>${list.map((p) => `<td>${fn(p)}</td>`).join('')}</tr>`;
     root.innerHTML = `${add}<div class="tablewrap" style="margin-top:16px"><table class="cmpt"><thead><tr><td></td>${list.map((p) => `<th scope="col"><div class="pic">${pic(p)}</div><h3><a href="${BASE}${p.url}">${esc(p.name)}</a></h3>
       ${p.title ? `<p class="price" style="margin-top:4px">${TX.ourPick}: ${esc(p.title)}</p>` : ''}
