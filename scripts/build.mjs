@@ -656,6 +656,28 @@ ${T.tiers.map(([e, h, sub], i) => { const l = i + 1; return `<section class="ban
   pages.set(R('privacy'), layout({ path: R('privacy'), alt: pair('privacy'), page: 'privacy', title: LEGAL.privT, desc: LEGAL.privD, body: prose(LEGAL.priv) }));
   pages.set(R('cookies'), layout({ path: R('cookies'), alt: pair('cookies'), page: 'cookies', title: LEGAL.cookT, desc: LEGAL.cookD, body: prose(LEGAL.cook) }));
 
+  // ----- Länk-i-bio (bara svenska, inte i Google) -----
+  if (L.code === 'sv') {
+    const picks = products.filter((p) => p.asin || p.pick).sort((a, b) => b.pop - a.pop);
+    const btn = (h, e, t, s, cls = '') => `<a class="lbtn ${cls}" href="${H(h)}"><span class="le" aria-hidden="true">${e}</span><span><b>${t}</b><small>${s}</small></span><span class="la" aria-hidden="true">→</span></a>`;
+    pages.set('lankar/', layout({
+      path: 'lankar/', page: 'links', noindex: true, title: 'Länkar', desc: 'Alla länkar från Gearwise på ett ställe.',
+      body: `<section class="band linkhub"><div class="wrap">
+  <div class="lhead"><span class="lavatar" aria-hidden="true"><i></i></span><h1>${esc(config.name)}</h1><p>Rätt pryl på en minut – ärliga köpguider, inga fejkrecensioner.</p></div>
+  <nav class="llist" aria-label="Länkar">
+    ${JUL ? btn(R('gifts'), '🎁', `Julklappsguiden ${YR}`, 'Till pendlaren, inredaren, träningsnörden …', 'hot') : ''}
+    ${BF_OVER ? '' : btn(R('bf'), '🏷️', `Black Friday ${BF.getUTCDate()} nov`, 'Så känner du igen ett riktigt fynd')}
+    ${btn(`${R('home')}#guiden`, '🧭', 'Prylguiden', 'Vad ska du göra? Vi visar rätt prylar')}
+    ${btn(R('guides'), '📚', 'Guider', 'Powerbank på flyget, laddare, tavelvägg …')}
+    ${btn(`${R('home')}?kategori=${catSlug('Hem & inredning')}#butik`, '🛋️', 'Hem & inredning', 'Tavlor, speglar, hyllor och mys')}
+    ${btn(`${R('home')}#butik`, '🛍️', 'Hela butiken', `${products.length} prylar med köpguide`)}
+  </nav>
+  ${picks.length ? `<h2 class="lsub">Våra val</h2><div class="lpicks">${picks.map((p) => `<a class="mini" href="${H(p.url)}"><span class="ic" aria-hidden="true">${ICONS[p.icon]}</span><span><b>${esc(p.pick || p.name)}</b><small>${esc(p.name)}</small></span></a>`).join('')}</div>` : ''}
+  <p class="lfoot">Reklam: länkarna till Amazon är affiliatelänkar. <a href="${H(R('about'))}">Om ${esc(config.name)}</a></p>
+</div></section>`,
+    }));
+  }
+
   // ----- products.json per språk -----
   pages.set(`${L.pre}products.json`, JSON.stringify({
     generatedAt: new Date().toISOString(),

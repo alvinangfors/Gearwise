@@ -460,3 +460,20 @@ html.jul header .logo i::after{content:"";position:absolute;left:9px;top:-13px;w
 .lang:hover{border-color:var(--sky);background:rgba(143,211,255,.1)}
 @media(max-width:600px){.lang{margin-left:auto;min-width:44px;height:44px}.lang+.favbtn{margin-left:0}}
 @media(max-width:600px){.favbtn .fl{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.nav{flex-wrap:nowrap;gap:8px}.logo{margin-right:auto}}
+/* ---------- Länk-i-bio ---------- */
+.linkhub .wrap{max-width:560px}
+.lhead{text-align:center;margin-bottom:26px}
+.lavatar{display:grid;place-items:center;width:92px;height:92px;margin:0 auto 14px;border-radius:28px;background:var(--sea);border:2px solid var(--line2);box-shadow:0 20px 50px -20px rgba(182,156,255,.7)}
+.lavatar i{width:26px;height:26px;border-radius:50%;background:var(--pink)}
+.lhead h1{margin:0;font-size:34px;font-weight:800;letter-spacing:-.02em}
+.lhead p{margin:6px 0 0;color:var(--mute)}
+.llist{display:flex;flex-direction:column;gap:12px}
+.lbtn{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;padding:16px 18px;border-radius:20px;text-decoration:none;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid var(--line2);transition:transform .3s var(--ease),border-color .3s,background .3s}
+.lbtn:hover{transform:translateY(-2px) scale(1.01);border-color:var(--sky);background:rgba(143,211,255,.08)}
+.lbtn.hot{background:linear-gradient(120deg,rgba(226,59,78,.35),rgba(46,158,107,.28));border-color:rgba(255,209,102,.45)}
+.lbtn .le{font-size:28px;text-align:center}
+.lbtn b{display:block;font-size:17px}.lbtn small{display:block;color:var(--mute);font-size:14px}
+.lbtn .la{color:var(--sky);font-size:20px}
+.lsub{font-size:20px;font-weight:700;margin:30px 0 12px;text-align:center}
+.lpicks{display:grid;gap:10px}
+.lfoot{text-align:center;color:var(--mute);font-size:13px;margin-top:26px}
