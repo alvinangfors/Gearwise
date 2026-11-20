@@ -1,0 +1,485 @@
+{
+  "brusreducerande-horlurar": {
+    "slug": "noise-cancelling-headphones",
+    "name": "Noise-cancelling over-ear headphones",
+    "why": "For commuting, flights and focus. Active noise cancellation shuts out the world.",
+    "bullets": ["Active noise cancellation (ANC)", "Long battery life", "Comfortable for long sessions"],
+    "pick": "Sony WH-1000XM6 noise-cancelling headphones",
+    "guide": {
+      "intro": "Over-ear headphones with active noise cancellation (ANC) mostly reduce steady, low sounds like engine rumble, fans and aircraft cabins. Voices and sudden noises are reduced less, which is why the difference between models is most noticeable on trains and planes.",
+      "consider": [
+        ["Comfort before specs", "Weight, clamping force and ear-pad material decide whether you can wear them for a whole flight. Try them if you can, and check the return policy before you buy."],
+        ["Battery life with ANC on", "The manufacturer's figure is often measured with noise cancellation off. Check the battery life with ANC on, since that is how you will use them."],
+        ["Codec and phone", "iPhones use AAC. Many Android phones also support LDAC or aptX. If the headphones don't share a codec with your phone, they fall back to basic SBC."],
+        ["Multipoint", "Multipoint lets the headphones stay connected to your computer and phone at the same time – handy if you take calls during the workday."]
+      ],
+      "forWho": "You commute, fly or work in an open-plan office.",
+      "skipIf": "You want to train in them or need to hear traffic around you. In-ear buds with a transparency mode suit you better."
+    }
+  },
+  "tradlosa-in-ear-horlurar": {
+    "slug": "wireless-earbuds",
+    "name": "True wireless earbuds",
+    "why": "Small and easy for workouts and everyday life, with a charging case.",
+    "bullets": ["Charging case", "Sweat-resistant models available", "Quick pairing"],
+    "pick": "soundcore wireless earbuds with noise cancellation",
+    "guide": {
+      "intro": "True wireless earbuds fit in your pocket and charge in their case. How good they sound and how well they block noise depends a lot on how they fit in your ears.",
+      "consider": [
+        ["Fit", "Check that ear tips in several sizes are included. If they don't seal properly, you lose both bass and noise cancellation."],
+        ["Durability", "IPX4 handles sweat and splashes. For hard workouts or running in the rain, IPX5 or higher is safer."],
+        ["Battery per charge", "Look at the time per charge, often 5–8 hours, rather than the total including the case. That is what decides whether they last a full workday."],
+        ["Transparency mode", "Lets ambient sound in through the microphones, so you hear traffic and announcements without taking the earbuds out."]
+      ],
+      "forWho": "You want something small for workouts, walks and everyday use.",
+      "skipIf": "You sit in long meetings or fly often and want maximum comfort. Over-ear headphones are more comfortable over time."
+    }
+  },
+  "bluetooth-hogtalare": {
+    "slug": "portable-bluetooth-speaker",
+    "name": "Portable Bluetooth speaker",
+    "why": "Handles rain and sand. Perfect for the balcony, the beach and the cabin.",
+    "bullets": ["Waterproof (IPX7)", "Powerful sound", "Up to a full day of playback"],
+    "pick": "JBL portable Bluetooth speaker, rugged and waterproof",
+    "guide": {
+      "intro": "A portable speaker is a trade-off between size and sound. Small speakers can sound clear, but deep bass needs volume inside the box.",
+      "consider": [
+        ["IP rating", "IPX7 means it can be submerged in water. IP67 means it is also dustproof, which is good at the beach."],
+        ["Battery life is measured at moderate volume", "If you play loud, the time is shorter – often much shorter."],
+        ["Stereo and party mode", "Many models can be paired two at a time. This normally only works with the same brand."],
+        ["Charging", "USB-C is the most convenient. Some larger models can also charge your phone."]
+      ],
+      "forWho": "You want music on the balcony, at the cabin or on the beach.",
+      "skipIf": "The speaker will stay indoors. A Wi-Fi speaker usually gives better sound and easier streaming."
+    }
+  },
+  "smart-hogtalare": {
+    "slug": "smart-speaker",
+    "name": "Smart speaker with voice control",
+    "why": "Control music, timers and smart lights with your voice.",
+    "bullets": ["Voice assistant", "Controls your smart home", "Music over Wi-Fi"],
+    "guide": {
+      "intro": "A smart speaker is as much a voice assistant as a speaker. Choose the ecosystem you want to live in first, and the sound second.",
+      "consider": [
+        ["Language", "Check that the voice assistant understands the language you want to use. Support differs between manufacturers."],
+        ["Ecosystem", "If you already have smart lights or plugs, choose a speaker that supports them or the Matter standard."],
+        ["Privacy", "Look for a physical button that turns off the microphone, and go through the manufacturer's settings for voice recordings."],
+        ["Music service", "Check that your music service can be controlled directly by voice."]
+      ],
+      "forWho": "You want to control music, timers and your smart home without picking up your phone.",
+      "skipIf": "You don't want a microphone at home listening for a wake word."
+    }
+  },
+  "usb-c-laddare-65w": {
+    "slug": "usb-c-charger-65w",
+    "name": "USB-C charger 65 W (GaN)",
+    "why": "One small charger for your phone, tablet and laptop.",
+    "bullets": ["GaN – compact and cool", "Multiple ports", "Fast charging (PD)"],
+    "pick": "UGREEN Nexode 65 W GaN charger",
+    "guide": {
+      "intro": "Chargers with gallium nitride (GaN) are smaller and run cooler than older chargers with the same power. 65 W is enough for most phones, tablets and many thin laptops.",
+      "consider": [
+        ["Power is shared between ports", "65 W is the total power. If you charge two things at once, each port gets less – the manufacturer's table usually shows how."],
+        ["Check what your laptop needs", "If your laptop's original charger says 90 W or more, it will charge more slowly on 65 W, or only when switched off."],
+        ["The cable matters", "Standard USB-C cables handle 60 W (3 A). For full power you need a cable rated for 5 A, i.e. 100 W or 240 W."],
+        ["PPS for Samsung", "Some Samsung phones need PPS for their fastest charging. Check that the charger supports it."]
+      ],
+      "forWho": "You want to replace several chargers with one, at home and on the go.",
+      "skipIf": "You have a powerful gaming or creative laptop that needs 100 W or more."
+    }
+  },
+  "powerbank-20000": {
+    "slug": "power-bank-20000mah",
+    "name": "Power bank 20,000 mAh",
+    "why": "Charge your phone several times over while travelling or at a festival.",
+    "bullets": ["High capacity", "USB-C in/out", "Charges two devices at once"],
+    "pick": "Anker power bank with built-in USB-C cables",
+    "guide": {
+      "intro": "20,000 mAh is enough for several phone charges, but not all of it reaches your phone. Expect roughly two thirds of the stated capacity to be usable, because of voltage conversion and heat losses.",
+      "consider": [
+        ["Flying", "20,000 mAh is about 74 Wh, and under 100 Wh is allowed in hand luggage on most airlines. Power banks must never go in checked luggage. Always check your airline's own rules."],
+        ["Output power", "To charge a tablet or laptop you need USB-C PD with at least 20–45 W. For phones only, less is fine."],
+        ["Weight", "Capacity weighs. Expect around a third of a kilo or more."],
+        ["Recharging the power bank", "Fast USB-C input makes a big difference – otherwise a full recharge can take all night."]
+      ],
+      "forWho": "You travel, go to festivals or spend whole days away from a socket.",
+      "skipIf": "You only need a little extra power day to day. A lighter 10,000 mAh is enough."
+    }
+  },
+  "tradlos-laddstation-3-i-1": {
+    "slug": "3-in-1-wireless-charger",
+    "name": "3-in-1 wireless charging station",
+    "why": "Phone, watch and earbuds in one place by the bed.",
+    "bullets": ["Qi compatible", "Fewer cables", "Looks good on the nightstand"],
+    "guide": {
+      "intro": "A three-device charging station gathers your phone, watch and earbuds in one place. The key is that all three actually fit your devices.",
+      "consider": [
+        ["Your watch decides", "Apple Watch and many Android watches don't charge on regular Qi. The station needs a charger made for your specific watch."],
+        ["Qi2 and magnets", "With Qi2 or MagSafe-compatible magnets the phone lands in the right spot every time, and charging can be faster."],
+        ["The adapter", "Many stations need a powerful USB-C adapter that isn't always included. Check what's in the box."],
+        ["Cases", "Thick cases, and cases with metal or card slots, can interfere with wireless charging."]
+      ],
+      "forWho": "You charge your phone, watch and earbuds every night and want to get rid of the cable mess.",
+      "skipIf": "You want to charge as fast as possible. A cable is still faster and more efficient."
+    }
+  },
+  "usb-c-kabel-flatad": {
+    "slug": "braided-usb-c-cable",
+    "name": "Braided USB-C cable (2-pack)",
+    "why": "A tough cable that handles everyday bending and pulling.",
+    "bullets": ["Braided jacket", "2 metres", "Fast charging and data"],
+    "guide": {
+      "intro": "USB-C cables look the same but handle very different things. The difference is in the specs, not the connector.",
+      "consider": [
+        ["Power", "60 W is enough for phones and tablets. For a laptop at 65 W or more you need a cable rated 100 W or 240 W."],
+        ["Data transfer", "Many charging cables only transfer data at USB 2.0 speed (480 Mbit/s). For a display or a fast SSD you need USB 3 or USB4."],
+        ["Length", "Two metres is good by the bed and sofa. In a bag, a shorter cable is easier."],
+        ["The connector", "Sturdy strain relief at the connector often lasts longer than the braiding itself."]
+      ],
+      "forWho": "Your cables crack at the connector, or you want a spare by the bed.",
+      "skipIf": "You want to connect an external display. Then you need a USB-C cable with video support."
+    }
+  },
+  "smarta-led-lampor": {
+    "slug": "smart-led-bulbs",
+    "name": "Smart LED bulbs (colour)",
+    "why": "Set the mood with an app or your voice – millions of colours.",
+    "bullets": ["E27 socket", "Scheduling", "No hub needed for Wi-Fi models"],
+    "guide": {
+      "intro": "Smart bulbs are an easy way to get started with a smart home. The big choice is between bulbs that connect directly to Wi-Fi and bulbs that go through a hub.",
+      "consider": [
+        ["Wi-Fi, Zigbee or Matter", "Wi-Fi bulbs need no hub but load your router when there are many. Zigbee and Thread need a hub but are often more stable. Matter makes it easier to mix brands."],
+        ["Socket and brightness", "Check the socket: E27, E14 or GU10. 806 lumens is roughly an old 60 W incandescent bulb."],
+        ["The wall switch", "Smart bulbs should sit on a regular switch that stays on. Don't use a wall dimmer."],
+        ["Wi-Fi band", "Most Wi-Fi bulbs need the 2.4 GHz network."]
+      ],
+      "forWho": "You want to schedule lights, set the mood or get started with a smart home.",
+      "skipIf": "The lamp is only controlled by the wall switch. Then the smart features are no use."
+    }
+  },
+  "smart-kontakt-energimatning": {
+    "slug": "smart-plug-energy-monitoring",
+    "name": "Smart plug with energy monitoring",
+    "why": "Make ordinary appliances smart and see how much power they use.",
+    "bullets": ["App control", "Timers and schedules", "Energy statistics"],
+    "guide": {
+      "intro": "A smart plug switches power on and off to whatever you plug in, on a schedule or from your phone. With energy monitoring you also see how much the appliance uses.",
+      "consider": [
+        ["Maximum load", "Check how many amps or watts the plug can handle, especially for heaters, kettles and other power-hungry appliances."],
+        ["Plug type", "Sweden uses earthed type F sockets. Make sure you buy an EU version."],
+        ["The appliance must start by itself", "It only works with appliances that switch on when they get power, like lamps and fans – not coffee makers with a start button."],
+        ["App and standard", "Matter or local control makes the plug less dependent on the manufacturer's cloud."]
+      ],
+      "forWho": "You want to schedule lamps or see what your TV uses in standby.",
+      "skipIf": "The appliance needs a button press after it gets power."
+    }
+  },
+  "wifi-kamera-inomhus": {
+    "slug": "indoor-wifi-camera",
+    "name": "Indoor Wi-Fi camera",
+    "why": "Keep an eye on your home, pet or baby from your phone.",
+    "bullets": ["Motion alerts", "Night vision", "Two-way audio"],
+    "guide": {
+      "intro": "An indoor camera lets you check in at home from your phone. Think as much about how recordings are stored and protected as about image quality.",
+      "consider": [
+        ["Storage", "A microSD card stores locally. Cloud storage often has a monthly fee – check what works without a subscription."],
+        ["Security", "Use a unique password and two-factor authentication in the app. Choose a manufacturer that updates its software."],
+        ["Privacy mode", "A physical shutter or a mode where the lens turns away is good when you are home."],
+        ["Respect others", "Tell people who live in or visit your home that the camera is there. Don't point it at neighbours or public places."]
+      ],
+      "forWho": "You want to keep an eye on pets, a sleeping baby or your home while you're away.",
+      "skipIf": "You need outdoor surveillance. That requires a weatherproof camera, and different rules may apply."
+    }
+  },
+  "mekaniskt-tangentbord": {
+    "slug": "wireless-mechanical-keyboard",
+    "name": "Wireless mechanical keyboard",
+    "why": "A satisfying typing feel and fewer cables on your desk.",
+    "bullets": ["Nordic layout available", "Bluetooth + 2.4 GHz", "Backlighting"],
+    "guide": {
+      "intro": "Mechanical keyboards have a separate switch under each key. That gives a clearer feel and a longer lifespan than ordinary membrane keyboards.",
+      "consider": [
+        ["Layout", "Many models are only sold with a US layout. If you write Swedish, check that it says Nordic or Swedish layout, with å, ä and ö on their own keys."],
+        ["Switches", "Linear switches are quiet and smooth. Tactile ones have a noticeable bump. Clicky switches are loud and can disturb others in shared rooms."],
+        ["Size", "Full size has a number pad. TKL and 75% save space so the mouse sits closer."],
+        ["Connection", "A 2.4 GHz receiver gives lower latency than Bluetooth. Bluetooth makes it easy to switch between devices."]
+      ],
+      "forWho": "You type a lot and want a nicer, more precise feel.",
+      "skipIf": "You want a flat keyboard that's easy to carry. A thin membrane or scissor keyboard suits you better."
+    }
+  },
+  "ergonomisk-mus": {
+    "slug": "ergonomic-wireless-mouse",
+    "name": "Ergonomic wireless mouse",
+    "why": "A vertical or contoured mouse that takes strain off your wrist.",
+    "bullets": ["Ergonomic shape", "Rechargeable", "Multiple devices"],
+    "guide": {
+      "intro": "An ergonomic mouse lets your hand rest in a more natural position. The most common type is vertical, where you hold your hand as in a handshake.",
+      "consider": [
+        ["Hand size", "Ergonomic mice come in different sizes. One that is too big or too small cancels out the benefit."],
+        ["Left-handed", "Contoured mice are usually made for the right hand. Left-handed versions exist, but fewer of them."],
+        ["Getting used to it", "Expect a few days before a vertical mouse feels natural."],
+        ["Multiple devices", "With several channels you can switch between your work and personal computer at the press of a button."]
+      ],
+      "forWho": "You spend many hours at the computer and want to relieve your wrist and forearm.",
+      "skipIf": "You are in pain in your hand or arm. Then it's wise to first talk to a healthcare professional or ergonomist."
+    }
+  },
+  "usb-c-hubb-7-i-1": {
+    "slug": "usb-c-hub-7-in-1",
+    "name": "USB-C hub 7-in-1",
+    "why": "HDMI, USB and a card reader for your thin laptop.",
+    "bullets": ["4K HDMI", "USB-A + SD/microSD", "Pass-through charging"],
+    "guide": {
+      "intro": "A USB-C hub gives a thin laptop the ports it lacks: HDMI, USB-A and a card reader. How well it works depends as much on the computer as on the hub.",
+      "consider": [
+        ["Display over USB-C", "The computer's USB-C port must support video (DisplayPort Alt Mode or Thunderbolt). The computer's specs will tell you."],
+        ["4K at 30 or 60 Hz", "Many cheap hubs only give 4K at 30 Hz, which feels choppy with the mouse pointer. Choose 60 Hz if you work on a 4K screen."],
+        ["Charging through the hub", "The hub uses some of the power itself. Expect the computer to get 10–15 W less than the charger delivers."],
+        ["Multiple displays", "Some computers, including several Mac models, only drive one external display regardless of hub."]
+      ],
+      "forWho": "You have a thin laptop and need to connect a display, memory cards and regular USB devices.",
+      "skipIf": "You want multiple displays and a fixed desk setup. A proper docking station is worth more."
+    }
+  },
+  "webbkamera": {
+    "slug": "webcam",
+    "name": "Webcam 1080p/4K",
+    "why": "A sharper picture in video calls than your laptop's built-in camera.",
+    "bullets": ["Autofocus", "Built-in microphone", "Privacy shutter"],
+    "guide": {
+      "intro": "An external webcam often gives a better picture than a laptop's built-in one, and can be placed at eye level. The lighting in the room often matters more than the resolution, though.",
+      "consider": [
+        ["1080p is usually enough", "Meeting apps compress the video, so 4K rarely shows its full benefit. 4K is most useful if you want to crop or record."],
+        ["Light", "Good cameras handle backlight and low light better. Still, a lamp in front of you makes the biggest difference."],
+        ["Microphone", "The built-in mic is fine for meetings. A headset gives clearer sound in noisy places."],
+        ["Field of view", "A narrow angle shows just your face. A wide angle suits several people on camera."]
+      ],
+      "forWho": "You have lots of video calls and want to see and be seen better.",
+      "skipIf": "Your laptop already has a good camera and you mostly use it with the screen open."
+    }
+  },
+  "laptopstall-aluminium": {
+    "slug": "aluminium-laptop-stand",
+    "name": "Aluminium laptop stand",
+    "why": "Raise the screen to eye level – your neck will thank you.",
+    "bullets": ["Adjustable height", "Foldable", "Better airflow"],
+    "guide": {
+      "intro": "A laptop stand raises the screen so you don't have to bend your neck. To work ergonomically, you also need a separate keyboard and mouse.",
+      "consider": [
+        ["Separate keyboard", "When the laptop sits high, the keyboard does too. Without an external keyboard and mouse it gets worse for your shoulders."],
+        ["Stability", "A sturdy stand doesn't wobble when you type or use the touchscreen."],
+        ["Size", "Check that the stand fits your laptop's size and weight."],
+        ["Travel", "Foldable models fit in a laptop bag."]
+      ],
+      "forWho": "You work many hours on a laptop at a desk.",
+      "skipIf": "You already have an external monitor that you mostly look at."
+    }
+  },
+  "portabel-ssd-1tb": {
+    "slug": "portable-ssd-1tb",
+    "name": "Portable SSD 1 TB",
+    "why": "Fast backups of photos and videos in a pocket-sized drive.",
+    "bullets": ["Up to ~1,000 MB/s", "Rugged", "USB-C"],
+    "guide": {
+      "intro": "A portable SSD is much faster and more durable than a regular external hard drive, since it has no moving parts. How fast it is in practice depends on the computer's port.",
+      "consider": [
+        ["The port sets the speed", "USB 3.2 Gen 2 (10 Gbit/s) gives around 1,000 MB/s. An older USB 3.0 port (5 Gbit/s) gives roughly half."],
+        ["Mac and Windows", "Format the drive as exFAT if it will be used with both Mac and Windows."],
+        ["Backups", "An external drive is a good copy, but not the only one. Keep a copy somewhere else too, for example in the cloud."],
+        ["Encryption", "Password protection or encryption is good if the drive could get lost."]
+      ],
+      "forWho": "You take photos, shoot video or want fast backups.",
+      "skipIf": "You just need to archive large amounts of rarely used data. A regular hard drive is cheaper per terabyte."
+    }
+  },
+  "bluetooth-tracker": {
+    "slug": "bluetooth-tracker",
+    "name": "Bluetooth tracker (4-pack)",
+    "why": "Find your keys, bag and suitcase with your phone.",
+    "bullets": ["Attaches to a keyring", "Sound alert", "Replaceable battery"],
+    "pick": "MiLi tracker with replaceable CR2032 battery",
+    "guide": {
+      "intro": "A Bluetooth tracker has no GPS. Close by, you find it with your phone and a sound alert. Further away, it only shows up if another phone on the same network passes by.",
+      "consider": [
+        ["The right network for your phone", "Trackers for Apple's Find My network work with iPhone. Trackers for Google's network work with Android. Some brands work with both but have a smaller network."],
+        ["Battery", "A replaceable coin cell (often CR2032) lasts about a year and is cheap to swap."],
+        ["Anti-stalking protection", "Modern trackers warn you if someone else's tracker is travelling with you. That's good, but can trigger an alert when you borrow someone's bag."],
+        ["Attachment", "Look for a loop or hole for the keyring, or a flat format for your wallet."]
+      ],
+      "forWho": "You often hunt for your keys or want to keep track of your suitcase.",
+      "skipIf": "You need real-time tracking, for example of a vehicle. That requires a GPS tracker with a SIM card."
+    }
+  },
+  "universell-reseadapter": {
+    "slug": "universal-travel-adapter",
+    "name": "Universal travel adapter",
+    "why": "One adapter for over 150 countries, with USB ports.",
+    "bullets": ["EU, UK, US, AU", "USB-A + USB-C", "Compact"],
+    "guide": {
+      "intro": "A travel adapter changes the plug shape to fit the country's sockets. It does not change the voltage.",
+      "consider": [
+        ["Voltage", "Phone and laptop chargers usually handle 100–240 V, as printed on the charger. Hair dryers and straighteners often don't."],
+        ["USB power", "The built-in USB ports often have low total power. For fast charging, bring your usual charger."],
+        ["Earthed devices", "Check that the adapter supports earthed plugs if you'll use, for example, a laptop charger with an earth pin."],
+        ["Fuse", "A built-in fuse protects the adapter and whatever you plug in."]
+      ],
+      "forWho": "You travel outside Europe, for example to the UK, the US or Australia.",
+      "skipIf": "You only travel within EU countries that use the same sockets as Sweden."
+    }
+  },
+  "actionkamera-4k": {
+    "slug": "4k-action-camera",
+    "name": "4K action camera",
+    "why": "Film skiing, cycling and diving in sharp 4K.",
+    "bullets": ["Image stabilisation", "Waterproof (with housing)", "Mounts often included"],
+    "guide": {
+      "intro": "An action camera is small, tough and made to be mounted on a helmet, handlebar or chest. Stabilisation often matters more than resolution.",
+      "consider": [
+        ["Stabilisation", "Good electronic stabilisation makes cycling and skiing footage watchable without a gimbal."],
+        ["Waterproofing", "Many cameras handle a few metres' depth without a housing. For diving you need a separate underwater housing."],
+        ["Battery and cold", "The battery often lasts one to two hours of filming, less in the cold. Bring a spare."],
+        ["Memory card", "4K recording needs a fast microSD card, at least V30. Check the manufacturer's recommendation."]
+      ],
+      "forWho": "You want to film sports, adventures and trips from a first-person view.",
+      "skipIf": "You mostly film everyday life and trips without speed. Your phone is often just as good."
+    }
+  },
+  "smartklocka-gps": {
+    "slug": "gps-smartwatch",
+    "name": "Smartwatch with GPS",
+    "why": "Training, heart rate, sleep and notifications – right on your wrist.",
+    "bullets": ["Built-in GPS", "Heart-rate tracking", "Multi-day battery"],
+    "pick": "Garmin Forerunner running watch with AMOLED display",
+    "guide": {
+      "intro": "Smartwatches range from everyday watches with notifications and apps to dedicated training watches with long battery life. Decide what matters most to you first.",
+      "consider": [
+        ["Your phone", "Some watches only work with iPhone, or only with Android. Check before you buy."],
+        ["Battery or display", "Watches with bright screens and many apps often need charging every day or two. Training watches can last a week or more."],
+        ["Heart-rate tracking", "Wrist-based heart rate works well at a steady pace but is less accurate during intervals. A chest strap is more accurate."],
+        ["Payments", "If you want to pay with the watch, check that your bank supports the watch's payment service."]
+      ],
+      "forWho": "You train regularly and want to track heart rate, distance and sleep.",
+      "skipIf": "You only want to count steps. A simpler activity band is enough."
+    }
+  },
+  "posters-och-tavlor": {
+    "slug": "posters-and-prints",
+    "name": "Posters and prints",
+    "why": "Give your walls personality – the fastest way to refresh a room.",
+    "bullets": ["Many sizes", "Matte or glossy print", "Fits standard frames"],
+    "guide": {
+      "intro": "Posters and prints are the fastest way to give a room personality. What makes a wall look considered is usually size, frame and placement, more than the image itself.",
+      "consider": [
+        ["Standard sizes", "Common poster sizes are 30×40, 50×70 and 70×100 cm. Buy the frame to match the poster, so you don't have to cut or fold."],
+        ["Size versus the wall", "A single picture above a sofa often looks best at about two thirds of the sofa's width. Otherwise, several smaller pictures can form a group."],
+        ["Hanging height", "A common rule of thumb is that the centre of the picture sits around 145–155 cm from the floor, roughly at eye level."],
+        ["Paper and print", "Thicker, matte paper gives fewer reflections and feels more premium. Check the print quality in the product description."]
+      ],
+      "forWho": "You want to give your walls personality without repainting.",
+      "skipIf": "You rent and aren't allowed to drill. Choose a picture ledge or adhesive strips rated for the frame's weight."
+    }
+  },
+  "tavelramar": {
+    "slug": "picture-frames",
+    "name": "Picture frames",
+    "why": "A good frame makes even a cheap poster look expensive.",
+    "bullets": ["Glass or acrylic", "With mount", "Portrait or landscape"],
+    "guide": {
+      "intro": "A good frame makes even a cheap poster look expensive. The differences are in the glazing, the mount and how the frame is hung.",
+      "consider": [
+        ["Glass or acrylic", "Real glass gives the sharpest picture but is heavier and can break. Acrylic is lighter and safer in kids' rooms, but scratches more easily."],
+        ["Mount", "The mount is the white border between picture and frame and gives the image room to breathe. Check that it is made for your picture size."],
+        ["Hanging", "Check whether the frame can hang both portrait and landscape, and that the hanger can take the frame's weight."],
+        ["Gallery wall", "Frames in the same colour and profile make a gallery wall look cohesive. Lay the frames out on the floor first and try the arrangement."]
+      ],
+      "forWho": "You have posters, photos or kids' drawings that deserve a place on the wall.",
+      "skipIf": "You want to switch images often. A picture ledge where frames just stand is easier."
+    }
+  },
+  "vagghyllor": {
+    "slug": "floating-wall-shelves",
+    "name": "Floating wall shelves",
+    "why": "Storage and a stage for books, plants and gadgets – without using floor space.",
+    "bullets": ["Hidden or visible brackets", "Various lengths", "Wood or metal"],
+    "guide": {
+      "intro": "Floating wall shelves give you storage and a place for books, plants and gadgets without taking floor space. What matters is how much the shelf can hold and how it is mounted.",
+      "consider": [
+        ["The wall decides the fixing", "Plasterboard, concrete and wood need different plugs and screws. The ones included don't always suit your wall, so check before drilling."],
+        ["Load", "The manufacturer's maximum load assumes correct mounting. Books quickly add up to several kilos per metre of shelf."],
+        ["Depth", "A depth of 15–20 cm fits most books and decorations without the shelf sticking out too much."],
+        ["Hidden or visible brackets", "Hidden fixings look clean but often hold less weight than shelves with visible brackets."]
+      ],
+      "forWho": "You want more storage or a place to show things off.",
+      "skipIf": "You rent and aren't allowed to drill into the walls."
+    }
+  },
+  "vaggspegel": {
+    "slug": "wall-mirror",
+    "name": "Wall mirror",
+    "why": "Make the room brighter and bigger – in an afternoon.",
+    "bullets": ["Round, rectangular or arched", "With or without frame", "Full or half length"],
+    "guide": {
+      "intro": "A mirror makes a room brighter and feel bigger by reflecting light. Size, weight and hanging matter more than you might think.",
+      "consider": [
+        ["Weight and hanging", "Glass mirrors are heavy. Fix them into studs or with plugs that can take the weight, especially in plasterboard walls."],
+        ["Placement", "A mirror opposite or next to a window spreads daylight around the room."],
+        ["Full-length mirror", "To see your whole body, a mirror about half your height is enough if it hangs correctly. A longer mirror is more forgiving."],
+        ["Glass or acrylic", "Real glass gives the sharpest reflection. Self-adhesive acrylic mirrors are light but can slightly distort the image."]
+      ],
+      "forWho": "You want to make a dark or small room brighter.",
+      "skipIf": "It would end up opposite the TV or a bright lamp, where it causes distracting reflections."
+    }
+  },
+  "kuddfodral": {
+    "slug": "cushion-covers",
+    "name": "Cushion covers and decorative cushions",
+    "why": "Change the feel of your sofa in five minutes.",
+    "bullets": ["45×45 or 50×50 cm", "Velvet, linen or cotton", "Hidden zip"],
+    "guide": {
+      "intro": "Cushions are the cheapest way to change the feel of your sofa. With covers you can switch colours with the seasons and keep the same inner cushions.",
+      "consider": [
+        ["Size", "Common sizes are 45×45 and 50×50 cm. The inner cushion should be the same size or a few centimetres bigger than the cover to look full."],
+        ["Material", "Velvet feels luxurious; linen and cotton are airier. Check whether the cover is machine washable."],
+        ["Zip", "A hidden zip makes the cover easy to remove and looks neater."],
+        ["Mix", "Combine different sizes and textures in the same colour palette for a sofa that looks considered."]
+      ],
+      "forWho": "You want to refresh your sofa or bed without buying new furniture.",
+      "skipIf": "You need a pillow to sleep on. A proper bed pillow is the right buy."
+    }
+  },
+  "led-ljus": {
+    "slug": "flameless-led-candles",
+    "name": "Flameless LED candles",
+    "why": "The cosy glow of candles – without an open flame.",
+    "bullets": ["Flickering flame", "Timer and remote", "Safe with kids and pets"],
+    "guide": {
+      "intro": "LED candles give the cosy glow of real candles without an open flame. They suit families with kids, pet owners and places where real candles aren't allowed.",
+      "consider": [
+        ["Realistic flame", "Candles with a moving or flickering flame look more real than ones that shine steadily."],
+        ["Timer and remote", "A timer that lights the candles at the same time every evening is handy, especially in windows."],
+        ["Batteries", "Check the battery type and approximate run time. Rechargeable candles can be cheaper in the long run."],
+        ["Real wax", "Candles with a real wax shell look more like ordinary candles than plastic ones."]
+      ],
+      "forWho": "You want cosy lighting without fire risk, for example with kids or pets at home.",
+      "skipIf": "You want the scent or warmth of real candles."
+    }
+  },
+  "matta": {
+    "slug": "living-room-rug",
+    "name": "Living room rug",
+    "why": "Ties the room together, dampens sound and warms your feet.",
+    "bullets": ["Wool or synthetic", "Short or long pile", "Rug pad recommended"],
+    "guide": {
+      "intro": "A rug ties the furniture together, dampens sound and makes a room warmer. Size is the most common mistake.",
+      "consider": [
+        ["Size", "In a living room it usually looks best if at least the sofa's front legs stand on the rug. A rug that is too small makes the room look smaller."],
+        ["Material", "Wool is hard-wearing and stain-resistant. Synthetic rugs are cheaper and often easier to keep clean."],
+        ["Rug pad", "A non-slip pad under the rug keeps it in place and protects the floor."],
+        ["Pile", "High pile is soft but collects more dust. Short pile or flat-weave is easier to vacuum."]
+      ],
+      "forWho": "You want a cosy living room with less echo.",
+      "skipIf": "Allergies make it hard to keep rugs clean. Choose a flat-weave, washable rug."
+    }
+  }
+}

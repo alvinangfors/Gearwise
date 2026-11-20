@@ -8,6 +8,25 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const page = document.body.dataset.page;
+  const PRE = document.documentElement.dataset.pre || '';
+  const EN = document.documentElement.lang === 'en';
+  const TX = EN ? {
+    favOn: 'Saved to favourites ♥', favOff: 'Removed from favourites', cmpOff: 'Removed from comparison', cmpMax: (n) => `You can compare up to ${n} items`,
+    cmpOn: (n, m) => `Added to comparison (${n}/${m})`, cmpCleared: 'Comparison cleared', one: '1 selected – pick one more', many: (n) => `${n} selected`,
+    on: 'Comparing', off: 'Compare', noFavs: 'You have no favourites yet. Tap ♥ on an item to save it.', noHits: 'No items matched your search.',
+    favCount: (n) => `Your favourites: ${n}`, count: (n, c) => `${n} items${c ? ' in ' + c : ''}`,
+    add: 'Add item:', choose: 'Choose…', none: 'You haven\u2019t picked any items yet. Choose 2–3 below, or tap <b>Compare</b> on an item in the shop.',
+    remove: 'Remove', rows: ['Category', 'Price level', 'Price', 'Good for', 'Features', 'Consider', 'Skip it if'], ourPick: 'Our pick',
+    seePrice: 'See current price on Amazon', view: 'View on Amazon →', failed: 'Could not load the product list.',
+  } : {
+    favOn: 'Sparad i favoriter ♥', favOff: 'Borttagen från favoriter', cmpOff: 'Borttagen från jämförelsen', cmpMax: (n) => `Du kan jämföra högst ${n} prylar`,
+    cmpOn: (n, m) => `Tillagd i jämförelsen (${n}/${m})`, cmpCleared: 'Jämförelsen är rensad', one: '1 vald – välj en till', many: (n) => `${n} valda`,
+    on: 'Jämförs', off: 'Jämför', noFavs: 'Du har inga favoriter än. Tryck på ♥ på en pryl för att spara den.', noHits: 'Inga prylar matchade din sökning.',
+    favCount: (n) => `Dina favoriter: ${n} st`, count: (n, c) => `${n} prylar${c ? ' i ' + c : ''}`,
+    add: 'Lägg till pryl:', choose: 'Välj…', none: 'Du har inte valt några prylar ännu. Välj 2–3 stycken här nedanför, eller tryck på <b>Jämför</b> på en pryl i butiken.',
+    remove: 'Ta bort', rows: ['Kategori', 'Prisklass', 'Pris', 'Passar för', 'Egenskaper', 'Tänk på', 'Hoppa över om'], ourPick: 'Vårt val',
+    seePrice: 'Se aktuellt pris hos Amazon', view: 'Se på Amazon →', failed: 'Kunde inte läsa produktlistan.',
+  };
 
   const load = (k) => { try { return JSON.parse(localStorage.getItem(k) || '[]'); } catch { return []; } };
   const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
@@ -69,7 +88,7 @@
     const on = !favs.includes(slug);
     favs = on ? [...favs, slug] : favs.filter((x) => x !== slug);
     save('gw-favs', favs); syncFavs(); if (shop) shop.render(false);
-    if (on) { burst(btn); toast('Sparad i favoriter ♥'); } else toast('Borttagen från favoriter');
+    if (on) { burst(btn); toast(TX.favOn); } else toast(TX.favOff);
   }
 
   // ---------- Jämförelse ----------
@@ -78,23 +97,23 @@
     $$('[data-cmp]').forEach((b) => {
       const on = cmp.includes(b.dataset.cmp);
       b.setAttribute('aria-pressed', on);
-      b.textContent = on ? (b.dataset.on || 'Jämförs') : (b.dataset.off || 'Jämför');
+      b.textContent = on ? (b.dataset.on || TX.on) : (b.dataset.off || TX.off);
     });
     if (!bar || page === 'jamfor') return;
     bar.hidden = cmp.length === 0;
-    $('#cmpn', bar).textContent = cmp.length === 1 ? '1 vald – välj en till' : `${cmp.length} valda`;
+    $('#cmpn', bar).textContent = cmp.length === 1 ? TX.one : TX.many(cmp.length);
     const a = $('a', bar);
-    a.href = `${BASE}jamfor/?p=${cmp.join(',')}`;
+    a.href = `${a.getAttribute('href').split('?')[0]}?p=${cmp.join(',')}`;
     a.setAttribute('aria-disabled', cmp.length < 2);
   }
   function toggleCmp(slug) {
-    if (cmp.includes(slug)) { cmp = cmp.filter((x) => x !== slug); toast('Borttagen från jämförelsen'); }
-    else if (cmp.length >= MAX_CMP) { toast(`Du kan jämföra högst ${MAX_CMP} prylar`); return; }
-    else { cmp = [...cmp, slug]; toast(`Tillagd i jämförelsen (${cmp.length}/${MAX_CMP})`); }
+    if (cmp.includes(slug)) { cmp = cmp.filter((x) => x !== slug); toast(TX.cmpOff); }
+    else if (cmp.length >= MAX_CMP) { toast(TX.cmpMax(MAX_CMP)); return; }
+    else { cmp = [...cmp, slug]; toast(TX.cmpOn(cmp.length, MAX_CMP)); }
     save('gw-cmp', cmp); syncCmp();
     if (page === 'jamfor') renderCompare();
   }
-  bar && $('button', bar).addEventListener('click', () => { cmp = []; save('gw-cmp', cmp); syncCmp(); toast('Jämförelsen är rensad'); });
+  bar && $('button', bar).addEventListener('click', () => { cmp = []; save('gw-cmp', cmp); syncCmp(); toast(TX.cmpCleared); });
 
   document.addEventListener('click', (e) => {
     const f = e.target.closest('[data-fav]'); if (f) { e.preventDefault(); toggleFav(f.dataset.fav, f); return; }
@@ -251,8 +270,8 @@
       [...cards].sort(key).forEach((c) => grid.appendChild(c));
       grid.appendChild(empty);
       empty.hidden = shown.length > 0;
-      empty.textContent = favOnly ? 'Du har inga favoriter än. Tryck på ♥ på en pryl för att spara den.' : 'Inga prylar matchade din sökning.';
-      count.textContent = favOnly ? `Dina favoriter: ${shown.length} st` : `${shown.length} prylar${cat !== 'Alla' ? ' i ' + cat : ''}`;
+      empty.textContent = favOnly ? TX.noFavs : TX.noHits;
+      count.textContent = favOnly ? TX.favCount(shown.length) : TX.count(shown.length, cat !== 'Alla' ? ($(`[data-c="${CSS.escape(cat)}"]`, chipsEl)?.textContent || cat) : '');
       $$('[data-c]', chipsEl).forEach((b) => b.setAttribute('aria-pressed', b.dataset.c === cat && !favOnly));
       const ft = $('#favToggle'); ft && ft.setAttribute('aria-pressed', favOnly);
       movePill();
@@ -316,7 +335,7 @@
   let data = null;
   async function renderCompare() {
     const root = $('#cmp-root'); if (!root) return;
-    if (!data) data = await fetch(`${BASE}products.json`).then((r) => r.json());
+    if (!data) data = await fetch(`${BASE}${PRE}products.json`).then((r) => r.json());
     const fromUrl = new URLSearchParams(location.search).get('p');
     if (fromUrl && !renderCompare.used) {
       renderCompare.used = true;
@@ -330,21 +349,21 @@
     const fresh = data.amazonFetchedAt && Date.now() - Date.parse(data.amazonFetchedAt) < DAY;
     const opts = data.products.filter((p) => !cmp.includes(p.slug)).map((p) => `<option value="${p.slug}">${esc(p.name)}</option>`).join('');
     const add = list.length < MAX_CMP
-      ? `<label class="addcmp">Lägg till pryl: <select id="addCmp"><option value="">Välj…</option>${opts}</select></label>` : '';
-    if (!list.length) { root.innerHTML = `<p>Du har inte valt några prylar ännu. Välj 2–3 stycken här nedanför, eller tryck på <b>Jämför</b> på en pryl i butiken.</p>${add}`; bindAdd(); return; }
+      ? `<label class="addcmp">${TX.add} <select id="addCmp"><option value="">${TX.choose}</option>${opts}</select></label>` : '';
+    if (!list.length) { root.innerHTML = `<p>${TX.none}</p>${add}`; bindAdd(); return; }
     const pic = (p) => p.img ? `<img class="ph" src="${esc(p.img)}" alt="" referrerpolicy="no-referrer" loading="lazy"><span class="fb" hidden>${p.icon}</span>` : p.icon;
     const row = (label, fn) => `<tr><th scope="row">${label}</th>${list.map((p) => `<td>${fn(p)}</td>`).join('')}</tr>`;
-    root.innerHTML = `${add}<div class="tablewrap" style="margin-top:16px"><table class="cmpt"><thead><tr><td></td>${list.map((p) => `<th scope="col"><div class="pic">${pic(p)}</div><h3><a href="${BASE}produkt/${p.slug}/">${esc(p.name)}</a></h3>
-      ${p.title ? `<p class="price" style="margin-top:4px">Vårt val: ${esc(p.title)}</p>` : ''}
-      <button class="btn2" data-cmp="${p.slug}" data-on="Ta bort" data-off="Jämför" style="margin-top:8px;min-height:44px">Ta bort</button></th>`).join('')}</tr></thead><tbody>
-      ${row('Kategori', (p) => esc(p.cat))}
-      ${row('Prisklass', (p) => esc(p.level))}
-      ${row('Pris', (p) => (fresh && p.price) ? `<strong>${esc(p.price)}</strong><br><span class="price">Amazon.se, ${esc(data.amazonFetchedAtText)}</span>` : '<span class="price">Se aktuellt pris hos Amazon</span>')}
-      ${row('Passar för', (p) => esc(p.guide?.forWho || p.why))}
-      ${row('Egenskaper', (p) => `<ul>${p.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`)}
-      ${row('Tänk på', (p) => `<ul>${(p.guide?.consider || []).map((c) => `<li>${esc(c[0])}</li>`).join('')}</ul>`)}
-      ${row('Hoppa över om', (p) => esc(p.guide?.skipIf || '–'))}
-      ${row('', (p) => `<a class="buy" href="${esc(p.link)}" target="_blank" rel="nofollow sponsored noopener">Se på Amazon →</a>`)}
+    root.innerHTML = `${add}<div class="tablewrap" style="margin-top:16px"><table class="cmpt"><thead><tr><td></td>${list.map((p) => `<th scope="col"><div class="pic">${pic(p)}</div><h3><a href="${BASE}${p.url}">${esc(p.name)}</a></h3>
+      ${p.title ? `<p class="price" style="margin-top:4px">${TX.ourPick}: ${esc(p.title)}</p>` : ''}
+      <button class="btn2" data-cmp="${p.slug}" data-on="${TX.remove}" data-off="${TX.off}" style="margin-top:8px;min-height:44px">${TX.remove}</button></th>`).join('')}</tr></thead><tbody>
+      ${row(TX.rows[0], (p) => esc(p.cat))}
+      ${row(TX.rows[1], (p) => esc(p.level))}
+      ${row(TX.rows[2], (p) => (fresh && p.price) ? `<strong>${esc(p.price)}</strong><br><span class="price">Amazon.se, ${esc(data.amazonFetchedAtText)}</span>` : `<span class="price">${TX.seePrice}</span>`)}
+      ${row(TX.rows[3], (p) => esc(p.guide?.forWho || p.why))}
+      ${row(TX.rows[4], (p) => `<ul>${p.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`)}
+      ${row(TX.rows[5], (p) => `<ul>${(p.guide?.consider || []).map((c) => `<li>${esc(c[0])}</li>`).join('')}</ul>`)}
+      ${row(TX.rows[6], (p) => esc(p.guide?.skipIf || '–'))}
+      ${row('', (p) => `<a class="buy" href="${esc(p.link)}" target="_blank" rel="nofollow sponsored noopener">${TX.view}</a>`)}
       </tbody></table></div>
       ${fresh && list.some((p) => p.price) ? `<p class="price" style="margin-top:12px">${esc(data.priceDisclaimer)}</p>` : ''}`;
     bindAdd(); syncCmp(); checkImgs();
@@ -496,5 +515,5 @@
 
   // ---------- Start ----------
   expirePrices(); checkImgs(); syncFavs(); syncCmp();
-  if (page === 'jamfor') renderCompare().catch(() => { $('#cmp-root').textContent = 'Kunde inte läsa produktlistan.'; });
+  if (page === 'jamfor') renderCompare().catch(() => { $('#cmp-root').textContent = TX.failed; });
 })();

@@ -35,7 +35,7 @@ const jobs = [
   [sq, 'ig-julklappar', `Julklappsguiden ${YR}`, 'Julklappar till <em>alla på listan</em>', 'Handplockat och sorterat efter budget', giftIcons, 'jul'],
   [story, 'story-julklappar', `Julklappsguiden ${YR}`, 'Hitta <em>rätt klapp</em> på en minut', 'Pendlaren · inredaren · träningsnörden · kontorsmänniskan', giftIcons, 'jul'],
   [pin, 'pin-black-friday', `Black Friday ${YR}`, 'Handla smart på <em>Black Friday</em>', 'Så känner du igen ett riktigt fynd', bfIcons, 'bf'],
-  [sq, 'ig-black-friday', `Black Friday ${YR}`, 'Handla smart på <em>Black Friday</em>', 'Fem regler för riktiga fynd', bfIcons, 'bf'],
+  [sq, 'ig-black-friday', `Black Friday ${YR}`, 'Handla smart på <em>Black Friday</em>', 'Fyra regler för riktiga fynd', bfIcons, 'bf'],
   [pin, 'pin-inredning', 'Hem & inredning', 'Ge hemmet <em>personlighet</em>', 'Tavlor, speglar, hyllor och mysbelysning', homeIcons, 'home'],
   [sq, 'ig-inredning', 'Hem & inredning', 'Ge hemmet <em>personlighet</em>', 'Tavlor, speglar, hyllor och mys', homeIcons, 'home'],
   ...GUIDES.map((g) => [pin, `pin-guide-${g.slug}`, `${g.emoji} Guide · ${g.kicker}`, esc(g.title).replace(/ – (.*)$/, ' – <em>$1</em>'), g.desc.split('. ')[0].replace(/\.$/, '') + '.', g.products, 'guide']),

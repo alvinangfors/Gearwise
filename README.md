@@ -43,6 +43,16 @@ npm test           # testar API-klienten och bygget
 - `pick` – namnet på produkten du rekommenderar, visas som "Vårt val" på produktsidan. Används tills API:t levererar Amazons egen titel.
 - `img` – bild-URL som Amazon själva tillhandahåller (SiteStripe). Ladda aldrig ner bilden till egen server. Laddar bilden inte visas den ritade ikonen.
 
+## Två språk
+
+Sajten byggs på svenska (roten) och engelska (`/en/`). Varje sida länkar till sin motsvarighet med `hreflang`, och det finns en språkknapp (SV/EN) i menyn.
+
+- Svenska produkttexter: `data/catalog.json`. Engelska: `data/catalog.en.json` (samma nyckel = svensk slug, plus engelsk `slug`).
+- Guider: `scripts/lib/guides.mjs` (sv) och `scripts/lib/guides.en.mjs` (en).
+- Alla övriga texter: `scripts/lib/strings.mjs`.
+- Lägger du till en produkt måste den ha en engelsk översättning – annars stoppar bygget med ett tydligt fel.
+- Länkarna går till Amazon.se på båda språken (ditt partner-ID gäller bara där). Amazon.se går att visa på engelska.
+
 ## Amazon: produkter, bilder och priser
 
 **Product Advertising API 5.0 är nedlagt.** Efterföljaren heter **Creators API** och använder OAuth 2.0 i stället för AWS-signering. Det här projektet använder Creators API.

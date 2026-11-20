@@ -80,3 +80,20 @@ test('alla Amazon-länkar har partnertagg och rel="nofollow sponsored noopener"'
   assert.match(html, /Som Amazon-partner tjänar Gearwise på kvalificerade köp/);
   await rm(dir, { recursive: true, force: true });
 });
+
+test('engelsk version: lang, hreflang och översatta produktsidor', async () => {
+  const { dir } = await project();
+  run(dir, 'build.mjs');
+  const en = await readFile(join(dir, 'dist/en/index.html'), 'utf8');
+  assert.match(en, /<html lang="en"/);
+  assert.match(en, /hreflang="sv" href="[^"]*\/Gearwise\/"/);
+  assert.match(en, /As an Amazon Associate, Gearwise earns from qualifying purchases/);
+  const cat = JSON.parse(await readFile(join(dir, 'data/catalog.json'), 'utf8'));
+  const tr = JSON.parse(await readFile(join(dir, 'data/catalog.en.json'), 'utf8'));
+  for (const p of cat) {
+    const html = await readFile(join(dir, `dist/en/product/${tr[p.slug].slug}/index.html`), 'utf8');
+    assert.match(html, new RegExp(`hreflang="sv" href="[^"]*/produkt/${p.slug}/"`));
+    assert.match(html, /rel="nofollow sponsored noopener"/);
+  }
+  await rm(dir, { recursive: true, force: true });
+});
