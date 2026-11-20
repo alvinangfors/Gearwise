@@ -3,17 +3,21 @@
   "url": "https://alvinangfors.github.io",
   "basePath": "/Gearwise/",
   "description": "Handplockade prylar inom ljud, laddning, smarta hemmet, dator och resa – med köpguider och direktlänk till Amazon.se.",
-
   "partnerTag": "gearwise054-21",
   "store": "https://www.amazon.se",
   "marketplace": "www.amazon.se",
-
   "owner": "Alvin Ängfors",
   "ownerOrgNr": "",
   "contactEmail": "alvin.angfors@gmail.com",
   "hosting": "GitHub Pages (GitHub Inc.)",
   "googleSiteVerification": "jQA696tBm1oCT7wvdFpwesTGp16_Cdfl7KuHkcCZoIA",
   "policyUpdated": "2026-11-19",
-
-  "categories": ["Ljud", "Laddning", "Smarta hemmet", "Dator & kontor", "Resa & ute"]
+  "categories": [
+    "Ljud",
+    "Laddning",
+    "Smarta hemmet",
+    "Dator & kontor",
+    "Resa & ute",
+    "Hem & inredning"
+  ]
 }

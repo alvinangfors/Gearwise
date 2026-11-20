@@ -146,8 +146,10 @@ ${body}
   <nav aria-label="Om sajten"><a href="${href('om/')}">Om oss</a><a href="${href('integritet/')}">Integritetspolicy</a><a href="${href('cookies/')}">Cookies</a></nav>
   <p>© ${year} ${esc(config.name)}</p></div>
 </div>
-<div class="mega" aria-hidden="true">${esc(config.name)}</div></footer>
+<div class="mega" aria-hidden="true">${[...config.name].map((ch, i) => `<span style="--i:${i}">${esc(ch)}</span>`).join('')}</div></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="cur-ring" aria-hidden="true"></div><div class="cur-dot" aria-hidden="true"></div>
+<button class="totop" id="totop" type="button" aria-label="Till toppen av sidan" hidden><svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="22" fill="none" stroke="rgba(143,211,255,.2)" stroke-width="3"/><circle class="pr" cx="26" cy="26" r="22" fill="none" stroke="url(#tg)" stroke-width="3" stroke-linecap="round"/><defs><linearGradient id="tg"><stop offset="0" stop-color="#8fd3ff"/><stop offset="1" stop-color="#ff5c8a"/></linearGradient></defs><path d="M26 34V19M19 25l7-7 7 7" fill="none" stroke="#eef4fb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 <div class="cmpbar" id="cmpbar" hidden role="region" aria-label="Jämförelse"><span id="cmpn"></span><a href="${href('jamfor/')}">Jämför →</a><button type="button">Rensa</button></div>
 </body>
 </html>
@@ -161,6 +163,7 @@ const CAT_TEXT = {
   'Smarta hemmet': 'Lampor, kontakter och kameror för ett smartare hem.',
   'Dator & kontor': 'Skönare skrivbord och skarpare videomöten.',
   'Resa & ute': 'Prylar som följer med på resan och äventyret.',
+  'Hem & inredning': 'Tavlor, speglar, hyllor och mys för ett hem som känns som ditt.',
 };
 const SCENARIOS = [
   ['pendla', '🚆', 'Pendla', ['brusreducerande-horlurar', 'tradlosa-in-ear-horlurar', 'powerbank-20000', 'bluetooth-tracker']],
@@ -170,7 +173,9 @@ const SCENARIOS = [
   ['resa', '✈️', 'Resa', ['universell-reseadapter', 'powerbank-20000', 'bluetooth-tracker', 'brusreducerande-horlurar']],
   ['ladda', '⚡', 'Ladda allt', ['usb-c-laddare-65w', 'tradlos-laddstation-3-i-1', 'usb-c-kabel-flatad', 'powerbank-20000']],
   ['fest', '🎉', 'Fest & ute', ['bluetooth-hogtalare', 'actionkamera-4k', 'powerbank-20000']],
+  ['inred', '🛋️', 'Inreda hemmet', ['posters-och-tavlor', 'tavelramar', 'vagghyllor', 'led-ljus', 'kuddfodral']],
 ];
+const splitChars = (s) => s.split(' ').map((w, wi, arr) => `<span class="w">${[...w].map((ch, ci) => `<span class="ch" style="--c:${arr.slice(0, wi).join('').length + wi + ci}">${esc(ch)}</span>`).join('')}</span>`).join(' ');
 const bySlug = Object.fromEntries(products.map((p) => [p.slug, p]));
 for (const [id, , , slugs] of SCENARIOS) for (const s of slugs) if (!bySlug[s]) throw new Error(`Prylguiden "${id}": produkten "${s}" finns inte`);
 for (const c of cats) if (!CAT_TEXT[c]) warnings.push(`Kategorin "${c}" saknar text i CAT_TEXT.`);
@@ -188,10 +193,10 @@ pages.set('', layout({
     { '@type': 'WebSite', name: config.name, url: abs(), inLanguage: 'sv-SE' },
     { '@type': 'Organization', name: config.name, url: abs(), logo: abs('apple-touch-icon.png') },
   ] },
-  body: `<section class="hero band"><div class="wrap hero-grid">
+  body: `<section class="hero band"><canvas class="stars" id="stars" aria-hidden="true"></canvas><div class="wrap hero-grid">
   <div class="hero-copy">
     <a class="eyebrow" href="#guiden"><b>Nytt</b> Prylguiden – hitta rätt pryl snabbt →</a>
-    <h1><span class="sr">Smarta prylar för pendlingen, träningen, hemmet, kontoret och resan</span><span aria-hidden="true">Smarta prylar<br>för <span class="rot" id="rot" data-words="pendlingen|träningen|hemmet|kontoret|resan|festen">pendlingen</span></span></h1>
+    <h1><span class="sr">Smarta prylar för pendlingen, träningen, hemmet, kontoret och resan</span><span aria-hidden="true">${splitChars('Smarta prylar')}<br>${splitChars('för')} <span class="rot" id="rot" data-words="pendlingen|träningen|hemmet|kontoret|resan|festen">pendlingen</span></span></h1>
     <p class="sub">Vi går igenom tekniken så att du slipper. Hitta rätt hörlurar, laddare eller smarta hem-prylar, och köp tryggt hos Amazon med deras leverans och returer.</p>
     <div class="ctas"><a class="cta magnetic" href="#butik">Utforska prylarna <span class="arr" aria-hidden="true">→</span></a><a class="ghost" href="#guiden">Starta Prylguiden</a></div>
     <div class="trust"><span>Frakt och returer via Amazon</span><span>Säker betalning</span><span>Köpguide för varje pryl</span></div>
@@ -203,12 +208,15 @@ pages.set('', layout({
 </div>
 </section>
 
-<div class="marquee" aria-hidden="true"><div class="track">${[...products, ...products].map((p) => `<span>${esc(p.name)}</span>`).join('')}</div></div>
+<div class="marquee" aria-hidden="true">
+  <div class="track">${[...products, ...products].map((p) => `<span>${esc(p.name)}</span>`).join('')}</div>
+  <div class="track rev">${[...products, ...products].reverse().map((p) => `<span class="mi"><i>${ICONS[p.icon]}</i>${esc(p.cat)}</span>`).join('')}</div>
+</div>
 
 <section class="band" id="kategorier" aria-labelledby="kat-h"><div class="wrap">
   <p class="kicker">Kategorier</p>
   <h2 id="kat-h">Utforska efter <span class="gt">kategori</span></h2>
-  <p class="lede">Fem områden, handplockade prylar och en köpguide för varje.</p>
+  <p class="lede">${({ 4: 'Fyra', 5: 'Fem', 6: 'Sex', 7: 'Sju', 8: 'Åtta' })[cats.length] || cats.length} områden, handplockade prylar och en köpguide för varje.</p>
   <div class="bento">
   ${cats.map((c, i) => {
     const inCat = products.filter((p) => p.cat === c).sort((a, b) => b.pop - a.pop);

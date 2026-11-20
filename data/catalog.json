@@ -863,5 +863,290 @@
     },
     "bestsellers": "electronics/20637796031",
     "pick": "Garmin Forerunner löparklocka med AMOLED-skärm"
+  },
+  {
+    "slug": "posters-och-tavlor",
+    "name": "Posters och tavlor",
+    "cat": "Hem & inredning",
+    "icon": "poster",
+    "lvl": 1,
+    "pop": 9,
+    "q": "poster tavla vardagsrum",
+    "why": "Ge väggarna personlighet – snabbaste sättet att förnya ett rum.",
+    "bullets": [
+      "Många storlekar",
+      "Matt eller blankt tryck",
+      "Passar standardramar"
+    ],
+    "bestsellers": "kitchen/20650243031",
+    "guide": {
+      "intro": "Posters och tavlor är det snabbaste sättet att ge ett rum personlighet. Det som får väggen att se genomtänkt ut är oftast storlek, ram och placering, mer än själva motivet.",
+      "consider": [
+        [
+          "Standardstorlekar",
+          "Vanliga posterstorlekar är 30×40, 50×70 och 70×100 cm. Köp ramen efter posterns mått, så slipper du skära eller vika."
+        ],
+        [
+          "Storlek mot väggen",
+          "En ensam tavla över en soffa ser ofta bäst ut om den är ungefär två tredjedelar så bred som soffan. Annars kan flera mindre tavlor bilda en grupp."
+        ],
+        [
+          "Hänghöjd",
+          "En vanlig tumregel är att tavlans mitt hamnar runt 145–155 cm från golvet, ungefär i ögonhöjd."
+        ],
+        [
+          "Papper och tryck",
+          "Tjockare, matt papper ger färre reflexer och känns mer exklusivt. Kontrollera tryckkvaliteten i produktbeskrivningen."
+        ]
+      ],
+      "forWho": "Dig som vill ge väggarna personlighet utan att måla om.",
+      "skipIf": "Du hyr och inte får borra. Välj då en tavelhylla eller häftremsor som klarar ramens vikt."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "tavelramar",
+    "name": "Tavelramar",
+    "cat": "Hem & inredning",
+    "icon": "frame",
+    "lvl": 1,
+    "pop": 8,
+    "q": "tavelram 50x70",
+    "why": "En bra ram får även en billig poster att se dyr ut.",
+    "bullets": [
+      "Glas eller plexi",
+      "Med passepartout",
+      "Stående eller liggande"
+    ],
+    "bestsellers": "kitchen/20651436031",
+    "guide": {
+      "intro": "En bra ram får även en billig poster att se dyr ut. Skillnaderna sitter i glaset, passepartouten och hur ramen hängs upp.",
+      "consider": [
+        [
+          "Glas eller plexi",
+          "Riktigt glas ger skarpast bild men är tyngre och kan gå sönder. Plexiglas är lättare och tryggare i barnrum, men repas lättare."
+        ],
+        [
+          "Passepartout",
+          "Passepartouten är den vita kanten mellan bild och ram och ger luft runt motivet. Kontrollera att den är gjord för just din bildstorlek."
+        ],
+        [
+          "Upphängning",
+          "Se efter om ramen kan hängas både stående och liggande, och att upphängningen klarar ramens vikt."
+        ],
+        [
+          "Tavelvägg",
+          "Ramar i samma färg och profil gör en tavelvägg sammanhållen. Lägg ut ramarna på golvet först och prova placeringen."
+        ]
+      ],
+      "forWho": "Dig som har posters, foton eller barnteckningar som förtjänar en plats på väggen.",
+      "skipIf": "Du vill byta motiv ofta. Då är en tavelhylla där tavlorna bara står smidigare."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "vagghyllor",
+    "name": "Svävande vägghyllor",
+    "cat": "Hem & inredning",
+    "icon": "shelf",
+    "lvl": 1,
+    "pop": 7,
+    "q": "vägghylla svävande",
+    "why": "Förvaring och en scen för böcker, växter och prylar – utan att ta golvyta.",
+    "bullets": [
+      "Dolda eller synliga fästen",
+      "Olika längder",
+      "Trä eller metall"
+    ],
+    "bestsellers": "kitchen/20650660031",
+    "guide": {
+      "intro": "Svävande vägghyllor ger förvaring och en plats för böcker, växter och prylar utan att ta golvyta. Det viktiga är vad hyllan tål och hur den fästs.",
+      "consider": [
+        [
+          "Väggen avgör fästet",
+          "Gips, betong och trä kräver olika pluggar och skruvar. De som följer med passar inte alltid din vägg, så kontrollera innan du borrar."
+        ],
+        [
+          "Belastning",
+          "Tillverkarens maxlast förutsätter rätt montering. Böcker blir snabbt flera kilo per hyllmeter."
+        ],
+        [
+          "Djup",
+          "Ett djup på 15–20 cm räcker för de flesta böcker och dekorationer utan att hyllan sticker ut för mycket."
+        ],
+        [
+          "Dolda eller synliga konsoler",
+          "Dolda fästen ser stilrena ut men tål ofta mindre vikt än hyllor med synliga konsoler."
+        ]
+      ],
+      "forWho": "Dig som vill ha mer förvaring eller en plats att visa upp saker.",
+      "skipIf": "Du hyr och inte får borra i väggarna."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "vaggspegel",
+    "name": "Väggspegel",
+    "cat": "Hem & inredning",
+    "icon": "mirror",
+    "lvl": 2,
+    "pop": 6,
+    "q": "väggspegel",
+    "why": "Gör rummet ljusare och större – på en eftermiddag.",
+    "bullets": [
+      "Rund, rektangulär eller välvd",
+      "Med eller utan ram",
+      "Hel- eller halvkropp"
+    ],
+    "bestsellers": "kitchen/20650630031",
+    "guide": {
+      "intro": "En spegel gör ett rum ljusare och känns större genom att reflektera ljus. Storlek, vikt och upphängning är viktigare än man tror.",
+      "consider": [
+        [
+          "Vikt och upphängning",
+          "Glasspeglar är tunga. Fäst dem i reglar eller med pluggar som klarar vikten, särskilt i gipsväggar."
+        ],
+        [
+          "Placering",
+          "En spegel mitt emot eller bredvid ett fönster sprider dagsljuset i rummet."
+        ],
+        [
+          "Helkroppsspegel",
+          "För att se hela kroppen räcker en spegel som är ungefär halva din längd, om den hänger rätt. En längre spegel är mer förlåtande."
+        ],
+        [
+          "Glas eller akryl",
+          "Riktigt glas ger skarpast spegelbild. Självhäftande akrylspeglar är lätta men kan ge en något förvrängd bild."
+        ]
+      ],
+      "forWho": "Dig som vill göra ett mörkt eller litet rum ljusare.",
+      "skipIf": "Den skulle hamna mitt emot tv:n eller en stark lampa, där den ger störande reflexer."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "kuddfodral",
+    "name": "Kuddfodral och prydnadskuddar",
+    "cat": "Hem & inredning",
+    "icon": "pillow",
+    "lvl": 1,
+    "pop": 7,
+    "q": "kuddfodral 50x50",
+    "why": "Byt känsla i soffan på fem minuter.",
+    "bullets": [
+      "45×45 eller 50×50 cm",
+      "Sammet, linne eller bomull",
+      "Dold dragkedja"
+    ],
+    "bestsellers": "kitchen/20650551031",
+    "guide": {
+      "intro": "Kuddar är det billigaste sättet att byta känsla i soffan. Med fodral kan du byta färg efter säsong och behålla samma innerkuddar.",
+      "consider": [
+        [
+          "Mått",
+          "Vanliga storlekar är 45×45 och 50×50 cm. Innerkudden bör vara lika stor eller några centimeter större än fodralet för att se fyllig ut."
+        ],
+        [
+          "Material",
+          "Sammet känns lyxig, linne och bomull är luftigare. Kontrollera om fodralet tål maskintvätt."
+        ],
+        [
+          "Dragkedja",
+          "En dold dragkedja gör det enkelt att ta av fodralet och ser snyggare ut."
+        ],
+        [
+          "Mixa",
+          "Kombinera gärna olika storlekar och strukturer i samma färgskala, så ser soffan genomtänkt ut."
+        ]
+      ],
+      "forWho": "Dig som vill förnya soffan eller sängen utan att köpa nya möbler.",
+      "skipIf": "Du behöver en kudde att sova på. Då är en riktig sovkudde rätt köp."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "led-ljus",
+    "name": "Flamfria LED-ljus",
+    "cat": "Hem & inredning",
+    "icon": "candle",
+    "lvl": 1,
+    "pop": 8,
+    "q": "led ljus flamfria fjärrkontroll timer",
+    "why": "Stearinljusets mys – utan öppen låga.",
+    "bullets": [
+      "Flimrande låga",
+      "Timer och fjärrkontroll",
+      "Säkra med barn och djur"
+    ],
+    "guide": {
+      "intro": "LED-ljus ger stearinljusets mysiga sken utan öppen låga. De passar i barnfamiljer, hos husdjursägare och där riktiga ljus inte är tillåtna.",
+      "consider": [
+        [
+          "Realistisk låga",
+          "Ljus med rörlig eller flimrande låga ser mer äkta ut än ljus som lyser jämnt."
+        ],
+        [
+          "Timer och fjärrkontroll",
+          "En timer som tänder ljusen samma tid varje kväll är smidig, särskilt i fönster."
+        ],
+        [
+          "Batterier",
+          "Kontrollera batterityp och ungefärlig drifttid. Uppladdningsbara ljus kan bli billigare i längden."
+        ],
+        [
+          "Äkta vax",
+          "Ljus med ytterhölje av riktigt vax liknar vanliga stearinljus mer än ljus av plast."
+        ]
+      ],
+      "forWho": "Dig som vill ha mysbelysning utan brandrisk, till exempel med barn eller husdjur hemma.",
+      "skipIf": "Du vill ha doften eller värmen från riktiga ljus."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "matta",
+    "name": "Matta till vardagsrummet",
+    "cat": "Hem & inredning",
+    "icon": "rug",
+    "lvl": 2,
+    "pop": 6,
+    "q": "matta vardagsrum 160x230",
+    "why": "Binder ihop rummet, dämpar ljud och värmer fötterna.",
+    "bullets": [
+      "Ull eller syntet",
+      "Kort eller lång lugg",
+      "Halkskydd rekommenderas"
+    ],
+    "guide": {
+      "intro": "En matta binder ihop möblerna, dämpar ljud och gör rummet varmare. Storleken är det vanligaste misstaget.",
+      "consider": [
+        [
+          "Storlek",
+          "I vardagsrummet ser det oftast bäst ut om åtminstone soffans framben står på mattan. En för liten matta får rummet att se mindre ut."
+        ],
+        [
+          "Material",
+          "Ull är slitstark och smutsavvisande. Syntetmattor är billigare och ofta lättare att hålla rena."
+        ],
+        [
+          "Halkskydd",
+          "Ett halkskydd under mattan gör att den ligger still och skyddar golvet."
+        ],
+        [
+          "Lugg",
+          "Hög lugg är mjuk men samlar mer damm. Kort lugg eller plattvävt är enklare att dammsuga."
+        ]
+      ],
+      "forWho": "Dig som vill ha ett ombonat vardagsrum och mindre eko.",
+      "skipIf": "Du har svårt att hålla mattor rena på grund av allergi. Välj då en plattvävd, tvättbar matta."
+    },
+    "asin": null,
+    "img": null
   }
 ]

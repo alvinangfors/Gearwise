@@ -351,6 +351,126 @@
   }
   function bindAdd() { $('#addCmp')?.addEventListener('change', (e) => { if (e.target.value) toggleCmp(e.target.value); }); }
 
+  // ---------- Stjärnbildsfält i hero ----------
+  const cv = $('#stars');
+  if (cv && !reduce && cv.getContext) {
+    const ctx = cv.getContext('2d');
+    const heroEl = cv.parentElement;
+    let W = 0, H = 0, dpr = 1, pts = [], visible = true, mouse = null, raf2 = 0, odd = false, ready = false;
+    const size = () => {
+      dpr = Math.min(2, devicePixelRatio || 1);
+      W = heroEl.clientWidth; H = heroEl.clientHeight;
+      cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const n = W < 700 ? 18 : 56;
+      pts = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25, r: Math.random() * 1.6 + 0.4 }));
+    };
+    const LINK = 120;
+    const frame = () => {
+      raf2 = 0;
+      if (!ready || !visible || document.hidden) return;
+      if (W < 700 && (odd = !odd)) { raf2 = requestAnimationFrame(frame); return; } // 30 fps på mobil
+      ctx.clearRect(0, 0, W, H);
+      for (const p of pts) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1;
+        if (p.y < 0 || p.y > H) p.vy *= -1;
+        if (mouse) { const dx = mouse.x - p.x, dy = mouse.y - p.y, d = Math.hypot(dx, dy); if (d < 180) { p.x += dx * 0.004; p.y += dy * 0.004; } }
+      }
+      for (let i = 0; i < pts.length; i++) {
+        const a = pts[i];
+        for (let j = i + 1; j < pts.length; j++) {
+          const b = pts[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+          if (d < LINK) { ctx.strokeStyle = `rgba(143,211,255,${(1 - d / LINK) * 0.22})`; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+        }
+        if (mouse) { const d = Math.hypot(a.x - mouse.x, a.y - mouse.y); if (d < 160) { ctx.strokeStyle = `rgba(255,92,138,${(1 - d / 160) * 0.45})`; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke(); } }
+        ctx.fillStyle = 'rgba(220,238,255,.75)'; ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2); ctx.fill();
+      }
+      raf2 = requestAnimationFrame(frame);
+    };
+    const start = () => { if (!raf2) raf2 = requestAnimationFrame(frame); };
+    size();
+    const go = () => setTimeout(() => { ready = true; start(); }, 1200);
+    document.readyState === 'complete' ? go() : addEventListener('load', go, { once: true });
+    let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(size, 200); });
+    new IntersectionObserver(([en]) => { visible = en.isIntersecting; if (visible) start(); }).observe(heroEl);
+    document.addEventListener('visibilitychange', start);
+    heroEl.addEventListener('pointermove', (e) => {
+      const r = heroEl.getBoundingClientRect();
+      mouse = { x: e.clientX - r.left, y: e.clientY - r.top };
+      heroEl.style.setProperty('--hx', mouse.x + 'px'); heroEl.style.setProperty('--hy', mouse.y + 'px');
+    });
+    heroEl.addEventListener('pointerleave', () => (mouse = null));
+  }
+
+  // ---------- Egen muspekare ----------
+  if (finePointer && !reduce) {
+    const ring = $('.cur-ring'), dot = $('.cur-dot');
+    if (ring && dot) {
+      let mx = -100, my = -100, rx = -100, ry = -100, running = false;
+      const loop = () => {
+        rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
+        ring.style.transform = `translate(${rx}px,${ry}px)`;
+        if (Math.abs(mx - rx) + Math.abs(my - ry) > 0.3) requestAnimationFrame(loop); else running = false;
+      };
+      const H = 'a,button,[role=tab],input,select,summary,label,.card,.tile';
+      document.addEventListener('pointermove', (e) => {
+        if (e.pointerType !== 'mouse') return;
+        mx = e.clientX; my = e.clientY;
+        dot.style.transform = `translate(${mx}px,${my}px)`;
+        document.documentElement.classList.add('cursor-on');
+        document.documentElement.classList.toggle('cursor-hover', !!e.target.closest?.(H));
+        if (!running) { running = true; requestAnimationFrame(loop); }
+      }, { passive: true });
+      document.addEventListener('pointerdown', () => document.documentElement.classList.add('cursor-down'));
+      document.addEventListener('pointerup', () => document.documentElement.classList.remove('cursor-down'));
+      document.documentElement.addEventListener('pointerleave', () => document.documentElement.classList.remove('cursor-on'));
+    }
+  }
+
+  // ---------- Avkodande rubriketiketter ----------
+  if (!reduce && 'IntersectionObserver' in window) {
+    const glyphs = '▓▒░<>/#%&*+=ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ';
+    const scramble = (el) => {
+      const final = el.textContent, t0 = performance.now(), dur = 700;
+      const step = (t) => {
+        const k = Math.min(1, (t - t0) / dur), n = Math.floor(final.length * k);
+        el.textContent = final.slice(0, n) + [...final.slice(n)].map((c) => (c === ' ' ? ' ' : glyphs[(Math.random() * glyphs.length) | 0])).join('');
+        if (k < 1) requestAnimationFrame(step); else el.textContent = final;
+      };
+      requestAnimationFrame(step);
+    };
+    const kio = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { scramble(en.target); kio.unobserve(en.target); } }), { threshold: 0.6 });
+    $$('.kicker').forEach((k) => kio.observe(k));
+  }
+
+  // ---------- Löpbandet snabbar upp när man scrollar ----------
+  const tracks = $$('.track');
+  if (tracks.length && !reduce && tracks[0].getAnimations) {
+    let lastY = scrollY, rate = 1, rafM = 0;
+    const tick = () => {
+      rate += (1 - rate) * 0.06;
+      tracks.forEach((tr) => tr.getAnimations().forEach((a) => (a.playbackRate = rate)));
+      rafM = Math.abs(rate - 1) > 0.02 ? requestAnimationFrame(tick) : 0;
+    };
+    addEventListener('scroll', () => {
+      const v = Math.abs(scrollY - lastY); lastY = scrollY;
+      rate = Math.min(6, Math.max(rate, 1 + v * 0.08));
+      if (!rafM) rafM = requestAnimationFrame(tick);
+    }, { passive: true });
+  }
+
+  // ---------- Till toppen ----------
+  const totop = $('#totop');
+  if (totop) {
+    const upd = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      totop.hidden = scrollY < 700;
+      totop.style.setProperty('--p', max > 0 ? Math.min(1, scrollY / max) : 0);
+    };
+    addEventListener('scroll', upd, { passive: true }); upd();
+    totop.addEventListener('click', () => { scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); $('.logo')?.focus({ preventScroll: true }); });
+  }
+
   // ---------- Start ----------
   expirePrices(); checkImgs(); syncFavs(); syncCmp();
   if (page === 'jamfor') renderCompare().catch(() => { $('#cmp-root').textContent = 'Kunde inte läsa produktlistan.'; });
