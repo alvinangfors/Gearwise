@@ -275,6 +275,8 @@
       $$('[data-c]', chipsEl).forEach((b) => b.setAttribute('aria-pressed', b.dataset.c === cat && !favOnly));
       const ft = $('#favToggle'); ft && ft.setAttribute('aria-pressed', favOnly);
       movePill();
+      const act = $('[data-c][aria-pressed="true"]', chipsEl);
+      if (act && chipsEl.scrollWidth > chipsEl.clientWidth) chipsEl.scrollTo({ left: act.offsetLeft - chipsEl.clientWidth / 2 + act.offsetWidth / 2, behavior: reduce ? 'auto' : 'smooth' });
     };
     shop = {
       render(animate = true) {

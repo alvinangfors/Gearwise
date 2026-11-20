@@ -123,17 +123,19 @@ const guidesFor = (L) => GUIDES.map((g) => {
 const SCENARIOS = [
   ['pendla', '🚆', ['brusreducerande-horlurar', 'tradlosa-in-ear-horlurar', 'powerbank-20000', 'bluetooth-tracker']],
   ['trana', '🏃', ['smartklocka-gps', 'tradlosa-in-ear-horlurar', 'actionkamera-4k']],
-  ['jobba', '💻', ['webbkamera', 'laptopstall-aluminium', 'ergonomisk-mus', 'mekaniskt-tangentbord', 'usb-c-hubb-7-i-1']],
+  ['jobba', '💻', ['laptopstall-aluminium', 'skrivbordslampa', 'skarmarm', 'webbkamera', 'ergonomisk-mus', 'mekaniskt-tangentbord']],
   ['hemma', '🏠', ['smart-hogtalare', 'smarta-led-lampor', 'smart-kontakt-energimatning', 'wifi-kamera-inomhus']],
   ['resa', '✈️', ['universell-reseadapter', 'powerbank-20000', 'bluetooth-tracker', 'brusreducerande-horlurar']],
   ['ladda', '⚡', ['usb-c-laddare-65w', 'tradlos-laddstation-3-i-1', 'usb-c-kabel-flatad', 'powerbank-20000']],
   ['fest', '🎉', ['bluetooth-hogtalare', 'actionkamera-4k', 'powerbank-20000']],
   ['inred', '🛋️', ['posters-och-tavlor', 'tavelramar', 'vagghyllor', 'led-ljus', 'kuddfodral']],
+  ['gym', '🏋️', ['kettlebell', 'traningsband', 'yogamatta', 'foam-roller', 'hopprep', 'vattenflaska']],
+  ['ordning', '📦', ['forvaringslador', 'vakuumpasar', 'etikettskrivare', 'flyttkartonger', 'kabelhantering']],
 ];
 const GIFTS = [
   ['pendlaren', '🚆', ['brusreducerande-horlurar', 'tradlosa-in-ear-horlurar', 'powerbank-20000', 'bluetooth-tracker']],
   ['inredaren', '🛋️', ['posters-och-tavlor', 'tavelramar', 'vaggspegel', 'kuddfodral', 'led-ljus']],
-  ['traning', '🏃', ['smartklocka-gps', 'tradlosa-in-ear-horlurar', 'actionkamera-4k', 'bluetooth-hogtalare']],
+  ['traning', '🏃', ['smartklocka-gps', 'tradlosa-in-ear-horlurar', 'kettlebell', 'vattenflaska', 'traningsband']],
   ['kontoret', '💻', ['mekaniskt-tangentbord', 'ergonomisk-mus', 'webbkamera', 'laptopstall-aluminium']],
   ['resenaren', '✈️', ['universell-reseadapter', 'powerbank-20000', 'bluetooth-tracker', 'brusreducerande-horlurar']],
   ['smarthem', '🏠', ['smart-hogtalare', 'smarta-led-lampor', 'smart-kontakt-energimatning', 'wifi-kamera-inomhus']],

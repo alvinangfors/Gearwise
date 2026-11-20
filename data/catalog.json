@@ -1148,5 +1148,605 @@
     },
     "asin": null,
     "img": null
+  },
+  {
+    "slug": "yogamatta",
+    "name": "Yogamatta",
+    "cat": "Träning & gym",
+    "icon": "yogamat",
+    "lvl": 1,
+    "pop": 8,
+    "q": "yogamatta halkfri",
+    "why": "Grepp och dämpning för yoga, stretch och hemmaträning.",
+    "bullets": [
+      "Halkfri yta",
+      "4–6 mm tjock",
+      "Bärrem ingår ofta"
+    ],
+    "guide": {
+      "intro": "En bra yogamatta ger grepp när du svettas och skonar knän och handleder. Tjocklek och material avgör mest.",
+      "consider": [
+        [
+          "Tjocklek",
+          "4–6 mm är en bra kompromiss. Tunnare ger bättre balans, tjockare skonar knäna men kan kännas svajig."
+        ],
+        [
+          "Grepp",
+          "Kolla att ytan är halkfri även när den blir fuktig. Gummi och PU greppar bäst, PVC och TPE är billigare och lättare."
+        ],
+        [
+          "Längd",
+          "Är du lång, välj en matta som är längre än standardmåttet runt 180 cm."
+        ],
+        [
+          "Rengöring",
+          "Torka av mattan efter passet. Kolla tillverkarens råd – vissa material tål inte starka rengöringsmedel."
+        ]
+      ],
+      "forWho": "Dig som tränar yoga, stretchar eller kör hemmaträning.",
+      "skipIf": "Du ska lyfta tunga vikter. Då behöver du ett hårdare golvskydd, till exempel gummiplattor."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "traningsband",
+    "name": "Träningsband (set)",
+    "cat": "Träning & gym",
+    "icon": "bands",
+    "lvl": 1,
+    "pop": 8,
+    "q": "träningsband set",
+    "why": "Ett helt gym i en påse – för styrka, rehab och resor.",
+    "bullets": [
+      "Flera motstånd",
+      "Tar ingen plats",
+      "Bra för uppvärmning"
+    ],
+    "guide": {
+      "intro": "Träningsband ger motstånd som ökar ju mer bandet sträcks. De är billiga, lätta att ta med och passar både nybörjare och vana.",
+      "consider": [
+        [
+          "Flera motstånd",
+          "Ett set med olika styrkor låter dig öka belastningen i takt med att du blir starkare."
+        ],
+        [
+          "Typ av band",
+          "Långa band med handtag passar övningar som liknar gymmaskiner. Korta minibands passar ben och säte."
+        ],
+        [
+          "Material",
+          "Latex är elastiskt men kan ge allergi. Det finns latexfria band, till exempel av TPE."
+        ],
+        [
+          "Kolla slitaget",
+          "Byt band som fått sprickor eller nötningar, eftersom de kan gå av under belastning."
+        ]
+      ],
+      "forWho": "Dig som vill träna styrka hemma, på resan eller som komplement till gymmet.",
+      "skipIf": "Du vill träna maxstyrka med tunga vikter. Då räcker inte banden."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "kettlebell",
+    "name": "Kettlebell",
+    "cat": "Träning & gym",
+    "icon": "kettlebell",
+    "lvl": 2,
+    "pop": 7,
+    "q": "kettlebell gjutjärn",
+    "why": "Kondition och styrka i ett – med ett enda redskap.",
+    "bullets": [
+      "Gjutjärn eller vinyl",
+      "Bred greppyta",
+      "Olika vikter"
+    ],
+    "guide": {
+      "intro": "En kettlebell tränar styrka och kondition samtidigt, till exempel i swingar och knäböj. Rätt vikt är viktigare än märket.",
+      "consider": [
+        [
+          "Vikt",
+          "Börja hellre för lätt än för tungt. Många nybörjare börjar mellan 8 och 16 kg, beroende på erfarenhet och övning."
+        ],
+        [
+          "Handtaget",
+          "Ett slätt handtag med plats för båda händerna gör swingar säkrare och skonar händerna."
+        ],
+        [
+          "Material",
+          "Gjutjärn är tåligt och kompakt. Vinylbelagda är snällare mot golvet men ofta större."
+        ],
+        [
+          "Golvet",
+          "Använd en matta eller gummiplatta under, så skyddar du både golvet och kettlebellen."
+        ]
+      ],
+      "forWho": "Dig som vill träna effektivt hemma med lite utrustning.",
+      "skipIf": "Du är ny på övningar som swingar och inte har lärt dig tekniken. Lär dig den först, gärna med en tränare."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "foam-roller",
+    "name": "Foam roller",
+    "cat": "Träning & gym",
+    "icon": "roller",
+    "lvl": 1,
+    "pop": 6,
+    "q": "foam roller massagerulle",
+    "why": "Rulla ut stela muskler efter träningen.",
+    "bullets": [
+      "Mjuk eller hård",
+      "Slät eller mönstrad",
+      "Lätt att ta med"
+    ],
+    "guide": {
+      "intro": "En foam roller används för att massera musklerna, till exempel efter träning. Många upplever att den minskar stelhet.",
+      "consider": [
+        [
+          "Hårdhet",
+          "Börja med en mjukare rulle. En hård eller mönstrad rulle ger mer tryck men kan göra ont för nybörjare."
+        ],
+        [
+          "Storlek",
+          "En lång rulle (runt 90 cm) är stabil för ryggen. En kort (30–45 cm) är lättare att ta med."
+        ],
+        [
+          "Teknik",
+          "Rulla lugnt över muskeln, inte över leder eller skelett."
+        ],
+        [
+          "Vid smärta",
+          "Har du en skada eller ont som inte går över, prata med vården eller en fysioterapeut först."
+        ]
+      ],
+      "forWho": "Dig som tränar mycket och vill känna dig mindre stel.",
+      "skipIf": "Du har en färsk skada. Låt den läka och fråga vården först."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "hopprep",
+    "name": "Hopprep",
+    "cat": "Träning & gym",
+    "icon": "rope",
+    "lvl": 1,
+    "pop": 6,
+    "q": "hopprep justerbart",
+    "why": "Billig och effektiv kondition – får plats i fickan.",
+    "bullets": [
+      "Justerbar längd",
+      "Kullagrade handtag",
+      "Bra för uppvärmning"
+    ],
+    "guide": {
+      "intro": "Hopprep är ett av de billigaste sätten att träna kondition och koordination. Längden och typen av rep avgör hur det känns.",
+      "consider": [
+        [
+          "Längd",
+          "Ställ dig mitt på repet. Handtagen bör nå ungefär upp till armhålorna. Ett justerbart rep är enklast."
+        ],
+        [
+          "Typ av rep",
+          "Tunna stålvajrar snurrar snabbt och passar dubbelhopp. Tjockare rep är lättare att lära sig med."
+        ],
+        [
+          "Underlag",
+          "Hoppa på trägolv, gummi eller en matta. Betong sliter på både rep och leder."
+        ],
+        [
+          "Handtag",
+          "Kullager gör att repet snurrar jämnt. Bra grepp behövs när du blir svettig."
+        ]
+      ],
+      "forWho": "Dig som vill ha snabb konditionsträning hemma eller på resan.",
+      "skipIf": "Du får ont i knän eller fötter av hopp. Välj något med mindre stötar."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "vattenflaska",
+    "name": "Isolerad vattenflaska",
+    "cat": "Träning & gym",
+    "icon": "bottle",
+    "lvl": 1,
+    "pop": 7,
+    "q": "vattenflaska rostfri isolerad 750 ml",
+    "why": "Kallt vatten hela passet – och varmt te på promenaden.",
+    "bullets": [
+      "Dubbelväggigt rostfritt stål",
+      "Läcksäker kork",
+      "500–1 000 ml"
+    ],
+    "guide": {
+      "intro": "En isolerad flaska håller drycken kall eller varm i flera timmar. Korken och storleken avgör hur smidig den är i vardagen.",
+      "consider": [
+        [
+          "Storlek",
+          "500–750 ml passar i de flesta väskor och flaskhållare. En liter räcker längre men väger mer."
+        ],
+        [
+          "Kork",
+          "En kork med pip är lätt att dricka ur under passet. Kolla att den är läcksäker om flaskan ska ligga i väskan."
+        ],
+        [
+          "Diskmaskin",
+          "Många isolerade flaskor ska diskas för hand för att isoleringen ska hålla. Kolla tillverkarens råd."
+        ],
+        [
+          "Material",
+          "Rostfritt stål tar inte smak och tål stötar."
+        ]
+      ],
+      "forWho": "Dig som tränar, pendlar eller vill slippa engångsflaskor.",
+      "skipIf": "Du vill ha den lättaste flaskan. En plastflaska väger mindre."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "presentpapper",
+    "name": "Presentpapper och presentpåsar",
+    "cat": "Förvaring & förpackning",
+    "icon": "giftwrap",
+    "lvl": 1,
+    "pop": 8,
+    "q": "presentpapper jul",
+    "why": "Snyggt inslagna klappar utan stress.",
+    "bullets": [
+      "Rullar eller påsar",
+      "Band och etiketter",
+      "Återanvändbara påsar"
+    ],
+    "guide": {
+      "intro": "Ett fint inslag gör klappen till en upplevelse. Papper eller påsar – det handlar mest om hur mycket tid du vill lägga.",
+      "consider": [
+        [
+          "Papper eller påse",
+          "Papper ger det klassiska inslaget. Presentpåsar går snabbare och kan återanvändas."
+        ],
+        [
+          "Pappersvikt",
+          "Tjockare papper spricker inte vid hörnen och lyser inte igenom."
+        ],
+        [
+          "Återvinning",
+          "Papper utan glitter, folie och plast är oftast lättare att återvinna. Kolla vad som gäller i din kommun."
+        ],
+        [
+          "Tillbehör",
+          "Ett set med band, etiketter och tejp gör att allt matchar."
+        ]
+      ],
+      "forWho": "Dig som slår in många julklappar.",
+      "skipIf": "Du har bara några paket. Då räcker ofta det du redan har hemma."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "forvaringslador",
+    "name": "Förvaringslådor med lock",
+    "cat": "Förvaring & förpackning",
+    "icon": "box",
+    "lvl": 1,
+    "pop": 7,
+    "q": "förvaringslådor med lock",
+    "why": "Ordning i garderoben, förrådet och under sängen.",
+    "bullets": [
+      "Med lock",
+      "Stapelbara",
+      "Genomskinliga eller tyg"
+    ],
+    "guide": {
+      "intro": "Förvaringslådor gör det lättare att hålla ordning och hitta saker. Mått och material väljer du efter var de ska stå.",
+      "consider": [
+        [
+          "Mät först",
+          "Mät hyllan, garderoben eller utrymmet under sängen innan du köper."
+        ],
+        [
+          "Genomskinliga eller täckta",
+          "Genomskinliga lådor visar innehållet. Täckta lådor ser lugnare ut på öppna hyllor."
+        ],
+        [
+          "Stapelbarhet",
+          "Lock som sitter fast gör att lådorna kan staplas utan att glida."
+        ],
+        [
+          "Etiketter",
+          "Märk lådorna, så hittar du rätt utan att öppna alla."
+        ]
+      ],
+      "forWho": "Dig som vill få ordning i förrådet, garderoben eller barnrummet.",
+      "skipIf": "Du behöver förvaring utomhus. Välj då lådor som tål fukt och kyla."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "vakuumpasar",
+    "name": "Vakuumpåsar",
+    "cat": "Förvaring & förpackning",
+    "icon": "vacuum",
+    "lvl": 1,
+    "pop": 6,
+    "q": "vakuumpåsar kläder",
+    "why": "Krymp täcken och vinterkläder till en bråkdel av volymen.",
+    "bullets": [
+      "Flera storlekar",
+      "Ventil för dammsugare",
+      "Skyddar mot damm"
+    ],
+    "guide": {
+      "intro": "Vakuumpåsar pressar ihop mjuka saker som täcken och kläder när du suger ut luften med dammsugaren.",
+      "consider": [
+        [
+          "Vad som passar",
+          "Bäst för täcken, kuddar och kläder av syntet eller bomull. Dun och ull kan ta skada av att pressas länge – kolla tillverkarens råd."
+        ],
+        [
+          "Ventil och förslutning",
+          "En tät ventil och dubbel förslutning gör att påsen håller vakuum längre."
+        ],
+        [
+          "Storlekar",
+          "Ett set med flera storlekar är smidigast."
+        ],
+        [
+          "Torrt först",
+          "Packa bara rena och torra saker, annars kan det bli mögel."
+        ]
+      ],
+      "forWho": "Dig som har ont om förvaring eller ska flytta.",
+      "skipIf": "Du vill förvara dun- eller ulljackor länge. Förvara dem hellre luftigt."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "flyttkartonger",
+    "name": "Flyttkartonger",
+    "cat": "Förvaring & förpackning",
+    "icon": "carton",
+    "lvl": 1,
+    "pop": 5,
+    "q": "flyttkartonger",
+    "why": "Stadiga kartonger som klarar flytten.",
+    "bullets": [
+      "Dubbelwell",
+      "Handtag",
+      "Flera storlekar"
+    ],
+    "guide": {
+      "intro": "Bra flyttkartonger gör flytten säkrare för både sakerna och ryggen. Styrka och storlek är viktigast.",
+      "consider": [
+        [
+          "Styrka",
+          "Dubbelwellpapp tål mer vikt och fukt än enkel well."
+        ],
+        [
+          "Storlek",
+          "Packa tunga saker som böcker i små kartonger och lätta saker i stora."
+        ],
+        [
+          "Handtag",
+          "Handtag gör kartongerna lättare att bära."
+        ],
+        [
+          "Tejp och märkning",
+          "Tejpa botten ordentligt och skriv rum och innehåll på sidan av kartongen."
+        ]
+      ],
+      "forWho": "Dig som ska flytta eller magasinera saker.",
+      "skipIf": "Du behöver förvaring under lång tid. Då är plastlådor med lock tåligare."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "etikettskrivare",
+    "name": "Etikettskrivare",
+    "cat": "Förvaring & förpackning",
+    "icon": "label",
+    "lvl": 2,
+    "pop": 5,
+    "q": "etikettskrivare bluetooth",
+    "why": "Tydliga etiketter på lådor, kablar och pärmar.",
+    "bullets": [
+      "App eller tangentbord",
+      "Olika tejpbredder",
+      "Kompakt"
+    ],
+    "guide": {
+      "intro": "En etikettskrivare gör det enkelt att märka lådor, kablar och pärmar, så att ordningen håller.",
+      "consider": [
+        [
+          "App eller tangentbord",
+          "Modeller med app ger fler typsnitt och symboler. Med tangentbord behövs ingen mobil."
+        ],
+        [
+          "Tejp och kostnad",
+          "Kolla vilken tejp som passar och vad den kostar – det är där den löpande kostnaden ligger."
+        ],
+        [
+          "Termisk eller färgband",
+          "Termiska skrivare behöver inget bläck, men etiketterna kan blekna i solljus."
+        ],
+        [
+          "Bredd",
+          "Bred tejp syns bättre på stora lådor, smal passar kablar."
+        ]
+      ],
+      "forWho": "Dig som organiserar förrådet, kontoret eller kabelhärvan.",
+      "skipIf": "Du märker bara några saker. Då räcker en penna och maskeringstejp."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "skrivbordslampa",
+    "name": "Skrivbordslampa (LED)",
+    "cat": "Dator & kontor",
+    "icon": "desklamp",
+    "lvl": 1,
+    "pop": 6,
+    "q": "skrivbordslampa led dimbar",
+    "why": "Jämnt, dimbart ljus vid skrivbordet.",
+    "bullets": [
+      "Dimbar",
+      "Justerbar färgtemperatur",
+      "Vridbar arm"
+    ],
+    "guide": {
+      "intro": "En bra skrivbordslampa lyser upp arbetsytan utan att blända. Dimring och färgtemperatur gör störst skillnad.",
+      "consider": [
+        [
+          "Dimring",
+          "Steglös dimring låter dig anpassa ljuset efter tid på dagen."
+        ],
+        [
+          "Färgtemperatur",
+          "Kallare ljus runt 4 000–5 000 K passar fokuserat arbete, varmare ljus passar kvällen."
+        ],
+        [
+          "Placering",
+          "Ställ lampan på motsatt sida om skrivhanden, så slipper du skuggor."
+        ],
+        [
+          "Flimmer",
+          "Se efter lampor som anges vara flimmerfria."
+        ]
+      ],
+      "forWho": "Dig som jobbar eller pluggar vid skrivbordet, särskilt på kvällen.",
+      "skipIf": "Du redan har bra ljus där du sitter."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "skarmarm",
+    "name": "Skärmarm",
+    "cat": "Dator & kontor",
+    "icon": "monitorarm",
+    "lvl": 2,
+    "pop": 5,
+    "q": "skärmarm vesa gasfjäder",
+    "why": "Rätt höjd på skärmen och mer plats på skrivbordet.",
+    "bullets": [
+      "VESA-fäste",
+      "Gasfjäder",
+      "Bordsklämma"
+    ],
+    "guide": {
+      "intro": "En skärmarm låter dig ställa skärmen i rätt höjd och avstånd och frigör plats på skrivbordet.",
+      "consider": [
+        [
+          "VESA",
+          "Skärmen måste ha VESA-hål på baksidan, ofta 75×75 eller 100×100 mm."
+        ],
+        [
+          "Vikt",
+          "Jämför armens viktintervall med skärmens vikt – annars sjunker skärmen eller fjädrar upp."
+        ],
+        [
+          "Montering",
+          "En bordsklämma kräver en stadig bordskant. Kolla vilken skivtjocklek armen klarar."
+        ],
+        [
+          "Kablar",
+          "Inbyggda kabelkanaler gör det snyggare."
+        ]
+      ],
+      "forWho": "Dig som har en extern skärm och vill få den i rätt höjd.",
+      "skipIf": "Din skärm saknar VESA-hål på baksidan."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "skrivbordsunderlagg",
+    "name": "Skrivbordsunderlägg",
+    "cat": "Dator & kontor",
+    "icon": "deskmat",
+    "lvl": 1,
+    "pop": 5,
+    "q": "skrivbordsunderlägg stor",
+    "why": "Mjukt underlag för mus och tangentbord – och ett snyggare skrivbord.",
+    "bullets": [
+      "Stort format",
+      "Halkfri undersida",
+      "Tyg, filt eller konstläder"
+    ],
+    "guide": {
+      "intro": "Ett stort skrivbordsunderlägg ger musen bra glid, skyddar bordet och gör skrivbordet mer ombonat.",
+      "consider": [
+        [
+          "Storlek",
+          "Mät skrivbordet. Underlägget ska rymma både tangentbordet och musen."
+        ],
+        [
+          "Material",
+          "Tyg ger bra musglid. Konstläder är lätt att torka av. Filt är mjukt men samlar damm."
+        ],
+        [
+          "Undersida",
+          "En halkfri undersida gör att underlägget ligger still."
+        ],
+        [
+          "Kanter",
+          "Sydda kanter håller längre än ofållade."
+        ]
+      ],
+      "forWho": "Dig som vill ha ett snyggare och skönare skrivbord.",
+      "skipIf": "Skrivbordet är så litet att underlägget skulle täcka allt."
+    },
+    "asin": null,
+    "img": null
+  },
+  {
+    "slug": "kabelhantering",
+    "name": "Kabelhantering för skrivbordet",
+    "cat": "Dator & kontor",
+    "icon": "cables",
+    "lvl": 1,
+    "pop": 5,
+    "q": "kabelhantering skrivbord",
+    "why": "Bort med sladdhärvan – snyggare och lättare att städa.",
+    "bullets": [
+      "Kabelränna",
+      "Kardborreband",
+      "Kabelklämmor"
+    ],
+    "guide": {
+      "intro": "Kabelhantering samlar sladdarna under och bakom skrivbordet, så att det blir snyggare och lättare att städa.",
+      "consider": [
+        [
+          "Kabelränna",
+          "En ränna under skivan rymmer grenuttag och överflödig kabel."
+        ],
+        [
+          "Fäste",
+          "Skruv håller bäst. Tejp är enklare men kan släppa med tiden."
+        ],
+        [
+          "Kardborreband",
+          "Återanvändbara band är lättare att ändra än buntband."
+        ],
+        [
+          "Planera",
+          "Låt sladdarna ha lite slack, så att du kan flytta skärmen."
+        ]
+      ],
+      "forWho": "Dig som är trött på sladdhärvan.",
+      "skipIf": "Du bara har en laptop utan extra skärm och sladdar."
+    },
+    "asin": null,
+    "img": null
   }
 ]
