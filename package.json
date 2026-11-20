@@ -4,7 +4,9 @@
   "private": true,
   "description": "Statisk affiliate-sajt för teknik och gadgets med länkar till Amazon.se",
   "type": "module",
-  "engines": { "node": ">=20.12" },
+  "engines": {
+    "node": ">=20.12"
+  },
   "scripts": {
     "build": "node scripts/build.mjs",
     "fetch": "node scripts/fetch-amazon.mjs",
@@ -13,6 +15,7 @@
     "serve": "node scripts/serve.mjs",
     "dev": "node scripts/build.mjs && node scripts/serve.mjs",
     "images": "node scripts/make-images.mjs",
-    "test": "node --test test/*.test.mjs"
+    "test": "node --test test/*.test.mjs",
+    "share": "node scripts/make-share.mjs"
   }
 }

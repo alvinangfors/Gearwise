@@ -471,6 +471,29 @@
     totop.addEventListener('click', () => { scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); $('.logo')?.focus({ preventScroll: true }); });
   }
 
+  // ---------- Mobilmeny ----------
+  const menuBtn = $('#menubtn'), mnav = $('#mnav');
+  if (menuBtn && mnav) {
+    const setMenu = (open, returnFocus = true) => {
+      menuBtn.setAttribute('aria-expanded', open);
+      mnav.hidden = !open;
+      document.documentElement.classList.toggle('menu-open', open);
+      if (open) $('a', mnav)?.focus();
+      else if (returnFocus) menuBtn.focus();
+    };
+    menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
+    mnav.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false, false); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !mnav.hidden) setMenu(false); });
+    addEventListener('resize', () => { if (innerWidth > 600 && !mnav.hidden) setMenu(false, false); });
+  }
+
+  // ---------- Nedräkningar (dagar kvar) ----------
+  $$('[data-days]').forEach((el) => {
+    const t = Date.parse(el.dataset.days);
+    if (!t) return;
+    el.textContent = Math.max(0, Math.ceil((t - Date.now()) / 864e5));
+  });
+
   // ---------- Start ----------
   expirePrices(); checkImgs(); syncFavs(); syncCmp();
   if (page === 'jamfor') renderCompare().catch(() => { $('#cmp-root').textContent = 'Kunde inte läsa produktlistan.'; });

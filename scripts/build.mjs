@@ -11,6 +11,7 @@ import { readFile, writeFile, mkdir, rm, cp } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { ICONS } from './lib/icons.mjs';
+import { GUIDES } from './lib/guides.mjs';
 
 const root = new URL('../', import.meta.url);
 const r = (p) => readFile(new URL(p, root), 'utf8');
@@ -26,6 +27,19 @@ const abs = (p = '') => origin + base + p;
 const href = (p = '') => base + p;
 const year = new Date().getFullYear();
 const today = new Date().toISOString().slice(0, 10);
+
+// ---------- Säsong: jultema 15 nov–26 dec (config.season: "auto" | "jul" | "av") ----------
+const NOW = new Date();
+const inXmas = (d) => (d.getMonth() === 10 && d.getDate() >= 15) || (d.getMonth() === 11 && d.getDate() <= 26);
+const JUL = config.season === 'jul' || (config.season !== 'av' && inXmas(NOW));
+const YR = NOW.getFullYear();
+const XMAS = new Date(`${YR}-12-24T00:00:00+01:00`);
+const blackFriday = (y) => { const d = new Date(Date.UTC(y, 10, 1)); const firstThu = 1 + ((4 - d.getUTCDay() + 7) % 7); return new Date(Date.UTC(y, 10, firstThu + 22, 6)); };
+const BF = blackFriday(YR);
+const CM = new Date(BF.getTime() + 3 * 864e5);
+const BF_OVER = NOW > new Date(CM.getTime() + 864e5);
+const daysTo = (d) => Math.max(0, Math.ceil((d - NOW) / 864e5));
+const dLong = new Intl.DateTimeFormat('sv-SE', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Europe/Stockholm' });
 
 // ---------- Kontroller ----------
 const warnings = [];
@@ -93,12 +107,13 @@ const jsFile = `assets/app.${jsHash}.js`;
 
 function layout({ path, title, desc, body, page = '', jsonld = null, noindex = false, ogType = 'website' }) {
   const fullTitle = path === '' ? title : `${title} – ${config.name}`;
-  const nav = [['Butik', '#butik', 'butik'], ['Prylguiden', '#guiden', 'guiden'], ['Jämför', 'jamfor/', 'jamfor'], ['Frågor', '#fragor', 'fragor'], ['Om oss', 'om/', 'om']];
+  const nav = [...(JUL ? [['🎁 Julklappar', 'julklappar/', 'julklappar']] : []), ['Butik', '#butik', 'butik'], ['Prylguiden', '#guiden', 'prylguiden'], ['Guider', 'guider/', 'guider'], ['Jämför', 'jamfor/', 'jamfor'], ...(JUL ? [] : [['Om oss', 'om/', 'om']])];
+  const mnav = [...nav, ...(JUL ? [['Black Friday', 'black-friday/', 'black-friday'], ['Om oss', 'om/', 'om']] : [['Black Friday', 'black-friday/', 'black-friday']]), ['Frågor', '#fragor', 'fragor']];
   const favBtn = page === 'start'
     ? `<button class="favbtn" id="favToggle" aria-pressed="false">♥ Favoriter <b class="favcount">0</b></button>`
     : `<a class="favbtn" href="${href('?favoriter#butik')}">♥ Favoriter <b class="favcount">0</b></a>`;
   return `<!DOCTYPE html>
-<html lang="sv" data-base="${base}">
+<html lang="sv" data-base="${base}"${JUL ? ' class="jul"' : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -129,11 +144,15 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(
 <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="progress" aria-hidden="true"></div>
 <a class="skip" href="#main">Hoppa till innehållet</a>
+${JUL ? '<div class="snow" aria-hidden="true"><i></i><i></i></div>' : ''}
 <header class="top"><nav class="nav" aria-label="Huvudmeny">
   <a class="logo" href="${href()}"><i></i>${esc(config.name)}</a>
   <div class="links">${nav.map(([t, h, k]) => `<a href="${href(h)}"${k === page ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</div>
   ${favBtn}
-</nav></header>
+  <button class="menubtn" id="menubtn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Meny"><span></span><span></span><span></span></button>
+</nav>${JUL ? `<div class="garland" aria-hidden="true">${Array.from({ length: 32 }, (_, i) => `<b style="left:${i * 80 + 40}px"></b>`).join('')}</div>` : ''}</header>
+<nav class="mnav" id="mnav" aria-label="Mobilmeny" hidden>${mnav.map(([t, h, k], i) => `<a href="${href(h)}" style="--i:${i}"${k === page ? ' aria-current="page"' : ''}>${t}</a>`).join('')}</nav>
+${JUL ? `<div class="xbar"><div class="wrap"><span>🎄 <b data-days="${XMAS.toISOString()}">${daysTo(XMAS)}</b> dagar kvar till julafton</span> <a href="${href('julklappar/')}">Julklappsguiden ${YR} →</a>${BF_OVER ? '' : ` <a href="${href('black-friday/')}">Black Friday ${BF.getUTCDate()} nov →</a>`}</div></div>` : ''}
 <main id="main">
 ${body}
 </main>
@@ -143,7 +162,8 @@ ${body}
     <p class="disc">Som Amazon-partner tjänar ${esc(config.name)} på kvalificerade köp. Länkarna till Amazon är affiliatelänkar. Priser och tillgänglighet kan ändras; aktuella uppgifter finns alltid hos Amazon.</p>
   </div>
   <div><p>Kontakt: <a href="mailto:${esc(config.contactEmail)}">${esc(config.contactEmail)}</a></p>
-  <nav aria-label="Om sajten"><a href="${href('om/')}">Om oss</a><a href="${href('integritet/')}">Integritetspolicy</a><a href="${href('cookies/')}">Cookies</a></nav>
+  <nav aria-label="Om sajten"><a href="${href('guider/')}">Guider</a><a href="${href('julklappar/')}">Julklappar</a><a href="${href('black-friday/')}">Black Friday</a><a href="${href('om/')}">Om oss</a><a href="${href('integritet/')}">Integritetspolicy</a><a href="${href('cookies/')}">Cookies</a></nav>
+  ${JUL ? `<p class="godjul">God jul önskar ${esc(config.name)} ✨</p>` : ''}
   <p>© ${year} ${esc(config.name)}</p></div>
 </div>
 <div class="mega" aria-hidden="true">${[...config.name].map((ch, i) => `<span style="--i:${i}">${esc(ch)}</span>`).join('')}</div></footer>
@@ -180,6 +200,18 @@ const bySlug = Object.fromEntries(products.map((p) => [p.slug, p]));
 for (const [id, , , slugs] of SCENARIOS) for (const s of slugs) if (!bySlug[s]) throw new Error(`Prylguiden "${id}": produkten "${s}" finns inte`);
 for (const c of cats) if (!CAT_TEXT[c]) warnings.push(`Kategorin "${c}" saknar text i CAT_TEXT.`);
 
+const guideCard = (g, i = 0) => `<a class="gcard" data-reveal style="--i:${i % 3}" href="${href(`guider/${g.slug}/`)}"><span class="ge" aria-hidden="true">${g.emoji}</span><span class="kicker">${esc(g.kicker)}</span><b>${esc(g.title)}</b><span class="gd">${esc(g.desc)}</span><span class="more">Läs guiden <span aria-hidden="true">→</span></span></a>`;
+for (const g of GUIDES) for (const s of g.products) if (!bySlug[s]) throw new Error(`Guiden "${g.slug}": produkten "${s}" finns inte`);
+const GIFTS = [
+  ['pendlaren', '🚆', 'Pendlaren', ['brusreducerande-horlurar', 'tradlosa-in-ear-horlurar', 'powerbank-20000', 'bluetooth-tracker']],
+  ['inredaren', '🛋️', 'Inredaren', ['posters-och-tavlor', 'tavelramar', 'vaggspegel', 'kuddfodral', 'led-ljus']],
+  ['traning', '🏃', 'Träningsnörden', ['smartklocka-gps', 'tradlosa-in-ear-horlurar', 'actionkamera-4k', 'bluetooth-hogtalare']],
+  ['kontoret', '💻', 'Kontorsmänniskan', ['mekaniskt-tangentbord', 'ergonomisk-mus', 'webbkamera', 'laptopstall-aluminium']],
+  ['resenaren', '✈️', 'Resenären', ['universell-reseadapter', 'powerbank-20000', 'bluetooth-tracker', 'brusreducerande-horlurar']],
+  ['smarthem', '🏠', 'Smarta hem-fantasten', ['smart-hogtalare', 'smarta-led-lampor', 'smart-kontakt-energimatning', 'wifi-kamera-inomhus']],
+];
+for (const [id, , , slugs] of GIFTS) for (const s of slugs) if (!bySlug[s]) throw new Error(`Julklappar "${id}": produkten "${s}" finns inte`);
+
 // ---------- Sidor ----------
 const pages = new Map(); // sökväg (relativt base) -> html
 
@@ -195,8 +227,8 @@ pages.set('', layout({
   ] },
   body: `<section class="hero band"><canvas class="stars" id="stars" aria-hidden="true"></canvas><div class="wrap hero-grid">
   <div class="hero-copy">
-    <a class="eyebrow" href="#guiden"><b>Nytt</b> Prylguiden – hitta rätt pryl snabbt →</a>
-    <h1><span class="sr">Smarta prylar för pendlingen, träningen, hemmet, kontoret och resan</span><span aria-hidden="true">${splitChars('Smarta prylar')}<br>${splitChars('för')} <span class="rot" id="rot" data-words="pendlingen|träningen|hemmet|kontoret|resan|festen">pendlingen</span></span></h1>
+    ${JUL ? `<a class="eyebrow" href="${href('julklappar/')}"><b>🎄 Jul</b> Julklappsguiden ${YR} är här →</a>` : `<a class="eyebrow" href="#guiden"><b>Nytt</b> Prylguiden – hitta rätt pryl snabbt →</a>`}
+    <h1><span class="sr">Smarta prylar för ${JUL ? 'julen, ' : ''}pendlingen, träningen, hemmet, kontoret och resan</span><span aria-hidden="true">${splitChars('Smarta prylar')}<br>${splitChars('för')} <span class="rot" id="rot" data-words="${JUL ? 'julen|' : ''}pendlingen|träningen|hemmet|kontoret|resan|festen">${JUL ? 'julen' : 'pendlingen'}</span></span></h1>
     <p class="sub">Vi går igenom tekniken så att du slipper. Hitta rätt hörlurar, laddare eller smarta hem-prylar, och köp tryggt hos Amazon med deras leverans och returer.</p>
     <div class="ctas"><a class="cta magnetic" href="#butik">Utforska prylarna <span class="arr" aria-hidden="true">→</span></a><a class="ghost" href="#guiden">Starta Prylguiden</a></div>
     <div class="trust"><span>Frakt och returer via Amazon</span><span>Säker betalning</span><span>Köpguide för varje pryl</span></div>
@@ -212,6 +244,11 @@ pages.set('', layout({
   <div class="track">${[...products, ...products].map((p) => `<span>${esc(p.name)}</span>`).join('')}</div>
   <div class="track rev">${[...products, ...products].reverse().map((p) => `<span class="mi"><i>${ICONS[p.icon]}</i>${esc(p.cat)}</span>`).join('')}</div>
 </div>
+
+${JUL ? `<section class="band promo-band" aria-label="Säsong"><div class="wrap promo">
+  <a class="promo-card xmas-card" data-reveal href="${href('julklappar/')}"><span class="pe" aria-hidden="true">🎁</span><span class="kicker">Julklappsguiden ${YR}</span><b>Julklappar till alla på listan</b><span>Pendlaren, inredaren, träningsnörden och kontorsmänniskan – handplockat och sorterat efter budget.</span><span class="go" aria-hidden="true">→</span></a>
+  <a class="promo-card bf-card" data-reveal style="--i:1" href="${href('black-friday/')}"><span class="pe" aria-hidden="true">🏷️</span><span class="kicker">Black Friday ${BF.getUTCDate()} nov</span><b>${BF_OVER ? 'Tips för smart rea-shopping' : 'Handla smart på Black Friday'}</b><span>Så skiljer du riktiga erbjudanden från falska, och vilka prylar som är värda att vänta på.</span><span class="go" aria-hidden="true">→</span></a>
+</div></section>` : ''}
 
 <section class="band" id="kategorier" aria-labelledby="kat-h"><div class="wrap">
   <p class="kicker">Kategorier</p>
@@ -268,6 +305,14 @@ ${[...products].sort((a, b) => b.pop - a.pop).map((p, i) => card(p, true, i)).jo
     <div class="step"><span class="no">2</span><h3>Köp hos Amazon</h3><p>Knappen tar dig till Amazon.se där du ser aktuellt pris, betyg och leveranstid.</p></div>
     <div class="step"><span class="no">3</span><h3>Amazon levererar</h3><p>Betalning, frakt, garanti och returer sköts av Amazon. Du handlar som vanligt.</p></div>
   </div>
+</div></section>
+
+<section class="band" id="guider-start" aria-labelledby="gs-h"><div class="wrap">
+  <p class="kicker">Guider</p>
+  <h2 id="gs-h">Lär dig välja <span class="gt">rätt</span></h2>
+  <p class="lede">Korta guider som svarar på det folk faktiskt undrar.</p>
+  <div class="ggrid">${GUIDES.slice(0, 3).map(guideCard).join('')}</div>
+  <p style="margin-top:22px"><a class="ghost" href="${href('guider/')}">Alla guider →</a></p>
 </div></section>
 
 <section class="band" id="fragor" aria-labelledby="faq-h"><div class="wrap narrow">
@@ -333,6 +378,142 @@ ${related.length ? `<section class="band related" aria-labelledby="rel-h"><div c
   <div class="grid">${related.map((x, i) => card(x, false, i)).join('\n')}</div>
 </div></section>` : ''}
 <div class="stickybuy" id="stickybuy" inert><b>${esc(p.pick || p.name)}</b>${buy(p)}</div>`,
+  }));
+}
+
+// Julklappsguiden
+{
+  const byLvl = (l) => products.filter((p) => p.lvl === l).sort((a, b) => b.pop - a.pop);
+  const tiers = [[1, '🧦', 'Mjuka paket i budgetklassen', 'Små klappar som gör stor skillnad i vardagen.'], [2, '🎁', 'Mellanklassen', 'Prylar som känns lyxiga utan att kosta skjortan.'], [3, '✨', 'Den stora klappen', 'När du verkligen vill imponera.']];
+  pages.set('julklappar/', layout({
+    path: 'julklappar/', page: 'julklappar', title: `Julklappsguiden ${YR} – tech och inredning`,
+    desc: `Julklappstips ${YR}: handplockade prylar till pendlaren, inredaren, träningsnörden och kontorsmänniskan – sorterade efter budget.`,
+    jsonld: { '@context': 'https://schema.org', '@type': 'ItemList', name: `Julklappsguiden ${YR}`, itemListElement: products.filter((p) => p.asin || p.pick).map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`produkt/${p.slug}/`), name: p.name })) },
+    body: `<section class="band xhero"><div class="wrap">
+  <nav class="crumbs" aria-label="Brödsmulor"><a href="${href()}">Start</a><span aria-hidden="true">›</span><span aria-current="page">Julklappar</span></nav>
+  <div class="xgrid">
+    <div>
+      <p class="kicker">Julklappsguiden ${YR}</p>
+      <h1>Julklappar till <span class="gt">alla på listan</span></h1>
+      <p class="lede">Handplockade prylar för pendlaren, inredaren, träningsnörden och den som jobbar hemma. Välj mottagare nedan eller bläddra efter budget.</p>
+      <div class="ctas"><a class="cta magnetic" href="#mottagare">Hitta rätt klapp <span class="arr" aria-hidden="true">→</span></a><a class="ghost" href="#budget">Efter budget</a></div>
+    </div>
+    <div class="xcount" data-reveal><span class="xbig" data-days="${XMAS.toISOString()}">${daysTo(XMAS)}</span><span>dagar kvar till julafton</span><span class="xgift" aria-hidden="true">🎁</span></div>
+  </div>
+</div></section>
+
+<section class="band" id="mottagare" aria-labelledby="mot-h"><div class="wrap"><div class="quiz" data-reveal>
+  <p class="kicker">Till vem?</p>
+  <h2 id="mot-h">Vem ska få <span class="gt">klappen?</span></h2>
+  <div class="qtabs" role="tablist" aria-label="Vem ska få klappen?">
+  ${GIFTS.map(([id, e, label], i) => `<button class="qtab" role="tab" id="gt-${id}" aria-controls="gp-${id}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}"><span class="e" aria-hidden="true">${e}</span>${label}</button>`).join('')}
+  </div>
+  ${GIFTS.map(([id, , , slugs], i) => `<div class="qpanel" role="tabpanel" id="gp-${id}" aria-labelledby="gt-${id}"${i === 0 ? '' : ' hidden'}>
+    ${slugs.map((s, j) => { const p = bySlug[s]; return `<a class="mini" style="--i:${j}" href="${href(`produkt/${p.slug}/`)}"><span class="ic" aria-hidden="true">${ICONS[p.icon]}</span><span><b>${esc(p.pick || p.name)}</b><small>${esc(p.why)}</small></span></a>`; }).join('')}
+  </div>`).join('\n  ')}
+</div></div></section>
+
+<div id="budget"></div>
+${tiers.map(([l, e, h, sub]) => `<section class="band" aria-labelledby="t${l}-h"><div class="wrap">
+  <p class="kicker">${LVL[l]}</p>
+  <h2 id="t${l}-h"><span aria-hidden="true">${e}</span> ${h}</h2>
+  <p class="lede">${sub}</p>
+  <div class="grid">${byLvl(l).map((p, i) => card(p, false, i)).join('\n')}</div>
+</div></section>`).join('\n')}
+
+<section class="band" aria-labelledby="xt-h"><div class="wrap guide">
+  <p class="kicker">Smarta tips</p>
+  <h2 id="xt-h">Så lyckas du med <span class="gt">julklapparna</span></h2>
+  <div class="consider">
+    <div class="ccard" data-reveal><h3>Beställ i tid</h3><p>Leveranstiden skiljer sig mellan produkter och säljare. Kolla det beräknade leveransdatumet hos Amazon innan du beställer, särskilt veckan före jul.</p></div>
+    <div class="ccard" data-reveal style="--i:1"><h3>Tänk på returer</h3><p>Är du osäker på storlek, färg eller om mottagaren redan har prylen? Läs Amazons returvillkor innan du köper, så vet du vad som gäller om något behöver bytas.</p></div>
+    <div class="ccard" data-reveal><h3>Kolla kompatibiliteten</h3><p>Klockor, trackers och smarta högtalare fungerar inte alltid med alla mobiler. Läs köpguiden för prylen innan du köper.</p></div>
+    <div class="ccard" data-reveal style="--i:1"><h3>Spara dina idéer</h3><p>Tryck på ♥ på prylarna du funderar på, så hittar du dem under Favoriter när det är dags att bestämma dig.</p></div>
+  </div>
+  <p class="note">Vi visar inga påhittade betyg eller rabatter. Aktuella priser och leveranstider ser du alltid hos Amazon.</p>
+</div></section>`,
+  }));
+}
+
+// Black Friday
+pages.set('black-friday/', layout({
+  path: 'black-friday/', page: 'black-friday', title: `Black Friday ${YR} – så handlar du smart`,
+  desc: `Black Friday ${YR} är ${dLong.format(BF)}. Så känner du igen riktiga erbjudanden, vad lägsta 30-dagarspris betyder och vilka prylar som är värda att vänta på.`,
+  body: `<section class="band xhero bf"><div class="wrap">
+  <nav class="crumbs" aria-label="Brödsmulor"><a href="${href()}">Start</a><span aria-hidden="true">›</span><span aria-current="page">Black Friday</span></nav>
+  <div class="xgrid">
+    <div>
+      <p class="kicker">Black Friday ${YR}</p>
+      <h1>${BF_OVER ? 'Rea-shoppa' : 'Black Friday'} – <span class="gt">handla smart</span></h1>
+      <p class="lede">${BF_OVER ? `Black Friday ${YR} är över, men tipsen gäller varje rea.` : `Black Friday infaller ${dLong.format(BF)} och Cyber Monday ${dLong.format(CM)}. Många butiker kör erbjudanden hela veckan.`} Här är hur du skiljer riktiga fynd från falska – och vilka prylar som är värda att hålla koll på.</p>
+      <div class="ctas"><a class="cta magnetic" href="${esc(`${config.store}/gp/goldbox?tag=${encodeURIComponent(tag)}`)}" target="_blank" rel="nofollow sponsored noopener">Se Amazons erbjudanden <span class="arr" aria-hidden="true">→</span></a><a class="ghost" href="#bf-prylar">Prylar att bevaka</a></div>
+    </div>
+    <div class="xcount bfcount" data-reveal>${BF_OVER ? `<span class="xbig">${YR + 1}</span><span>Nästa Black Friday</span>` : `<span class="xbig" data-days="${BF.toISOString()}">${daysTo(BF)}</span><span>dagar kvar till Black Friday</span>`}<span class="xgift" aria-hidden="true">🏷️</span></div>
+  </div>
+</div></section>
+
+<section class="band" aria-labelledby="bft-h"><div class="wrap guide">
+  <p class="kicker">Fem regler</p>
+  <h2 id="bft-h">Så känner du igen ett <span class="gt">riktigt fynd</span></h2>
+  <div class="consider">
+    <div class="ccard" data-reveal><h3>Jämför med lägsta 30-dagarspriset</h3><p>När en butik i Sverige annonserar en prissänkning ska den enligt prisinformationslagen även visa det lägsta pris varan haft de senaste 30 dagarna. Det är det priset rabatten ska jämföras med.</p></div>
+    <div class="ccard" data-reveal style="--i:1"><h3>Gör en lista innan</h3><p>Bestäm vad du behöver innan rean börjar. Då är det lättare att låta bli erbjudanden på saker du egentligen inte ville ha.</p></div>
+    <div class="ccard" data-reveal><h3>Jämför modeller, inte bara procent</h3><p>En stor rabatt på fel produkt är ingen vinst. Läs köpguiden och välj rätt typ av pryl först – sedan priset.</p></div>
+    <div class="ccard" data-reveal style="--i:1"><h3>Kolla säljaren och returvillkoren</h3><p>På Amazon kan samma produkt säljas av olika säljare. Se vem som säljer och skickar varan, och vilka returvillkor som gäller.</p></div>
+  </div>
+  <p class="note">Vi hittar aldrig på rabatter. Aktuella priser och erbjudanden ser du hos Amazon. Spara prylarna du bevakar med ♥, så hittar du dem snabbt när rean drar igång.</p>
+</div></section>
+
+<section class="band" id="bf-prylar" aria-labelledby="bfp-h"><div class="wrap">
+  <p class="kicker">Att bevaka</p>
+  <h2 id="bfp-h">Prylar värda att <span class="gt">hålla koll på</span></h2>
+  <div class="grid">${[...products].sort((a, b) => (!!(b.asin || b.pick) - !!(a.asin || a.pick)) || b.pop - a.pop).slice(0, 12).map((p, i) => card(p, false, i)).join('\n')}</div>
+</div></section>`,
+}));
+
+// Guider
+pages.set('guider/', layout({
+  path: 'guider/', page: 'guider', title: 'Guider – välj rätt pryl',
+  desc: 'Korta, faktabaserade guider: powerbank på flyget, hur många watt laddaren behöver, tavelvägg, ergonomi och mysbelysning.',
+  body: `<section class="band"><div class="wrap">
+  <nav class="crumbs" aria-label="Brödsmulor"><a href="${href()}">Start</a><span aria-hidden="true">›</span><span aria-current="page">Guider</span></nav>
+  <p class="kicker">Guider</p>
+  <h1 class="pageh">Lär dig välja <span class="gt">rätt</span></h1>
+  <p class="lede">Korta guider som svarar på det folk faktiskt undrar – utan reklamsnack.</p>
+  <div class="ggrid">${GUIDES.map(guideCard).join('')}</div>
+</div></section>`,
+}));
+for (const g of GUIDES) {
+  const prods = g.products.map((s) => bySlug[s]);
+  const others = GUIDES.filter((x) => x !== g).slice(0, 3);
+  pages.set(`guider/${g.slug}/`, layout({
+    path: `guider/${g.slug}/`, page: 'guider', ogType: 'article', title: g.title, desc: g.desc,
+    jsonld: { '@context': 'https://schema.org', '@graph': [
+      { '@type': 'Article', headline: g.title, description: g.desc, inLanguage: 'sv-SE', dateModified: today, author: { '@type': 'Organization', name: config.name }, publisher: { '@type': 'Organization', name: config.name, logo: { '@type': 'ImageObject', url: abs('apple-touch-icon.png') } }, mainEntityOfPage: abs(`guider/${g.slug}/`) },
+      { '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Start', item: abs() },
+        { '@type': 'ListItem', position: 2, name: 'Guider', item: abs('guider/') },
+        { '@type': 'ListItem', position: 3, name: g.title, item: abs(`guider/${g.slug}/`) },
+      ] },
+    ] },
+    body: `<article class="band"><div class="wrap article">
+  <nav class="crumbs" aria-label="Brödsmulor"><a href="${href()}">Start</a><span aria-hidden="true">›</span><a href="${href('guider/')}">Guider</a><span aria-hidden="true">›</span><span aria-current="page">${esc(g.title)}</span></nav>
+  <p class="kicker"><span aria-hidden="true">${g.emoji}</span> ${esc(g.kicker)}</p>
+  <h1 class="pageh">${esc(g.title)}</h1>
+  <p class="lede">${esc(g.desc)}</p>
+  ${g.sections.map(([h, ps], i) => `<section class="asec" data-reveal><h2><span class="an" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>${esc(h)}</h2>${ps.map((x) => `<p>${esc(x)}</p>`).join('')}</section>`).join('\n  ')}
+  <p class="note">Guiden beskriver allmänna fakta och tumregler. Kontrollera alltid tillverkarens och, där det gäller, myndighetens eller flygbolagets aktuella regler.</p>
+</div></article>
+<section class="band" aria-labelledby="gp-h"><div class="wrap">
+  <p class="kicker">Prylar i guiden</p>
+  <h2 id="gp-h">Läs mer om <span class="gt">prylarna</span></h2>
+  <div class="grid">${prods.map((p, i) => card(p, false, i)).join('\n')}</div>
+</div></section>
+<section class="band" aria-labelledby="go-h"><div class="wrap">
+  <p class="kicker">Fler guider</p>
+  <h2 id="go-h">Läs <span class="gt">vidare</span></h2>
+  <div class="ggrid">${others.map(guideCard).join('')}</div>
+</div></section>`,
   }));
 }
 

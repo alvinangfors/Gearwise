@@ -3,3 +3,5 @@ dist/
 .env
 data/amazon.json
 .DS_Store
+share/
+*.zip
