@@ -130,7 +130,7 @@ const SCENARIOS = [
   ['fest', '🎉', ['bluetooth-hogtalare', 'actionkamera-4k', 'powerbank-20000']],
   ['inred', '🛋️', ['posters-och-tavlor', 'tavelramar', 'vagghyllor', 'led-ljus', 'kuddfodral']],
   ['gym', '🏋️', ['kettlebell', 'traningsband', 'yogamatta', 'foam-roller', 'hopprep', 'vattenflaska']],
-  ['ordning', '📦', ['forvaringslador', 'vakuumpasar', 'etikettskrivare', 'flyttkartonger', 'kabelhantering']],
+  ['ordning', '📦', ['forvaringslador', 'etikettark', 'vakuumpasar', 'etikettskrivare', 'flyttkartonger', 'kabelhantering']],
 ];
 const GIFTS = [
   ['pendlaren', '🚆', ['brusreducerande-horlurar', 'tradlosa-in-ear-horlurar', 'powerbank-20000', 'bluetooth-tracker']],

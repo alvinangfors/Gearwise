@@ -1424,5 +1424,39 @@
       "forWho": "You are tired of the cable mess.",
       "skipIf": "You only have a laptop with no extra monitor or cables."
     }
+  },
+  "etikettark": {
+    "slug": "printable-label-sheets",
+    "name": "Printable label sheets",
+    "why": "Print your own labels on an ordinary printer – for boxes, jars and parcels.",
+    "bullets": [
+      "24 sheets",
+      "For inkjet printers",
+      "Self-adhesive"
+    ],
+    "pick": "Label sheets for inkjet printers (24 sheets)",
+    "guide": {
+      "intro": "Label sheets go through your ordinary printer – great for storage boxes, address labels, gift tags and jars.",
+      "consider": [
+        [
+          "The right printer",
+          "Check that the sheets are made for your printer type. Inkjet sheets don’t always suit laser printers, and vice versa."
+        ],
+        [
+          "Format and template",
+          "Check the label sizes in the description and use a template in your word processor so the text lands correctly."
+        ],
+        [
+          "Adhesive",
+          "Some labels are permanent, others removable. Choose removable ones for boxes whose contents change."
+        ],
+        [
+          "Test print",
+          "Print on plain paper first and hold it against the label sheet, so you don’t waste sheets."
+        ]
+      ],
+      "forWho": "You want to label boxes, jars or parcels with neat, matching labels.",
+      "skipIf": "You only need a few labels. A label maker or a pen is easier."
+    }
   }
 }

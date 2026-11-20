@@ -2,14 +2,17 @@
 // Renderar korta stående videor (1080×1920, 30 fps, H.264) för TikTok, Reels och Shorts till videos/.
 //   npm run videos            (alla)
 //   npm run videos -- 2 5     (bara video 2 och 5)
-// Kräver Playwright (Chromium) och ffmpeg. Ingen ljudspår – lägg till musik eller röst i appen.
+// Kräver Playwright (Chromium) och ffmpeg. Musiken är egenkomponerad (scripts/lib/music.mjs).
+//   npm run videos -- --ljud   (byt bara musik på redan renderade videor)
 //
 // Varje scen: [sekunder, text, undertext?, ikoner?, extra?]. **ord** = gradient.
 
-import { readFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { spawn } from 'node:child_process';
 import { createRequire } from 'node:module';
 import { ICONS } from './lib/icons.mjs';
+import { makeTrack } from './lib/music.mjs';
 
 let chromium;
 try { ({ chromium } = await import('playwright')); }
@@ -165,17 +168,33 @@ window.seek=(t)=>{
 </script></body></html>` };
 }
 
-const pick = process.argv.slice(2).map(Number).filter(Boolean);
+const args = process.argv.slice(2);
+const audioOnly = args.includes('--ljud');
+const pick = args.map(Number).filter(Boolean);
 const out = new URL('videos/', root);
-await mkdir(out, { recursive: true });
+await mkdir(new URL('silent/', out), { recursive: true });
 const browser = await chromium.launch();
 for (const [i, v] of VIDEOS.entries()) {
   if (pick.length && !pick.includes(i + 1)) continue;
+  const { total, html, scenes } = pageHtml(v);
+  const silent = new URL(`silent/${v.file}.mp4`, out).pathname;
+  const file = new URL(`${v.file}.mp4`, out).pathname;
+  if (!(audioOnly && existsSync(silent))) await renderVideo(v, total, html, silent);
+  // Musik + effekter, synkade mot scenbytena
+  const wav = new URL(`silent/${v.file}.wav`, out).pathname;
+  await writeFile(wav, makeTrack({ duration: total, sceneStarts: scenes.map((s) => s.start), theme: v.theme, seed: i + 7 }));
+  await run('ffmpeg', ['-y', '-loglevel', 'error', '-i', silent, '-i', wav, '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', file]);
+  await rm(wav);
+  console.log(`videos/${v.file}.mp4 (${total.toFixed(1)} s, med ljud)`);
+}
+await browser.close();
+
+function run(cmd, a) { return new Promise((r, j) => spawn(cmd, a, { stdio: 'inherit' }).on('close', (c) => (c === 0 ? r() : j(new Error(cmd + ' ' + c))))); }
+
+async function renderVideo(v, total, html, file) {
   const page = await browser.newPage({ viewport: { width: W, height: H } }); // ny flik per video, annars krockar skripten
-  const { total, html } = pageHtml(v);
   await page.setContent(html);
   await page.evaluate(() => document.fonts.ready);
-  const file = new URL(`${v.file}.mp4`, out).pathname;
   const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-',
     '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-preset', 'medium', '-crf', '20', '-movflags', '+faststart', file], { stdio: ['pipe', 'inherit', 'inherit'] });
   const frames = Math.round(total * FPS);
@@ -187,6 +206,4 @@ for (const [i, v] of VIDEOS.entries()) {
   ff.stdin.end();
   await new Promise((r, j) => ff.on('close', (c) => (c === 0 ? r() : j(new Error('ffmpeg ' + c)))));
   await page.close();
-  console.log(`videos/${v.file}.mp4 (${total.toFixed(1)} s)`);
 }
-await browser.close();

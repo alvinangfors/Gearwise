@@ -1748,5 +1748,46 @@
     },
     "asin": null,
     "img": null
+  },
+  {
+    "slug": "etikettark",
+    "name": "Etikettark för skrivare",
+    "cat": "Förvaring & förpackning",
+    "icon": "labelsheet",
+    "lvl": 1,
+    "pop": 6,
+    "q": "etikettark skrivare",
+    "why": "Skriv ut egna etiketter på vanlig skrivare – till lådor, burkar och paket.",
+    "bullets": [
+      "24 ark",
+      "För bläckstråleskrivare",
+      "Självhäftande"
+    ],
+    "asin": "B09MZLR946",
+    "img": null,
+    "pick": "Etikettark för bläckstråleskrivare (24 ark)",
+    "guide": {
+      "intro": "Etikettark skriver du ut på din vanliga skrivare – bra för förvaringslådor, adresslappar, julklappsetiketter och burkar.",
+      "consider": [
+        [
+          "Rätt skrivare",
+          "Kolla att arken är gjorda för din skrivartyp. Ark för bläckstråle passar inte alltid laserskrivare, och tvärtom."
+        ],
+        [
+          "Format och mall",
+          "Kolla etikettmåtten i beskrivningen och använd en mall i ordbehandlaren, så hamnar texten rätt."
+        ],
+        [
+          "Häftförmåga",
+          "Vissa etiketter sitter permanent, andra går att ta bort. Välj borttagbara till lådor där innehållet byts."
+        ],
+        [
+          "Provutskrift",
+          "Skriv ut på vanligt papper först och lägg det mot etikettarket, så slipper du slösa ark."
+        ]
+      ],
+      "forWho": "Dig som vill märka lådor, burkar eller paket med snygga, enhetliga etiketter.",
+      "skipIf": "Du bara behöver några enstaka etiketter. Då är en etikettskrivare eller en penna smidigare."
+    }
   }
 ]
