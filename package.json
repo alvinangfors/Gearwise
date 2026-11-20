@@ -16,6 +16,7 @@
     "dev": "node scripts/build.mjs && node scripts/serve.mjs",
     "images": "node scripts/make-images.mjs",
     "test": "node --test test/*.test.mjs",
-    "share": "node scripts/make-share.mjs"
+    "share": "node scripts/make-share.mjs",
+    "videos": "node scripts/make-videos.mjs"
   }
 }
